@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.dark body {
+  background: #06111f;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 bg-clip-text text-transparent;
+  }
+
+  .premium-card {
+    @apply rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-premium transition duration-300 hover:-translate-y-1 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.06] dark:shadow-none dark:backdrop-blur-xl;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-navy-950;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-blue-400 dark:focus:ring-offset-navy-950;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:placeholder:text-slate-500;
+  }
+}
+
+/* Animated BM navbar logo */
+.bm-live-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #2563eb;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.12);
+}
+
+.dark .bm-live-logo {
+  background: #06111f;
+}
+
+.bm-live-logo span {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bm-live-logo::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  border: 3px solid transparent;
+  border-top-color: #2563eb;
+  border-right-color: #10b981;
+  animation: spinLogo 2.4s linear infinite;
+}
+
+@keyframes spinLogo {
+  to {
+    transform: rotate(360deg);
+  }
+}
