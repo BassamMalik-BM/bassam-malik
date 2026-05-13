@@ -8,6 +8,7 @@ import TradingJournalBlog from './blogs/TradingJournalBlog';
 import SupportResistanceBlog from './blogs/SupportResistanceBlog';
 import BeginnerMistakesBlog from './blogs/BeginnerMistakesBlog';
 import CryptoChartsBlog from './blogs/CryptoChartsBlog';
+import BitcoinBlog from "./blogs/BitcoinBlog";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -47,6 +48,8 @@ export default function BlogDetail() {
   <BeginnerMistakesBlog />
 ) : post.slug === 'how-to-read-crypto-charts' ? (
   <CryptoChartsBlog />
+) : post.slug === "what-is-bitcoin-and-why-does-it-matter" ? (
+  <BitcoinBlog />
 ) : (
 
   <article className="premium-card p-8 sm:p-10">
