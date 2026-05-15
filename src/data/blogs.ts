@@ -58,5 +58,15 @@ export const blogPosts: BlogPost[] = [
   readingTime: "8 min read",
   content: [],
   },
+  {
+  slug: "what-is-market-capitalization-in-crypto",
+  title: "What Is Market Capitalization in Crypto?",
+  description:
+    "Learn what market cap means in crypto, why price alone is misleading, and how beginners can use it to compare assets more responsibly.",
+  category: "Crypto Basics",
+  readingTime: "10 min read",
+  content: [],
+},
+
 ];
 
