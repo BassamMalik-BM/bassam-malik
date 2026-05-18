@@ -11,6 +11,7 @@ import BeginnerMistakesBlog from "./blogs/BeginnerMistakesBlog";
 import CryptoChartsBlog from "./blogs/CryptoChartsBlog";
 import BitcoinBlog from "./blogs/BitcoinBlog";
 import MarketCapBlog from "./blogs/MarketCapBlog";
+import CryptoVolatilityBlog from './blogs/CryptoVolatilityBlog';
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -51,6 +52,8 @@ export default function BlogDetail() {
               <BitcoinBlog />
             ) : post.slug === "what-is-market-capitalization-in-crypto" ? (
               <MarketCapBlog />
+            ) : post.slug === 'what-is-crypto-volatility' ? (
+              <CryptoVolatilityBlog />
             ) : (
               <article className="premium-card p-8 sm:p-10">
                 <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">

@@ -2,6 +2,24 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'what-is-crypto-volatility',
+  title: 'What Is Crypto Volatility?',
+  description:
+    'Learn what crypto volatility means, why prices move quickly, and how beginners can manage risk during market swings.',
+  category: 'Market Concepts',
+  readingTime: '8 min read',
+  content: [],
+  },
+  {
+  slug: "what-is-market-capitalization-in-crypto",
+  title: "What Is Market Capitalization in Crypto?",
+  description:
+    "Learn what market cap means in crypto, why price alone is misleading, and how beginners can use it to compare assets more responsibly.",
+  category: "Crypto Basics",
+  readingTime: "10 min read",
+  content: [],
+  },
+  {
     slug: 'what-is-crypto-spot-trading',
     title: 'What Is Crypto Spot Trading?',
     description: 'Understand the basics of buying and selling crypto assets directly without leverage or futures contracts.',
@@ -58,15 +76,6 @@ export const blogPosts: BlogPost[] = [
   readingTime: "8 min read",
   content: [],
   },
-  {
-  slug: "what-is-market-capitalization-in-crypto",
-  title: "What Is Market Capitalization in Crypto?",
-  description:
-    "Learn what market cap means in crypto, why price alone is misleading, and how beginners can use it to compare assets more responsibly.",
-  category: "Crypto Basics",
-  readingTime: "10 min read",
-  content: [],
-},
 
 ];
 

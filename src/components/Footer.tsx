@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
@@ -11,23 +11,33 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    {
-      name: "X",
-      icon: FaXTwitter,
-      url: "https://x.com/BassamMalik_BM",
-      glow:
-        "hover:border-black hover:shadow-[0_0_30px_rgba(0,0,0,0.35)] dark:hover:border-white dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]",
-      color: "text-slate-700 dark:text-white",
-    },
-    {
-      name: "Binance",
-      icon: SiBinance,
-      url: "https://app.binance.com/uni-qr/cpro/Square-Creator-063366329?l=en&r=J2UQ5OA7&uc=app_square_share_link&us=copylink",
-      glow:
-        "hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.45)]",
-      color: "text-yellow-500",
-    },
-  ];
+  {
+    name: "WhatsApp",
+    icon: FaWhatsapp,
+    url: "https://whatsapp.com/channel/0029VbCHUF1FHWq1qeAZ2Y2c",
+    glow:
+      "hover:border-green-500 hover:shadow-[0_0_30px_rgba(34,197,94,0.45)]",
+    color: "text-green-500",
+  },
+
+  {
+    name: "X",
+    icon: FaXTwitter,
+    url: "https://x.com/",
+    glow:
+      "hover:border-black hover:shadow-[0_0_30px_rgba(0,0,0,0.35)] dark:hover:border-white dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]",
+    color: "text-slate-700 dark:text-white",
+  },
+
+  {
+    name: "Binance",
+    icon: SiBinance,
+    url: "https://www.binance.com/",
+    glow:
+      "hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.45)]",
+    color: "text-yellow-500",
+  },
+];
 
   return (
     <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
