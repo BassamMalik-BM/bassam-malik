@@ -84,5 +84,6 @@ export const blogPosts: BlogPost[] = [
   readingTime: "8 min read",
   content: [],
   },
+
 ];
 
