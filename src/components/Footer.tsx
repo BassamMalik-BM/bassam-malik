@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
@@ -11,6 +11,14 @@ export default function Footer() {
   ];
 
   const socialLinks = [
+    {
+      name: "WhatsApp",
+      icon: FaWhatsapp,
+      url: "https://whatsapp.com/channel/0029VbCHUF1FHWq1qeAZ2Y2c",
+      glow:
+        "hover:border-green-500 hover:shadow-[0_0_30px_rgba(34,197,94,0.45)]",
+      color: "text-green-500",
+    },
     {
       name: "X",
       icon: FaXTwitter,

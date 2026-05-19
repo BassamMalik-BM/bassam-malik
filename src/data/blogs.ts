@@ -2,6 +2,33 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'how-crypto-wallets-work',
+  title: 'How Crypto Wallets Work',
+  description:
+    'Learn what crypto wallets actually do, how public and private keys work, and how beginners can protect their assets safely.',
+  category: 'Crypto Basics',
+  readingTime: '9 min read',
+  content: [],
+  },
+  {
+  slug: 'what-is-market-capitalization-in-crypto',
+  title: 'What Is Market Capitalization in Crypto?',
+  description:
+    'Learn what market cap means, why price alone can be misleading, and how beginners can compare crypto assets more realistically.',
+  category: 'Crypto Basics',
+  readingTime: '10 min read',
+  content: [],
+  },
+  {
+  slug: 'what-is-crypto-volatility',
+  title: 'What Is Crypto Volatility?',
+  description:
+    'Learn what crypto volatility means, why prices move quickly, and how beginners can manage risk during market swings.',
+  category: 'Market Concepts',
+  readingTime: '8 min read',
+  content: [],
+  },
+  {
     slug: 'what-is-crypto-spot-trading',
     title: 'What Is Crypto Spot Trading?',
     description: 'Understand the basics of buying and selling crypto assets directly without leverage or futures contracts.',
@@ -52,8 +79,7 @@ export const blogPosts: BlogPost[] = [
   {
   slug: "what-is-bitcoin-and-why-does-it-matter",
   title: "What Is Bitcoin and Why Does It Matter?",
-  description:
-    "A beginner-friendly explanation of Bitcoin, how it works, and why people consider it important.",
+  description: "A beginner-friendly explanation of Bitcoin, how it works, and why people consider it important.",
   category: "Bitcoin Basics",
   readingTime: "8 min read",
   content: [],

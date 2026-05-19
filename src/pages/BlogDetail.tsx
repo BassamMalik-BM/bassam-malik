@@ -9,6 +9,9 @@ import SupportResistanceBlog from './blogs/SupportResistanceBlog';
 import BeginnerMistakesBlog from './blogs/BeginnerMistakesBlog';
 import CryptoChartsBlog from './blogs/CryptoChartsBlog';
 import BitcoinBlog from "./blogs/BitcoinBlog";
+import MarketCapBlog from "./blogs/MarketCapBlog";
+import CryptoVolatilityBlog from "./blogs/CryptoVolatilityBlog";
+import CryptoWalletsBlog from "./blogs/CryptoWalletsBlog";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -50,7 +53,13 @@ export default function BlogDetail() {
   <CryptoChartsBlog />
 ) : post.slug === "what-is-bitcoin-and-why-does-it-matter" ? (
   <BitcoinBlog />
-) : (
+) : post.slug === "what-is-market-capitalization-in-crypto" ? (
+  <MarketCapBlog />
+) : post.slug === "what-is-crypto-volatility" ? (
+  <CryptoVolatilityBlog />
+) : post.slug === "how-crypto-wallets-work" ? (
+  <CryptoWalletsBlog />
+) : ( 
 
   <article className="premium-card p-8 sm:p-10">
     <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
