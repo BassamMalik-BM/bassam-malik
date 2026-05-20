@@ -2,10 +2,17 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'why-emotional-trading-is-dangerous',
+  title: 'Why Emotional Trading Is Dangerous?',
+  description:'Learn why emotional trading can hurt beginners and how fear, greed, FOMO, and panic can lead to poor crypto trading decisions.',
+  category: 'Trading Psychology',
+  readingTime: '9 min read',
+  content: [],
+  },
+  {
   slug: 'how-crypto-wallets-work',
-  title: 'How Crypto Wallets Work',
-  description:
-    'Learn what crypto wallets actually do, how public and private keys work, and how beginners can protect their assets safely.',
+  title: 'How Crypto Wallets Work?',
+  description:'Learn what crypto wallets actually do, how public and private keys work, and how beginners can protect their assets safely.',
   category: 'Crypto Basics',
   readingTime: '9 min read',
   content: [],
@@ -13,8 +20,7 @@ export const blogPosts: BlogPost[] = [
   {
   slug: 'what-is-market-capitalization-in-crypto',
   title: 'What Is Market Capitalization in Crypto?',
-  description:
-    'Learn what market cap means, why price alone can be misleading, and how beginners can compare crypto assets more realistically.',
+  description:'Learn what market cap means, why price alone can be misleading, and how beginners can compare crypto assets more realistically.',
   category: 'Crypto Basics',
   readingTime: '10 min read',
   content: [],
@@ -22,8 +28,7 @@ export const blogPosts: BlogPost[] = [
   {
   slug: 'what-is-crypto-volatility',
   title: 'What Is Crypto Volatility?',
-  description:
-    'Learn what crypto volatility means, why prices move quickly, and how beginners can manage risk during market swings.',
+  description:'Learn what crypto volatility means, why prices move quickly, and how beginners can manage risk during market swings.',
   category: 'Market Concepts',
   readingTime: '8 min read',
   content: [],
@@ -38,7 +43,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'why-risk-management-matters',
-    title: 'Why Risk Management Matters',
+    title: 'Why Risk Management Matters?',
     description: 'Learn why protecting your capital matters more than chasing every market move.',
     category: 'Risk Management',
     readingTime: '9 min read',
@@ -46,7 +51,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-build-a-trading-journal',
-    title: 'How to Build a Trading Journal',
+    title: 'How to Build a Trading Journal?',
     description: 'Create a simple journal to track decisions, emotions, entries, exits, and lessons learned.',
     category: 'Trading Journal',
     readingTime: '10 min read',
@@ -62,7 +67,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'common-mistakes-beginners-make-in-crypto',
-    title: 'Common Mistakes Beginners Make in Crypto',
+    title: 'Common Mistakes Beginners Make in Crypto.',
     description: 'Avoid emotional decisions, weak planning, overconfidence, and poor risk control.',
     category: 'Beginner Guide',
     readingTime: '6 min read',
@@ -70,7 +75,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-read-crypto-charts',
-    title: 'How to Read Crypto Charts',
+    title: 'How to Read Crypto Charts?',
     description: 'A beginner-friendly introduction to candles, trends, volume, and important price zones.',
     category: 'Market Concepts',
     readingTime: '5 min read',

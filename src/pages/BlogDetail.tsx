@@ -13,6 +13,7 @@ import BitcoinBlog from "./blogs/BitcoinBlog";
 import MarketCapBlog from "./blogs/MarketCapBlog";
 import CryptoVolatilityBlog from "./blogs/CryptoVolatilityBlog";
 import CryptoWalletsBlog from "./blogs/CryptoWalletsBlog";
+import EmotionalTradingBlog from "./blogs/EmotionalTradingBlog";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -58,7 +59,10 @@ export default function BlogDetail() {
                 <CryptoVolatilityBlog />
               ) : post.slug === "how-crypto-wallets-work" ? (
                 <CryptoWalletsBlog />
+              ) : post.slug === "why-emotional-trading-is-dangerous" ? (
+                <EmotionalTradingBlog />
               ) : (
+                
                 <article className="premium-card p-8 sm:p-10">
                   <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
                     <span className="rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
