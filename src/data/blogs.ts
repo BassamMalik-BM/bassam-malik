@@ -2,6 +2,14 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'how-to-control-fear-and-greed-in-crypto-trading',
+  title: 'How to Control Fear & Greed in Crypto Trading',
+  description:'Learn how fear and greed affect crypto trading and discover beginner-friendly ways to make calmer and more disciplined decisions.',
+  category: 'Trading Psychology',
+  readingTime: '10 min read',
+  content: [],
+  },
+  {
   slug: 'why-emotional-trading-is-dangerous',
   title: 'Why Emotional Trading Is Dangerous?',
   description:'Learn why emotional trading can hurt beginners and how fear, greed, FOMO, and panic can lead to poor crypto trading decisions.',

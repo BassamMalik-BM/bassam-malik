@@ -14,6 +14,7 @@ import MarketCapBlog from "./blogs/MarketCapBlog";
 import CryptoVolatilityBlog from "./blogs/CryptoVolatilityBlog";
 import CryptoWalletsBlog from "./blogs/CryptoWalletsBlog";
 import EmotionalTradingBlog from "./blogs/EmotionalTradingBlog";
+import FearAndGreedBlog from "./blogs/FearAndGreedBlog";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -61,6 +62,8 @@ export default function BlogDetail() {
                 <CryptoWalletsBlog />
               ) : post.slug === "why-emotional-trading-is-dangerous" ? (
                 <EmotionalTradingBlog />
+              ) : post.slug === "how-to-control-fear-and-greed-in-crypto-trading" ? (
+               <FearAndGreedBlog />
               ) : (
                 
                 <article className="premium-card p-8 sm:p-10">

@@ -6,6 +6,13 @@ import BlogCard from '../components/BlogCard';
 import SectionHeader from '../components/SectionHeader';
 import { blogPosts } from '../data/blogs';
 
+import tileNetwork from '../assets/images/tile-network.png'
+import bitcoin from '../assets/images/bitcoin.png'
+import ethereum from '../assets/images/ethereum.png'
+import litecoin from '../assets/images/litecoin.png'
+import xrp from '../assets/images/xrp.png'
+import dogecoin from '../assets/images/dogecoin.png'
+
 const features = [
   { title: 'Spot Trading', description: 'Learn how buying and selling crypto assets works without futures, leverage, or complex products.', icon: BarChart3 },
   { title: 'Risk Management', description: 'Build habits that help protect capital and reduce emotional decisions in volatile markets.', icon: ShieldCheck },
@@ -41,27 +48,114 @@ export default function Home() {
             </div>
           </div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.55 }} className="premium-card relative overflow-hidden p-8">
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl" />
-            <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl" />
-            <div className="relative">
-              <div className="mb-8 flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Learning Dashboard</p>
-                  <h2 className="mt-1 text-2xl font-bold text-slate-950 dark:text-white">Spot Market Basics</h2>
-                </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">Beginner Safe</span>
-              </div>
-              <div className="space-y-4">
-                {['Plan before buying', 'Define risk clearly', 'Record every decision', 'Review before selling'].map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/70 p-4 dark:border-white/10 dark:bg-white/[0.05]">
-                    <CheckCircle2 className="text-emerald-500" size={20} />
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          <motion.div
+  initial={{ opacity: 0, scale: 0.96 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.55 }}
+  className="relative flex min-h-[500px] items-center justify-center overflow-visible"
+>
+  {/* Glow */}
+  <div className="absolute top-16 right-20 h-72 w-72 rounded-full bg-blue-500/15 blur-[100px]" />
+  <div className="absolute bottom-12 right-16 h-72 w-72 rounded-full bg-emerald-500/20 blur-[100px]" />
+
+  <div className="relative w-full max-w-[700px]">
+    {/* Tile Network */}
+    <img
+      src={tileNetwork}
+      alt="Crypto Network"
+      className="relative z-10 w-full select-none object-contain"
+    />
+
+    {/* BTC - big center */}
+    <motion.img
+      src={bitcoin}
+      alt="Bitcoin"
+      className="absolute z-30 w-[25%] select-none drop-shadow-[0_0_40px_rgba(16,185,129,0.35)]"
+      style={{
+        top: '5%',
+        left: '37%',
+      }}
+      animate={{
+        y: [0, -14, 0],
+        rotate: [-2, 2, -2],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+
+    {/* Ethereum - top left */}
+    <motion.img
+      src={ethereum}
+      alt="Ethereum"
+      className="absolute z-30 w-[10%] select-none"
+      style={{
+        top: '8%',
+        left: '20%',
+      }}
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 3.7,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+
+    {/* Dogecoin - top right */}
+    <motion.img
+      src={dogecoin}
+      alt="Dogecoin"
+      className="absolute z-30 w-[10%] select-none"
+      style={{
+        top: '8%',
+        right: '20%',
+      }}
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+
+    {/* Litecoin - bottom left */}
+    <motion.img
+      src={litecoin}
+      alt="Litecoin"
+      className="absolute z-30 w-[10%] select-none"
+      style={{
+        bottom: '34%',
+        left: '20%',
+      }}
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 3.8,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+
+    {/* XRP - bottom right */}
+    <motion.img
+      src={xrp}
+      alt="XRP"
+      className="absolute z-30 w-[10%] select-none"
+      style={{
+        bottom: '34%',
+        right: '20%',
+      }}
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 4.2,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+    />
+  </div>
+</motion.div>
+
         </div>
       </section>
 
