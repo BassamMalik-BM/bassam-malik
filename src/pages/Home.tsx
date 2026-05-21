@@ -12,6 +12,7 @@ import ethereum from '../assets/images/ethereum.png'
 import litecoin from '../assets/images/litecoin.png'
 import xrp from '../assets/images/xrp.png'
 import dogecoin from '../assets/images/dogecoin.png'
+import trustImage from '../assets/images/crypto-coins.png'
 
 const features = [
   { title: 'Spot Trading', description: 'Learn how buying and selling crypto assets works without futures, leverage, or complex products.', icon: BarChart3 },
@@ -34,13 +35,13 @@ export default function Home() {
         <div className="container-page relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-5 inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 dark:border-blue-400/20 dark:bg-blue-500/10 dark:text-blue-300">
-              Serious crypto education for beginners
+              Crypto trading for beginners
             </motion.p>
             <motion.h1 initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
-              Learn Crypto Spot Trading the Smart Way
+              Learn Crypto Trading the Smart Way
             </motion.h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Bassam Malik helps beginners understand crypto spot trading, risk management, chart basics, trading journals, and responsible market decision-making without hype or guaranteed profit claims.
+              Bassam Malik helps beginners understand crypto trading, risk management, chart basics, trading journals, and responsible market decision-making without hype or guaranteed profit claims.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link to="/blogs" className="button-primary">Start Learning <ArrowRight className="ml-2" size={18} /></Link>
@@ -177,23 +178,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
-        <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
-          <SectionHeader eyebrow="Trust first" title="Education without hype, pressure, or unrealistic promises" description="This website is built for beginners who want calm, practical, and responsible crypto education." />
-          <div className="grid gap-4">
-            {trustPoints.map((point) => (
-              <div key={point} className="flex gap-3 rounded-3xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-white/[0.06]">
-                <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-500" size={22} />
-                <p className="font-medium text-slate-700 dark:text-slate-200">{point}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="section-padding bg-slate-50 dark:bg-navy-950 overflow-hidden">
+  <div className="container-page grid gap-14 lg:grid-cols-2 lg:items-center">
+
+    {/* Left Side - Image */}
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative order-2 lg:order-1"
+    >
+      {/* Glow Effects */}
+      <div className="absolute -left-8 top-10 h-48 w-48 rounded-full bg-blue-500/20 blur-[100px]" />
+      <div className="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-emerald-500/20 blur-[100px]" />
+
+      {/* Image Card */}
+      <div className="relative overflow-hidden rounded-[36px] bg-transparent shadow-[0_0_40px_rgba(16,185,129,0.08)]">
+        <img
+          src={trustImage}
+          alt="Crypto Education"
+          className="h-full w-full rounded-[36px] object-cover"
+        />
+      </div>
+    </motion.div>
+
+    {/* Right Side - Text */}
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="order-1 lg:order-2"
+    >
+      <SectionHeader
+        eyebrow="Trust first"
+        title="Education without hype, pressure, or unrealistic promises"
+        description="This website is built for beginners who want calm, practical, and responsible crypto education."
+      />
+    </motion.div>
+
+  </div>
+</section>
 
       <section className="section-padding bg-white dark:bg-navy-900">
         <div className="container-page">
-          <SectionHeader centered eyebrow="Featured blogs" title="Start learning with beginner-friendly lessons" description="Read practical guides about spot trading, chart basics, risk management, and journaling." />
+          <SectionHeader centered eyebrow="Latest blogs" title="Start learning with beginner-friendly lessons" description="Read practical guides about spot trading, chart basics, risk management, and journaling." />
           <div className="grid gap-6 md:grid-cols-3">
             {blogPosts.slice(0, 3).map((post) => <BlogCard key={post.slug} post={post} />)}
           </div>
