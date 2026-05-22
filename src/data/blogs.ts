@@ -2,6 +2,14 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'the-importance-of-patience-in-crypto-trading',
+  title: 'The Importance of Patience in Crypto Trading',
+  description: 'Learn why patience matters in crypto trading, how impatience affects beginners, and practical ways to build better trading discipline.',
+  category: 'Trading Psychology',
+  readingTime: '11 min read',
+  content: [],
+  },
+  {
   slug: 'how-to-control-fear-and-greed-in-crypto-trading',
   title: 'How to Control Fear & Greed in Crypto Trading',
   description:'Learn how fear and greed affect crypto trading and discover beginner-friendly ways to make calmer and more disciplined decisions.',

@@ -182,26 +182,17 @@ export default function Home() {
   <div className="container-page grid gap-14 lg:grid-cols-2 lg:items-center">
 
     {/* Left Side - Image */}
-    <motion.div
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="relative order-2 lg:order-1"
-    >
-      {/* Glow Effects */}
-      <div className="absolute -left-8 top-10 h-48 w-48 rounded-full bg-blue-500/20 blur-[100px]" />
-      <div className="absolute bottom-0 right-0 h-48 w-48 rounded-full bg-emerald-500/20 blur-[100px]" />
+    <div className="relative flex items-center justify-center order-2 lg:order-1">
+  {/* Soft glow */}
+  <div className="absolute h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]" />
+  <div className="absolute bottom-0 right-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-[90px]" />
 
-      {/* Image Card */}
-      <div className="relative overflow-hidden rounded-[36px] bg-transparent shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-        <img
-          src={trustImage}
-          alt="Crypto Education"
-          className="h-full w-full rounded-[36px] object-cover"
-        />
-      </div>
-    </motion.div>
+  <img
+    src={trustImage}
+    alt="Crypto Education"
+    className="relative z-10 w-full max-w-[400px] object-contain select-none"
+  />
+</div>
 
     {/* Right Side - Text */}
     <motion.div
