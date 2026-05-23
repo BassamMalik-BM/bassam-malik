@@ -6,10 +6,10 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Blogs', path: '/blogs' },
   { name: 'Resources', path: '/resources' },
-  { name: 'Risk Disclaimer', path: '/risk-disclaimer' },
+  { name: "Tools", path: "/tools" },
   { name: "Calculators", path: "/calculators" },
   { name: "Ebooks", path: "/ebooks" },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Contact', path: '/contact' }
   
 ];
 

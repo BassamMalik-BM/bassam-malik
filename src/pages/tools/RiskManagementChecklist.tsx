@@ -96,11 +96,11 @@ export default function RiskManagementChecklist() {
           animate={{ opacity: 1, y: 0 }}
         >
           <Link
-            to="/resources"
+            to="/tools"
             className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
           >
             <ArrowLeft size={18} />
-            Back to Resources
+            Back to Tools
           </Link>
 
           <section className="premium-card mb-8 overflow-hidden">

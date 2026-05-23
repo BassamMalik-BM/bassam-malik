@@ -14,7 +14,6 @@ import TradeSizeCalculator from "./pages/calculators/TradeSizeCalculator";
 import RiskRewardCalculator from "./pages/calculators/RiskRewardCalculator";
 import ProfitCalculator from "./pages/calculators/ProfitCalculator";
 import CompoundGrowthCalculator from "./pages/calculators/CompoundGrowthCalculator";
-import DcaCalculator from "./pages/calculators/DcaCalculator";
 import BreakEvenCalculator from "./pages/calculators/BreakEvenCalculator";
 import Calculator from "./pages/calculators/Calculator";
 import About from "./pages/About";
@@ -24,6 +23,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import RiskManagementChecklist from "./pages/tools/RiskManagementChecklist";
 import TradingJournalTemplate from "./pages/tools/TradingJournalTemplate";
 import Ebooks from "./pages/Ebooks";
+import Tools from "./pages/Tools";
+import TradingMistakeAnalyzer from './pages/tools/TradingMistakeAnalyzer';
+import DCAPlanner from './pages/tools/DCAPlanner';
 
 export default function App() {
   return (
@@ -43,7 +45,6 @@ export default function App() {
         <Route path="/calculators/risk-reward" element={<RiskRewardCalculator />} />
         <Route path="/calculators/profit" element={<ProfitCalculator />} />
         <Route path="/calculators/compound-growth" element={<CompoundGrowthCalculator />} />
-        <Route path="/calculators/dca" element={<DcaCalculator />} />
         <Route path="/calculators/break-even" element={<BreakEvenCalculator />} />
         <Route path="/calculators/calculator" element={<Calculator />} />
         <Route path="/about" element={<About />} />
@@ -52,6 +53,9 @@ export default function App() {
         <Route path="/tools/risk-management-checklist" element={<RiskManagementChecklist />} />
         <Route path="/tools/trading-journal-template" element={<TradingJournalTemplate />} />
         <Route path="/ebooks" element={<Ebooks />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/tools/trading-mistake-analyzer" element={<TradingMistakeAnalyzer />} />
+        <Route path="/tools/dca-planner" element={<DCAPlanner />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

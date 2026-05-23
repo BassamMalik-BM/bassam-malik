@@ -37,21 +37,4 @@ export const resources: Resource[] = [
     href: '/downloads/trading-tools-and-indicators.pdf',
   },
 
-  {
-  title: 'Risk Management Checklist',
-  description:
-    'Use an interactive checklist before, during, and after making a trading decision.',
-  type: 'Interactive Tool',
-  cta: 'Open Checklist',
-  href: '/tools/risk-management-checklist',
-  },
-
-  {
-  title: 'Trading Journal Template',
-  description:
-    'Record your trading decisions, emotions, outcomes, and lessons in an interactive journal.',
-  type: 'Interactive Tool',
-  cta: 'Open Journal',
-  href: '/tools/trading-journal-template',
-  },
 ];

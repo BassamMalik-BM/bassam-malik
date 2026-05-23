@@ -16,6 +16,7 @@ import CryptoWalletsBlog from "./blogs/CryptoWalletsBlog";
 import EmotionalTradingBlog from "./blogs/EmotionalTradingBlog";
 import FearAndGreedBlog from "./blogs/FearAndGreedBlog";
 import PatienceTradingBlog from "./blogs/PatienceTradingBlog";
+import AffordToLoseBlog from "./blogs/AffordToLoseBlog";
 
 export default function BlogDetail() {
   const { slug } = useParams();
@@ -67,6 +68,8 @@ export default function BlogDetail() {
                <FearAndGreedBlog />
               ) : post.slug === "the-importance-of-patience-in-crypto-trading" ? (
                <PatienceTradingBlog />
+              ) : post.slug === "never-invest-more-than-you-can-afford-to-lose" ? (
+               <AffordToLoseBlog />
               ) : (
                 
                 <article className="premium-card p-8 sm:p-10">

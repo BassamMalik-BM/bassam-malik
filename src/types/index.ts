@@ -14,3 +14,12 @@ export type Resource = {
   cta: string;
   href: string;
 };
+
+export type Tool = {
+  title: string;
+  description: string;
+  type: string;
+  cta: string;
+  href: string;
+  icon: any;
+};

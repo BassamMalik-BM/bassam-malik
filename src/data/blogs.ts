@@ -2,6 +2,15 @@ import type { BlogPost } from '../types';
 
 export const blogPosts: BlogPost[] = [
   {
+  slug: 'never-invest-more-than-you-can-afford-to-lose',
+  title: 'Never Invest More Than You Can Afford to Lose in Crypto Trading',
+  description:
+    'Learn why investing only what you can afford to lose matters in crypto trading, how risk affects beginners, and practical ways to protect your financial stability.',
+  category: 'Risk Management',
+  readingTime: '10 min read',
+  content: [],
+  },
+  {
   slug: 'the-importance-of-patience-in-crypto-trading',
   title: 'The Importance of Patience in Crypto Trading',
   description: 'Learn why patience matters in crypto trading, how impatience affects beginners, and practical ways to build better trading discipline.',
