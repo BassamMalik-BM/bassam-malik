@@ -1,15 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import BlogDetail from './pages/BlogDetail';
-import Blogs from './pages/Blogs';
+import LearnDetail from './pages/LearnDetail';
+import Learn from './pages/Learn';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Resources from './pages/Resources';
 import RiskDisclaimer from './pages/RiskDisclaimer';
-import Calculators from "./pages/calculators/Calculators";
+import Calculators from "./pages/Calculators";
 import TradeSizeCalculator from "./pages/calculators/TradeSizeCalculator";
 import RiskRewardCalculator from "./pages/calculators/RiskRewardCalculator";
 import ProfitCalculator from "./pages/calculators/ProfitCalculator";
@@ -34,8 +34,8 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:slug" element={<BlogDetail />} />
+        <Route path="/learn" element={<Learn />} />
+        <Route path="/blogs/:slug" element={<LearnDetail />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/risk-disclaimer" element={<RiskDisclaimer />} />
         <Route path="/contact" element={<Contact />} />

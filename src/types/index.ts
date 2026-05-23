@@ -1,4 +1,4 @@
-export type BlogPost = {
+export type LearnPost = {
   slug: string;
   title: string;
   description: string;
@@ -21,5 +21,12 @@ export type Tool = {
   type: string;
   cta: string;
   href: string;
+  icon: any;
+};
+
+export type CalculatorItem = {
+  title: string;
+  description: string;
+  path: string;
   icon: any;
 };

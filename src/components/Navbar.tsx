@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Blogs', path: '/blogs' },
+  { name: 'Learn', path: '/learn' },
   { name: 'Resources', path: '/resources' },
   { name: "Tools", path: "/tools" },
   { name: "Calculators", path: "/calculators" },

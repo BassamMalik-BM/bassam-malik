@@ -2,9 +2,9 @@ import { ArrowRight, BarChart3, BookOpen, ShieldCheck, NotebookPen, LineChart, C
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
-import BlogCard from '../components/BlogCard';
+import LearnCard from '../components/LearnCard';
 import SectionHeader from '../components/SectionHeader';
-import { blogPosts } from '../data/blogs';
+import { learnPosts } from '../data/learn';
 
 import tileNetwork from '../assets/images/tile-network.png'
 import bitcoin from '../assets/images/bitcoin.png'
@@ -216,7 +216,7 @@ export default function Home() {
         <div className="container-page">
           <SectionHeader centered eyebrow="Latest blogs" title="Start learning with beginner-friendly lessons" description="Read practical guides about spot trading, chart basics, risk management, and journaling." />
           <div className="grid gap-6 md:grid-cols-3">
-            {blogPosts.slice(0, 3).map((post) => <BlogCard key={post.slug} post={post} />)}
+            {learnPosts.slice(0, 3).map((post) => <LearnCard key={post.slug} post={post} />)}
           </div>
         </div>
       </section>

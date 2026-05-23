@@ -1,30 +1,30 @@
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
-import { blogPosts } from "../data/blogs";
+import { learnPosts } from "../data/learn";
 
-import CryptoSpotTradingBlog from "./blogs/CryptoSpotTradingBlog";
-import RiskManagementBlog from "./blogs/RiskManagementBlog";
-import TradingJournalBlog from "./blogs/TradingJournalBlog";
-import SupportResistanceBlog from "./blogs/SupportResistanceBlog";
-import BeginnerMistakesBlog from "./blogs/BeginnerMistakesBlog";
-import CryptoChartsBlog from "./blogs/CryptoChartsBlog";
-import BitcoinBlog from "./blogs/BitcoinBlog";
-import MarketCapBlog from "./blogs/MarketCapBlog";
-import CryptoVolatilityBlog from "./blogs/CryptoVolatilityBlog";
-import CryptoWalletsBlog from "./blogs/CryptoWalletsBlog";
-import EmotionalTradingBlog from "./blogs/EmotionalTradingBlog";
-import FearAndGreedBlog from "./blogs/FearAndGreedBlog";
-import PatienceTradingBlog from "./blogs/PatienceTradingBlog";
-import AffordToLoseBlog from "./blogs/AffordToLoseBlog";
+import CryptoSpotTrading from "./learn/CryptoSpotTrading";
+import RiskManagement from "./learn/RiskManagement";
+import TradingJournal from "./learn/TradingJournal";
+import SupportResistance from "./learn/SupportResistance";
+import BeginnerMistakes from "./learn/BeginnerMistakes";
+import CryptoCharts from "./learn/CryptoCharts";
+import Bitcoin from "./learn/Bitcoin";
+import MarketCap from "./learn/MarketCap";
+import CryptoVolatility from "./learn/CryptoVolatility";
+import CryptoWallets from "./learn/CryptoWallets";
+import EmotionalTrading from "./learn/EmotionalTrading";
+import FearAndGreed from "./learn/FearAndGreed";
+import PatienceTrading from "./learn/PatienceTrading";
+import AffordToLose from "./learn/AffordToLose";
 
-export default function BlogDetail() {
+export default function LearnDetail() {
   const { slug } = useParams();
-  const post = blogPosts.find((item) => item.slug === slug);
+  const post = learnPosts.find((item) => item.slug === slug);
 
-  if (!post) return <Navigate to="/blogs" replace />;
+  if (!post) return <Navigate to="/learn" replace />;
 
-  const relatedPosts = blogPosts
+  const relatedPosts = learnPosts
     .filter((item) => item.slug !== post.slug)
     .slice(0, 5);
 
@@ -33,43 +33,43 @@ export default function BlogDetail() {
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
           <Link
-            to="/blogs"
+            to="/learn"
             className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
           >
-            <ArrowLeft size={17} /> Back to blogs
+            <ArrowLeft size={17} /> Back to Learn
           </Link>
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
-            {/* CENTER - BLOG CONTENT */}
+            {/* CENTER - LEARN CONTENT */}
             <div>
               {post.slug === "what-is-crypto-spot-trading" ? (
-                <CryptoSpotTradingBlog />
+                <CryptoSpotTrading />
               ) : post.slug === "why-risk-management-matters" ? (
-                <RiskManagementBlog />
+                <RiskManagement />
               ) : post.slug === "how-to-build-a-trading-journal" ? (
-                <TradingJournalBlog />
+                <TradingJournal />
               ) : post.slug === "support-and-resistance-levels" ? (
-                <SupportResistanceBlog />
+                <SupportResistance />
               ) : post.slug === "common-mistakes-beginners-make-in-crypto" ? (
-                <BeginnerMistakesBlog />
+                <BeginnerMistakes />
               ) : post.slug === "how-to-read-crypto-charts" ? (
-                <CryptoChartsBlog />
+                <CryptoCharts />
               ) : post.slug === "what-is-bitcoin-and-why-does-it-matter" ? (
-                <BitcoinBlog />
+                <Bitcoin />
               ) : post.slug === "what-is-market-capitalization-in-crypto" ? (
-                <MarketCapBlog />
+                <MarketCap />
               ) : post.slug === "what-is-crypto-volatility" ? (
-                <CryptoVolatilityBlog />
+                <CryptoVolatility />
               ) : post.slug === "how-crypto-wallets-work" ? (
-                <CryptoWalletsBlog />
+                <CryptoWallets />
               ) : post.slug === "why-emotional-trading-is-dangerous" ? (
-                <EmotionalTradingBlog />
+                <EmotionalTrading />
               ) : post.slug === "how-to-control-fear-and-greed-in-crypto-trading" ? (
-               <FearAndGreedBlog />
+               <FearAndGreed />
               ) : post.slug === "the-importance-of-patience-in-crypto-trading" ? (
-               <PatienceTradingBlog />
+               <PatienceTrading />
               ) : post.slug === "never-invest-more-than-you-can-afford-to-lose" ? (
-               <AffordToLoseBlog />
+               <AffordToLose />
               ) : (
                 
                 <article className="premium-card p-8 sm:p-10">
@@ -106,11 +106,11 @@ export default function BlogDetail() {
               )}
             </div>
 
-            {/* RIGHT SIDE - RELATED BLOGS */}
+            {/* RIGHT SIDE - LEARN MORE */}
             <aside>
               <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5">
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
-                  Related Blogs
+                  Learn More
                 </h3>
 
                 <div className="mt-5 divide-y divide-slate-200 dark:divide-white/10">
