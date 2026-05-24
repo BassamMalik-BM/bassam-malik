@@ -3,6 +3,8 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import LearnDetail from './pages/LearnDetail';
 import Learn from './pages/Learn';
+import Blogs from "./pages/Blogs";
+import BlogsDetail from "./pages/BlogsDetail";
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Home from './pages/Home';
@@ -34,8 +36,10 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:slug" element={<BlogsDetail />} />
         <Route path="/learn" element={<Learn />} />
-        <Route path="/blogs/:slug" element={<LearnDetail />} />
+        <Route path="/learn/:slug" element={<LearnDetail />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/risk-disclaimer" element={<RiskDisclaimer />} />
         <Route path="/contact" element={<Contact />} />

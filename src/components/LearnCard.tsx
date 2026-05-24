@@ -1,12 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import type { BlogPost } from '../types';
+import type { LearnPost } from '../types';
 
-type BlogCardProps = {
-  post: BlogPost;
+type LearnCardProps = {
+  post: LearnPost;
 };
 
-export default function BlogCard({ post }: BlogCardProps) {
+export default function LearnCard({ post }: LearnCardProps) {
   return (
     <article className="premium-card flex h-full flex-col">
       <div className="mb-5 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide">
@@ -15,7 +15,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       </div>
       <h3 className="text-xl font-bold text-slate-950 dark:text-white">{post.title}</h3>
       <p className="mt-3 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{post.description}</p>
-      <Link to={`/blogs/${post.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400">
+      <Link to={`/learn/${post.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400">
         Read More <ArrowRight size={16} />
       </Link>
     </article>

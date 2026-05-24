@@ -214,7 +214,7 @@ export default function Home() {
 
       <section className="section-padding bg-white dark:bg-navy-900">
         <div className="container-page">
-          <SectionHeader centered eyebrow="Latest blogs" title="Start learning with beginner-friendly lessons" description="Read practical guides about spot trading, chart basics, risk management, and journaling." />
+          <SectionHeader centered eyebrow="LEARN CRYPTO" title="Start learning with beginner-friendly lessons" description="Read practical guides about spot trading, chart basics, risk management, and journaling." />
           <div className="grid gap-6 md:grid-cols-3">
             {learnPosts.slice(0, 3).map((post) => <LearnCard key={post.slug} post={post} />)}
           </div>

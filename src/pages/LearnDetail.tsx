@@ -117,7 +117,7 @@ export default function LearnDetail() {
                   {relatedPosts.map((item) => (
                     <Link
                       key={item.slug}
-                      to={`/blogs/${item.slug}`}
+                      to={`/learn/${item.slug}`}
                       className="group flex items-center justify-between gap-4 py-4"
                     >
                       <span className="text-sm font-semibold leading-6 text-slate-700 transition group-hover:text-blue-600 dark:text-slate-300 dark:group-hover:text-blue-300">
