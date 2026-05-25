@@ -6,13 +6,6 @@ import LearnCard from '../components/LearnCard';
 import SectionHeader from '../components/SectionHeader';
 import { learnPosts } from '../data/learn';
 
-import tileNetwork from '../assets/images/tile-network.png'
-import bitcoin from '../assets/images/bitcoin.png'
-import ethereum from '../assets/images/ethereum.png'
-import litecoin from '../assets/images/litecoin.png'
-import xrp from '../assets/images/xrp.png'
-import dogecoin from '../assets/images/dogecoin.png'
-import trustImage from '../assets/images/crypto-coins.png'
 
 const features = [
   { title: 'Spot Trading', description: 'Learn how buying and selling crypto assets works without futures, leverage, or complex products.', icon: BarChart3 },
@@ -62,14 +55,14 @@ export default function Home() {
   <div className="relative w-full max-w-[700px]">
     {/* Tile Network */}
     <img
-      src={tileNetwork}
+      src="/images/home-page/tile-network.png"
       alt="Crypto Network"
       className="relative z-10 w-full select-none object-contain"
     />
 
     {/* BTC - big center */}
     <motion.img
-      src={bitcoin}
+      src="/images/home-page/bitcoin.png"
       alt="Bitcoin"
       className="absolute z-30 w-[25%] select-none drop-shadow-[0_0_40px_rgba(16,185,129,0.35)]"
       style={{
@@ -89,7 +82,7 @@ export default function Home() {
 
     {/* Ethereum - top left */}
     <motion.img
-      src={ethereum}
+      src="/images/home-page/ethereum.png"
       alt="Ethereum"
       className="absolute z-30 w-[10%] select-none"
       style={{
@@ -106,7 +99,7 @@ export default function Home() {
 
     {/* Dogecoin - top right */}
     <motion.img
-      src={dogecoin}
+      src="/images/home-page/dogecoin.png"
       alt="Dogecoin"
       className="absolute z-30 w-[10%] select-none"
       style={{
@@ -123,7 +116,7 @@ export default function Home() {
 
     {/* Litecoin - bottom left */}
     <motion.img
-      src={litecoin}
+      src="/images/home-page/litecoin.png"
       alt="Litecoin"
       className="absolute z-30 w-[10%] select-none"
       style={{
@@ -140,7 +133,7 @@ export default function Home() {
 
     {/* XRP - bottom right */}
     <motion.img
-      src={xrp}
+      src="/images/home-page/xrp.png"
       alt="XRP"
       className="absolute z-30 w-[10%] select-none"
       style={{
@@ -188,7 +181,7 @@ export default function Home() {
   <div className="absolute bottom-0 right-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-[90px]" />
 
   <img
-    src={trustImage}
+    src="/images/home-page/crypto-coins.png"
     alt="Crypto Education"
     className="relative z-10 w-full max-w-[400px] object-contain select-none"
   />

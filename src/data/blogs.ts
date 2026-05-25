@@ -10,5 +10,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: "12 min read",
   content: [],
   },
+  {
+  slug: "best-free-websites-for-crypto-market-analysis",
+  title: "Best Free Websites for Crypto Market Analysis",
+  description:
+    "Discover beginner-friendly crypto websites for market analysis, Bitcoin charts, sentiment, research, and safer decision-making.",
+  category: "Beginner Tools",
+  readingTime: "13 min read",
+  content: [],
+  },
 
 ];
