@@ -28,5 +28,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: '14 min read',
   content: [],
   },
+  {
+  slug: 'is-crypto-too-late-in-2026',
+  title: "Is Crypto Too Late in 2026?",
+  description:
+    'Wondering if crypto is too late in 2026? Learn why education, Bitcoin basics, risk awareness, and patience matter more than timing.',
+  category: 'Beginner Guides',
+  readingTime: '12 min read',
+  content: [],
+ },
 
 ];
