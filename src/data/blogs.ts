@@ -19,5 +19,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: "13 min read",
   content: [],
   },
+  {
+  slug: 'beginner-crypto-roadmap-2026',
+  title: 'Beginner Crypto Roadmap (2026)',
+  description:
+    'New to crypto in 2026? Follow this beginner crypto roadmap to learn Bitcoin, wallets, market basics, research, and risk management step by step.',
+  category: 'Beginner Guides',
+  readingTime: '14 min read',
+  content: [],
+  },
 
 ];
