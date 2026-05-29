@@ -1,22 +1,22 @@
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import AnimatedPage from "../components/AnimatedPage";
-import { learnPosts } from "../data/learn";
+import AnimatedPage from "../../components/AnimatedPage";
+import { learnPosts } from "../../data/learn";
 
-import CryptoSpotTrading from "./learn/CryptoSpotTrading";
-import RiskManagement from "./learn/RiskManagement";
-import TradingJournal from "./learn/TradingJournal";
-import SupportResistance from "./learn/SupportResistance";
-import BeginnerMistakes from "./learn/BeginnerMistakes";
-import CryptoCharts from "./learn/CryptoCharts";
-import Bitcoin from "./learn/Bitcoin";
-import MarketCap from "./learn/MarketCap";
-import CryptoVolatility from "./learn/CryptoVolatility";
-import CryptoWallets from "./learn/CryptoWallets";
-import EmotionalTrading from "./learn/EmotionalTrading";
-import FearAndGreed from "./learn/FearAndGreed";
-import PatienceTrading from "./learn/PatienceTrading";
-import AffordToLose from "./learn/AffordToLose";
+import CryptoSpotTrading from "../learn/CryptoSpotTrading";
+import RiskManagement from "../learn/RiskManagement";
+import TradingJournal from "../learn/TradingJournal";
+import SupportResistance from "../learn/SupportResistance";
+import BeginnerMistakes from "../learn/BeginnerMistakes";
+import CryptoCharts from "../learn/CryptoCharts";
+import Bitcoin from "../learn/Bitcoin";
+import MarketCap from "../learn/MarketCap";
+import CryptoVolatility from "../learn/CryptoVolatility";
+import CryptoWallets from "../learn/CryptoWallets";
+import EmotionalTrading from "../learn/EmotionalTrading";
+import FearAndGreed from "../learn/FearAndGreed";
+import PatienceTrading from "../learn/PatienceTrading";
+import AffordToLose from "../learn/AffordToLose";
 
 export default function LearnDetail() {
   const { slug } = useParams();

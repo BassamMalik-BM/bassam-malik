@@ -1,14 +1,14 @@
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import AnimatedPage from "../components/AnimatedPage";
-import { blogPosts } from "../data/blogs";
+import AnimatedPage from "../../components/AnimatedPage";
+import { blogPosts } from "../../data/blogs";
 
 // BLOG IMPORTS
-import BestCryptoBooks from "./blogs/BestCryptoBooks";
-import BestCryptoMarketAnalysisWebsites from "./blogs/BestCryptoMarketAnalysisWebsites";
-import BeginnerCryptoRoadmap from "./blogs/BeginnerCryptoRoadmap";
-import IsCryptoTooLateIn2026 from "./blogs/IsCryptoTooLateIn2026";
-import IsCryptoSafeForBeginners from "./blogs/IsCryptoSafeForBeginners";
+import BestCryptoBooks from "../blogs/BestCryptoBooks";
+import BestCryptoMarketAnalysisWebsites from "../blogs/BestCryptoMarketAnalysisWebsites";
+import BeginnerCryptoRoadmap from "../blogs/BeginnerCryptoRoadmap";
+import IsCryptoTooLateIn2026 from "../blogs/IsCryptoTooLateIn2026";
+import IsCryptoSafeForBeginners from "../blogs/IsCryptoSafeForBeginners";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
