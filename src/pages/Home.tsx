@@ -119,7 +119,7 @@ export default function Home() {
                 src="/images/home-page/ethereum.png"
                 alt="Ethereum"
                 className="absolute z-30 w-[10%] select-none"
-                style={{ top: '8%', left: '20%' }}
+                style={{ top: '4%', left: '20%' }}
                 animate={{ y: [0, -10, 0] }}
                 transition={{
                   duration: 3.7,
@@ -132,7 +132,7 @@ export default function Home() {
                 src="/images/home-page/dogecoin.png"
                 alt="Dogecoin"
                 className="absolute z-30 w-[10%] select-none"
-                style={{ top: '8%', right: '20%' }}
+                style={{ top: '4%', right: '20%' }}
                 animate={{ y: [0, -10, 0] }}
                 transition={{
                   duration: 4,
