@@ -46,5 +46,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: '13 min read',
   content: [],
  },
+ {
+  slug: 'how-much-money-do-you-need-to-start-crypto',
+  title: "How Much Money Do You Need to Start Crypto?",
+  description:
+    'Wondering how much money you need to start crypto? Learn why education, risk awareness, and responsible first steps matter more than starting with a large amount.',
+  category: 'Beginner Guides',
+  readingTime: '12 min read',
+  content: [],
+  },
 
 ];

@@ -203,7 +203,7 @@ export default function BestCryptoBooks() {
         </div>
 
         <h1 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-          Best Crypto Books for Beginners: Start Learning Crypto the Right Way
+          Best Crypto Books for Beginners
         </h1>
 
         <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">

@@ -9,6 +9,7 @@ import BestCryptoMarketAnalysisWebsites from "../blogs/BestCryptoMarketAnalysisW
 import BeginnerCryptoRoadmap from "../blogs/BeginnerCryptoRoadmap";
 import IsCryptoTooLateIn2026 from "../blogs/IsCryptoTooLateIn2026";
 import IsCryptoSafeForBeginners from "../blogs/IsCryptoSafeForBeginners";
+import HowMuchMoneyDoYouNeedToStartCrypto from "../blogs/HowMuchMoneyDoYouNeedToStartCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -46,6 +47,8 @@ export default function BlogsDetail() {
                <IsCryptoTooLateIn2026 /> 
            ) : post.slug === "is-crypto-safe-for-beginners" ? (
                <IsCryptoSafeForBeginners /> 
+           ) : post.slug === "how-much-money-do-you-need-to-start-crypto" ? (
+               <HowMuchMoneyDoYouNeedToStartCrypto />
            ) : (
 
                 <article className="premium-card p-8 sm:p-10">
