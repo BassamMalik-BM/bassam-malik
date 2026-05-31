@@ -55,5 +55,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: '12 min read',
   content: [],
   },
+  {
+  slug: 'spot-trading-vs-holding-crypto',
+  title: 'Spot Trading vs Holding Crypto: Which Is Better for Beginners?',
+  description:
+    'Spot trading vs holding crypto — learn the difference between both approaches, their risks, and what beginners should consider before deciding.',
+  category: 'Beginner Guides',
+  readingTime: '13 min read',
+  content: [],
+  },
 
 ];
