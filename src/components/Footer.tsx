@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
 import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
@@ -34,6 +34,22 @@ export default function Footer() {
       glow:
         "hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.45)]",
       color: "text-yellow-500",
+    },
+    {
+      name: "Facebook",
+      icon: FaFacebook,
+      url: "https://www.facebook.com/share/1B6PP4quka/",
+      glow:
+        "hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.45)]",
+      color: "text-blue-500",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      url: "#",
+      glow:
+        "hover:border-pink-500 hover:shadow-[0_0_30px_rgba(236,72,153,0.45)]",
+      color: "text-pink-500",
     },
   ];
 
