@@ -10,7 +10,8 @@ import BeginnerCryptoRoadmap from "../blogs/BeginnerCryptoRoadmap";
 import IsCryptoTooLateIn2026 from "../blogs/IsCryptoTooLateIn2026";
 import IsCryptoSafeForBeginners from "../blogs/IsCryptoSafeForBeginners";
 import HowMuchMoneyDoYouNeedToStartCrypto from "../blogs/HowMuchMoneyDoYouNeedToStartCrypto";
-import SpotTradingVSHoldingCrypto from "../blogs/SpotTradingVSHoldingCrypto";
+import SpotTradingVsHoldingCrypto from "../blogs/SpotTradingVsHoldingCrypto";
+import BitcoinVsEthereum from '../blogs/BitcoinVsEthereum';
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -51,7 +52,9 @@ export default function BlogsDetail() {
            ) : post.slug === "how-much-money-do-you-need-to-start-crypto" ? (
                <HowMuchMoneyDoYouNeedToStartCrypto />
            ) : post.slug === "spot-trading-vs-holding-crypto" ? (
-               <SpotTradingVSHoldingCrypto />
+               <SpotTradingVsHoldingCrypto />
+           ) : post.slug === "bitcoin-vs-ethereum" ? (
+               <BitcoinVsEthereum />
            ) : (
 
                 <article className="premium-card p-8 sm:p-10">

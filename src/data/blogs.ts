@@ -64,5 +64,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: '13 min read',
   content: [],
   },
+  {
+  slug: 'bitcoin-vs-ethereum',
+  title: 'Bitcoin vs Ethereum: Understanding the Key Differences for Beginners',
+  description:
+    'Learn the key differences between Bitcoin and Ethereum, their purposes, strengths, risks, and why understanding both is essential for beginner crypto education.',
+  category: 'Beginner Guides',
+  readingTime: '13 min read',
+  content: [],
+  },
 
 ];
