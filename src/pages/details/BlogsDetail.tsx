@@ -10,8 +10,8 @@ import BeginnerCryptoRoadmap from "../blogs/BeginnerCryptoRoadmap";
 import IsCryptoTooLateIn2026 from "../blogs/IsCryptoTooLateIn2026";
 import IsCryptoSafeForBeginners from "../blogs/IsCryptoSafeForBeginners";
 import HowMuchMoneyDoYouNeedToStartCrypto from "../blogs/HowMuchMoneyDoYouNeedToStartCrypto";
-import SpotTradingVsHoldingCrypto from "../blogs/SpotTradingVsHoldingCrypto";
 import BitcoinVsEthereum from '../blogs/BitcoinVsEthereum';
+import SpotTradingVsHoldingCrypto from "../blogs/SpotTradingVsHoldingCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
