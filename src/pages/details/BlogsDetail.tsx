@@ -11,7 +11,7 @@ import IsCryptoTooLateIn2026 from "../blogs/IsCryptoTooLateIn2026";
 import IsCryptoSafeForBeginners from "../blogs/IsCryptoSafeForBeginners";
 import HowMuchMoneyDoYouNeedToStartCrypto from "../blogs/HowMuchMoneyDoYouNeedToStartCrypto";
 import BitcoinVsEthereum from '../blogs/BitcoinVsEthereum';
-import SpotTradingVsHoldingCrypto from "../blogs/SpotTradingVsHoldingCrypto";
+import SpotTradingVSHoldingCrypto from "../blogs/SpotTradingVSHoldingCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -52,7 +52,7 @@ export default function BlogsDetail() {
            ) : post.slug === "how-much-money-do-you-need-to-start-crypto" ? (
                <HowMuchMoneyDoYouNeedToStartCrypto />
            ) : post.slug === "spot-trading-vs-holding-crypto" ? (
-               <SpotTradingVsHoldingCrypto />
+               <SpotTradingVSHoldingCrypto />
            ) : post.slug === "bitcoin-vs-ethereum" ? (
                <BitcoinVsEthereum />
            ) : (
