@@ -73,5 +73,14 @@ export const blogPosts: BlogPost[] = [
   readingTime: '13 min read',
   content: [],
   },
+  {
+  slug: 'hot-wallet-vs-cold-wallet',
+  title: 'Hot Wallet vs Cold Wallet',
+  description:
+    'Learn the difference between hot wallets and cold wallets, their advantages, risks, and which crypto wallet may be suitable for beginners.',
+  category: 'Crypto Wallets',
+  readingTime: '15 min read',
+  content: [],
+  },
 
 ];

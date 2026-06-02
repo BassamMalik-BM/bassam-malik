@@ -16,6 +16,7 @@ import About from './pages/About';
 import RiskDisclaimer from './pages/RiskDisclaimer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import CookiesPolicy from "./pages/CookiesPolicy";
 import NotFound from './pages/NotFound';
 
 import BlogsDetail from './pages/details/BlogsDetail';
@@ -52,6 +53,7 @@ export default function App() {
         <Route path="/risk-disclaimer" element={<RiskDisclaimer />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/cookies-policy" element={<CookiesPolicy />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

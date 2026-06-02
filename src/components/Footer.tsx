@@ -8,6 +8,7 @@ export default function Footer() {
     { name: "Contact", path: "/contact" },
     { name: "Risk Disclaimer", path: "/risk-disclaimer" },
     { name: "About", path: "/about" },
+    { name: "Cookies Policy", path: "/cookies-policy", },
   ];
 
   const socialLinks = [
@@ -46,7 +47,7 @@ export default function Footer() {
     {
       name: "Instagram",
       icon: FaInstagram,
-      url: "#",
+      url: "https://www.instagram.com/bassammalik_bm?igsh=MWVndzN5cGM5MHZpdA==",
       glow:
         "hover:border-pink-500 hover:shadow-[0_0_30px_rgba(236,72,153,0.45)]",
       color: "text-pink-500",
