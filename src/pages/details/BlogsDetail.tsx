@@ -13,6 +13,7 @@ import HowMuchMoneyDoYouNeedToStartCrypto from "../blogs/HowMuchMoneyDoYouNeedTo
 import BitcoinVsEthereum from '../blogs/BitcoinVsEthereum';
 import SpotTradingVSHoldingCrypto from "../blogs/SpotTradingVSHoldingCrypto";
 import HotWalletVsColdWallet from "../blogs/HotWalletVsColdWallet";
+import CanBeginnersMakeMoneyInCrypto from "../blogs/CanBeginnersMakeMoneyInCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -58,7 +59,9 @@ export default function BlogsDetail() {
                <BitcoinVsEthereum />
            ) : post.slug === "hot-wallet-vs-cold-wallet" ? (
                <HotWalletVsColdWallet />
-          ) : (
+           ) : post.slug === "can-beginners-make-money-in-crypto" ? (
+               <CanBeginnersMakeMoneyInCrypto />
+           ) : (
 
                 <article className="premium-card p-8 sm:p-10">
                   <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">

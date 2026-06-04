@@ -20,6 +20,15 @@ export const blogPosts: BlogPost[] = [
   content: [],
   },
   {
+  slug: 'can-beginners-make-money-in-crypto',
+  title: 'Can Beginners Make Money in Crypto? A Realistic Beginner\'s Guide',
+  description:
+    'Can beginners make money in crypto? Learn realistic expectations, risk management, common mistakes, and how responsible crypto education can help beginners navigate the market.',
+  category: 'Beginner Guides',
+  readingTime: '14 min read',
+  content: [],
+  },
+  {
   slug: 'beginner-crypto-roadmap-2026',
   title: 'Beginner Crypto Roadmap (2026)',
   description:
