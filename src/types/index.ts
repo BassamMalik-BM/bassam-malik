@@ -4,6 +4,7 @@ export type BlogPost = {
   description: string;
   category: string;
   readingTime: string;
+  image: string;
   content: string[];
 };
 

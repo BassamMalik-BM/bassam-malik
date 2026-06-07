@@ -17,6 +17,8 @@ import RiskDisclaimer from './pages/RiskDisclaimer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import CookiesPolicy from "./pages/CookiesPolicy";
+import LearnCategories from "./pages/LearnCategories";
+import LearnCategory from "./pages/LearnCategory";
 import NotFound from './pages/NotFound';
 
 import BlogsDetail from './pages/details/BlogsDetail';
@@ -44,6 +46,9 @@ export default function App() {
 
         <Route path="/calculators" element={<Calculators />} />
         <Route path="/calculators/:slug" element={<CalculatorsDetail />} />
+
+        <Route path="/learn/categories" element={<LearnCategories />} />
+        <Route path="/learn/category/:category" element={<LearnCategory />} />
 
         <Route path="/resources" element={<Resources />} />
         <Route path="/ebooks" element={<Ebooks />} />

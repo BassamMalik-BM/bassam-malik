@@ -6,7 +6,7 @@ import { learnPosts } from "../data/learn";
 
 const POSTS_PER_PAGE = 12;
 
-export default function Blogs() {
+export default function Learn() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -49,7 +49,9 @@ export default function Blogs() {
               </h1>
 
               <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-                Beginner-friendly lessons designed to help you understand crypto trading, risk management, chart reading, trading psychology, and smarter decision-making without hype or confusion.
+                Beginner-friendly lessons designed to help you understand crypto
+                trading, risk management, chart reading, trading psychology, and
+                smarter decision-making without hype or confusion.
               </p>
             </div>
 
@@ -84,10 +86,10 @@ export default function Blogs() {
             </p>
           )}
 
-          {/* BLOG GRID */}
+          {/* LEARN GRID */}
           {currentPosts.length > 0 ? (
             <>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {currentPosts.map((post) => (
                   <LearnCard key={post.slug} post={post} />
                 ))}
