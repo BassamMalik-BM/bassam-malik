@@ -15,6 +15,7 @@ import SpotTradingVSHoldingCrypto from "../blogs/SpotTradingVSHoldingCrypto";
 import HotWalletVsColdWallet from "../blogs/HotWalletVsColdWallet";
 import CanBeginnersMakeMoneyInCrypto from "../blogs/CanBeginnersMakeMoneyInCrypto";
 import BestCryptoExchanges from "../blogs/BestCryptoExchanges";
+import HowLongDoesItTakeToLearnCrypto from "../blogs/HowLongDoesItTakeToLearnCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -64,6 +65,8 @@ export default function BlogsDetail() {
                <CanBeginnersMakeMoneyInCrypto />
            ) : post.slug === "best-crypto-exchanges-for-beginners" ? (
               <BestCryptoExchanges />
+           ) : post.slug === "how-long-does-it-take-to-learn-crypto" ? (
+              <HowLongDoesItTakeToLearnCrypto />
            ) : (
 
                 <article className="premium-card p-8 sm:p-10">
@@ -85,11 +88,6 @@ export default function BlogsDetail() {
                     {post.description}
                   </p>
 
-                  <div className="mt-10 space-y-6 text-base leading-8 text-slate-700 dark:text-slate-300">
-                    {post.content.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))}
-                  </div>
                 </article>
               )}
             </div>

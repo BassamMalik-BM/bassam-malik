@@ -280,14 +280,12 @@ export default function BestCryptoExchanges() {
             <div key={exchange.name} className="py-10 first:pt-0 last:pb-0">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
-                    <img
-                      src={exchange.logo}
-                      alt={`${exchange.name} logo`}
-                      className="max-h-10 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  </div>
+                  <img
+                    src={exchange.logo}
+                    alt={`${exchange.name} logo`}
+                    className="h-12 w-auto object-contain sm:h-14"
+                    loading="lazy"
+                  />
 
                   <div>
                     <h3 className="text-2xl font-bold text-slate-950 dark:text-white">
