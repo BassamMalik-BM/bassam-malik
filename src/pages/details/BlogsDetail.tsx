@@ -4,6 +4,7 @@ import AnimatedPage from "../../components/AnimatedPage";
 import { blogPosts } from "../../data/blogs";
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ArticleSchema from "../../schemas/ArticleSchema";
+import SEO from "../../components/SEO";
 
 // BLOG IMPORTS
 import BestCryptoBooks from "../blogs/BestCryptoBooks";
@@ -33,6 +34,13 @@ export default function BlogsDetail() {
   return (
     <AnimatedPage>
     <ArticleSchema post={post} />
+    <SEO
+      title={post.title}
+      description={post.description}
+      path={`/blogs/${post.slug}`}
+      image={post.image}
+      type="article"
+    />
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
           <Breadcrumbs />

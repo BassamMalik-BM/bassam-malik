@@ -4,6 +4,7 @@ import AnimatedPage from "../../components/AnimatedPage";
 import { learnPosts } from "../../data/learn";
 import Breadcrumbs from '../../components/Breadcrumbs';
 import LearnArticleSchema from "../../schemas/LearnArticleSchema";
+import SEO from "../../components/SEO";
 
 import CryptoSpotTrading from "../learn/CryptoSpotTrading";
 import RiskManagement from "../learn/RiskManagement";
@@ -33,6 +34,12 @@ export default function LearnDetail() {
   return (
     <AnimatedPage>
       <LearnArticleSchema post={post} />
+      <SEO
+        title={post.title}
+        description={post.description}
+        path={`/learn/${post.slug}`}
+        type="article"
+      />
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
           <Breadcrumbs />
