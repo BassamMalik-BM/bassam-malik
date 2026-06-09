@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BookOpen, Lock, ShieldCheck, BarChart3 } from "lucide-react";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ebooks = [
   {
@@ -26,6 +27,7 @@ export default function Ebooks() {
   return (
     <main className="section-padding">
       <div className="container-page">
+        <Breadcrumbs />
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

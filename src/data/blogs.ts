@@ -9,6 +9,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "12 min read",
     image: "/images/best-crypto-books/hero.png",
+    date: "2026-05-28",
   },
   {
     slug: "best-free-websites-for-crypto-market-analysis",
@@ -18,24 +19,27 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Tools",
     readingTime: "13 min read",
     image: "/images/best-crypto-market-analysis-websites/hero.png",
+    date: "2026-05-29",
   },
   {
-  slug: 'best-crypto-exchanges-for-beginners',
-  title: 'Best Crypto Exchanges for Beginners: What to Look For Before You Sign Up',
-  description:
-    'Looking for the best crypto exchange as a beginner? Learn what to look for, popular platforms, security tips, and common mistakes to avoid.',
-  category: 'Beginner Guides',
-  readingTime: '14 min read',
-  image: "/images/best-crypto-exchanges/hero.png",
+    slug: "best-crypto-exchanges-for-beginners",
+    title: "Best Crypto Exchanges for Beginners: What to Look For Before You Sign Up",
+    description:
+      "Looking for the best crypto exchange as a beginner? Learn what to look for, popular platforms, security tips, and common mistakes to avoid.",
+    category: "Beginner Guides",
+    readingTime: "14 min read",
+    image: "/images/best-crypto-exchanges/hero.png",
+    date: "2026-05-30",
   },
   {
-  slug: "how-long-does-it-take-to-learn-crypto",
-  title: "How Long Does It Take to Learn Crypto?",
-  description:
-    "Wondering how long it takes to learn crypto? This realistic beginner's guide breaks down each learning stage so you can build knowledge with confidence.",
-  category: "Beginner Education",
-  readingTime: "12 min read",
-  image: "/images/how-long-does-it-take-to-learn-crypto/hero.png",
+    slug: "how-long-does-it-take-to-learn-crypto",
+    title: "How Long Does It Take to Learn Crypto?",
+    description:
+      "Wondering how long it takes to learn crypto? This realistic beginner's guide breaks down each learning stage so you can build knowledge with confidence.",
+    category: "Beginner Education",
+    readingTime: "12 min read",
+    image: "/images/how-long-does-it-take-to-learn-crypto/hero.png",
+    date: "2026-05-31",
   },
   {
     slug: "can-beginners-make-money-in-crypto",
@@ -45,6 +49,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "14 min read",
     image: "/images/can-beginners-make-money-in-crypto/hero.png",
+    date: "2026-06-01",
   },
   {
     slug: "beginner-crypto-roadmap-2026",
@@ -54,6 +59,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "14 min read",
     image: "/images/beginner-crypto-roadmap/hero.png",
+    date: "2026-06-02",
   },
   {
     slug: "is-crypto-too-late-in-2026",
@@ -63,6 +69,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "12 min read",
     image: "/images/is-crypto-too-late-in-2026/hero.png",
+    date: "2026-06-03",
   },
   {
     slug: "is-crypto-safe-for-beginners",
@@ -72,6 +79,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "13 min read",
     image: "/images/is-crypto-safe-for-beginners/hero.png",
+    date: "2026-06-04",
   },
   {
     slug: "how-much-money-do-you-need-to-start-crypto",
@@ -81,6 +89,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "12 min read",
     image: "/images/how-much-money-do-you-need-to-start-crypto/hero.png",
+    date: "2026-06-05",
   },
   {
     slug: "spot-trading-vs-holding-crypto",
@@ -90,6 +99,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "13 min read",
     image: "/images/spot-trading-vs-holding-crypto/hero.png",
+    date: "2026-06-06",
   },
   {
     slug: "bitcoin-vs-ethereum",
@@ -99,6 +109,7 @@ export const blogPosts: BlogPost[] = [
     category: "Beginner Guides",
     readingTime: "13 min read",
     image: "/images/bitcoin-vs-ethereum/hero.png",
+    date: "2026-06-07",
   },
   {
     slug: "hot-wallet-vs-cold-wallet",
@@ -108,5 +119,6 @@ export const blogPosts: BlogPost[] = [
     category: "Crypto Wallets",
     readingTime: "15 min read",
     image: "/images/hot-wallet-vs-cold-wallet/hero.png",
+    date: "2026-06-08",
   },
 ];

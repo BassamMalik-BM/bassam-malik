@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Percent } from "lucide-react";
+import { Percent } from "lucide-react";
 
 export default function BreakEvenCalculator() {
   const [lossPercent, setLossPercent] = useState("");
@@ -22,20 +21,13 @@ export default function BreakEvenCalculator() {
   }, [lossPercent]);
 
   return (
-    <main className="section-padding">
-      <div className="container-page">
+    <main>
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-4xl"
         >
-          <Link
-            to="/calculators"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
-          >
-            <ArrowLeft size={18} />
-            Back to Calculators
-          </Link>
 
           <div className="mb-8">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">

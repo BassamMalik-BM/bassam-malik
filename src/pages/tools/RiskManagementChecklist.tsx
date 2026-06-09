@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, RotateCcw, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { RotateCcw, ShieldCheck } from "lucide-react";
 
 const sections = [
   {
@@ -89,19 +88,12 @@ export default function RiskManagementChecklist() {
   };
 
   return (
-    <main className="section-padding">
-      <div className="container-page">
+    <main>
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Link
-            to="/tools"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
-          >
-            <ArrowLeft size={18} />
-            Back to Tools
-          </Link>
 
           <section className="premium-card mb-8 overflow-hidden">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

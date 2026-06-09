@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { calculators } from '../data/calculators';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Calculators() {
   return (
     <main className="section-padding bg-slate-50 dark:bg-navy-950">
       <section className="container-page">
+        <Breadcrumbs />
         {/* Heading Section */}
         <div className="mb-14 max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">

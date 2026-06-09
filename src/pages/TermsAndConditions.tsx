@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function TermsAndConditions() {
   return (
     <main className="section-padding">
       <div className="container-page">
+        <Breadcrumbs />
         <motion.article
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

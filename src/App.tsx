@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
+import BreadcrumbSchema from './schemas/BreadcrumbSchema';
 
 import Home from './pages/Home';
 import Learn from './pages/Learn';
@@ -31,6 +32,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors dark:bg-navy-950 dark:text-slate-100">
       <ScrollToTop />
       <Navbar />
+      <BreadcrumbSchema />
 
       <Routes>
         <Route path="/" element={<Home />} />

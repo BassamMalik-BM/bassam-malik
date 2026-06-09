@@ -1,5 +1,5 @@
-import { Cookie, ShieldCheck } from "lucide-react";
 import AnimatedPage from "../components/AnimatedPage";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const sections = [
   {
@@ -20,7 +20,7 @@ const sections = [
   {
     title: "4. Analytics and Performance",
     content:
-      "Bassam Malik may use analytics and performance tools, such as Vercel Analytics and Vercel Speed Insights, to understand general website usage, page performance, loading speed, and visitor interaction patterns. These tools help improve the website experience.",
+      "Bassam Malik may use analytics and performance tools, such as Vercel Analytics and Vercel Speed Insights, to understand general website usage, page performance, loading speed, and visitor interaction patterns.",
   },
   {
     title: "5. Third-Party Services",
@@ -30,7 +30,7 @@ const sections = [
   {
     title: "6. Managing Cookies",
     content:
-      "You can manage, block, or delete cookies through your browser settings. Please note that disabling some cookies may affect how certain parts of the website function or display.",
+      "You can manage, block, or delete cookies through your browser settings. Disabling some cookies may affect how certain parts of the website function or display.",
   },
   {
     title: "7. Updates to This Policy",
@@ -48,48 +48,36 @@ export default function CookiesPolicy() {
   return (
     <AnimatedPage>
       <main className="section-padding bg-slate-50 text-slate-900 dark:bg-navy-950 dark:text-white">
-        <section className="container-page">
-          <article className="premium-card mx-auto max-w-5xl p-8 sm:p-10 lg:p-12">
-            <div className="mb-8 flex flex-wrap items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
-                <Cookie size={28} />
-              </div>
+        <div className="container-page">
+          <Breadcrumbs />
 
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-300">
-                  Website Policy
-                </p>
-                <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-                  Cookies Policy
-                </h1>
-              </div>
-            </div>
+          <article className="mx-auto max-w-6xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
+              Website Policy
+            </p>
 
-            <p className="max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+            <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+              Cookies Policy
+            </h1>
+
+            <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               This page explains how cookies and similar technologies may be used
               on Bassam Malik to improve functionality, performance, analytics,
               and the overall browsing experience.
             </p>
 
-            <div className="mt-8 rounded-3xl border border-blue-100 bg-blue-50 p-5 dark:border-blue-400/20 dark:bg-blue-500/10">
-              <div className="flex items-start gap-3">
-                <ShieldCheck
-                  size={22}
-                  className="mt-1 shrink-0 text-blue-600 dark:text-blue-300"
-                />
-
-                <p className="leading-7 text-slate-700 dark:text-slate-300">
-                  Bassam Malik is an educational website. Cookies and analytics
-                  tools are used to understand performance, improve content, and
-                  support a better user experience.
-                </p>
-              </div>
+            <div className="premium-card mt-10 p-8 sm:p-10">
+              <p className="leading-8 text-slate-700 dark:text-slate-300">
+                Bassam Malik is an educational website. Cookies and analytics
+                tools are used to understand performance, improve content, and
+                support a better user experience.
+              </p>
             </div>
 
-            <div className="mt-10 divide-y divide-slate-200 dark:divide-white/10">
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
               {sections.map((section) => (
-                <section key={section.title} className="py-7 first:pt-0">
-                  <h2 className="text-2xl font-bold text-slate-950 dark:text-white">
+                <section key={section.title} className="premium-card p-8">
+                  <h2 className="text-xl font-bold text-slate-950 dark:text-white">
                     {section.title}
                   </h2>
 
@@ -105,7 +93,7 @@ export default function CookiesPolicy() {
               purposes and may be updated as the website grows.
             </div>
           </article>
-        </section>
+        </div>
       </main>
     </AnimatedPage>
   );

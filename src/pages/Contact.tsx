@@ -2,6 +2,7 @@ import { Mail, MessageCircle, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import SectionHeader from "../components/SectionHeader";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 type FormState = {
   name: string;
@@ -87,6 +88,7 @@ export default function Contact() {
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
+          <Breadcrumbs />
           <SectionHeader
             eyebrow="Contact"
             title="Have a question about beginner crypto education?"

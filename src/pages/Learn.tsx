@@ -3,6 +3,7 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedPage from "../components/AnimatedPage";
 import LearnCard from "../components/LearnCard";
 import { learnPosts } from "../data/learn";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const POSTS_PER_PAGE = 12;
 
@@ -37,6 +38,7 @@ export default function Learn() {
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
+          <Breadcrumbs />
           {/* HEADER + SEARCH */}
           <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>

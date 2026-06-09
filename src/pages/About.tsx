@@ -1,60 +1,89 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, BookOpen, BarChart3 } from "lucide-react";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function About() {
   return (
     <main className="section-padding">
       <div className="container-page">
+        <Breadcrumbs />
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mx-auto max-w-4xl"
+          className="mx-auto max-w-6xl"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-500">
             About Bassam Malik
           </p>
 
-          <h1 className="text-4xl font-bold text-slate-950 dark:text-white">
-            Crypto trading education built for beginners
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+            Trading education built for beginner learners
           </h1>
 
-          <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-            Bassam Malik Education is created to help beginners understand crypto
-            trading concepts with clarity, structure, and responsible risk awareness.
-            The goal is not to create hype, but to provide useful learning resources
-            that help people make more informed decisions.
+          <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+            Bassam Malik is an educational platform created to help beginners
+            understand trading, market structure, risk management, chart reading,
+            and decision-making with more clarity. The goal is not to create hype
+            or push unrealistic expectations. The goal is to provide simple,
+            structured, and practical learning resources that help people make
+            more informed decisions.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             <FeatureCard
-              icon={<BookOpen />}
               title="Beginner Friendly"
-              text="Simple explanations of market structure, chart reading, trading journals, and common beginner mistakes."
+              text="Lessons are written in simple language so new learners can understand market concepts without feeling overwhelmed."
             />
 
             <FeatureCard
-              icon={<ShieldCheck />}
               title="Risk First"
-              text="The website focuses on risk management, planning, and safer decision-making before any trading action."
+              text="The website focuses on risk awareness, capital protection, journaling, patience, and responsible decision-making."
             />
 
             <FeatureCard
-              icon={<BarChart3 />}
-              title="Practical Tools"
-              text="Calculators and resources are designed to support learning, planning, and better trading habits."
+              title="Practical Learning"
+              text="Blogs, tools, calculators, and resources are designed to help learners apply concepts in a more structured way."
             />
           </div>
 
-          <section className="premium-card mt-10">
+          <section className="premium-card mt-12 p-8 sm:p-10">
             <h2 className="text-2xl font-bold text-slate-950 dark:text-white">
-              Our approach
+              Why This Website Exists
             </h2>
 
-            <p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">
-              Crypto markets can be volatile and emotional, especially for beginners.
-              This website encourages education, patience, journaling, and risk
-              awareness instead of rushing into decisions. All content is for
-              educational purposes only and should not be treated as financial advice.
+            <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              Many beginners enter the market with excitement but without a clear
+              plan. They may focus only on profits, fast results, or social media
+              opinions while ignoring risk, emotions, and proper learning. Bassam
+              Malik was created to make trading education easier to understand and
+              more responsible for beginners.
+            </p>
+
+            <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              The content on this website focuses on education, not promises.
+              You will find beginner guides, market explanations, trading tools,
+              calculators, resources, and risk-focused lessons designed to support
+              better learning habits.
+            </p>
+          </section>
+
+          <section className="premium-card mt-8 p-8 sm:p-10">
+            <h2 className="text-2xl font-bold text-slate-950 dark:text-white">
+              Our Approach
+            </h2>
+
+            <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              The approach is simple: learn first, plan carefully, manage risk,
+              and avoid emotional decisions. Markets can move quickly, and no
+              educational content can remove risk completely. That is why this
+              website encourages patience, journaling, realistic expectations,
+              and independent research.
+            </p>
+
+            <p className="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+              All content on Bassam Malik is for educational purposes only. It
+              should not be treated as financial advice, investment advice, or a
+              guarantee of results.
             </p>
           </section>
         </motion.div>
@@ -64,20 +93,14 @@ export default function About() {
 }
 
 function FeatureCard({
-  icon,
   title,
   text,
 }: {
-  icon: React.ReactNode;
   title: string;
   text: string;
 }) {
   return (
-    <div className="premium-card">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">
-        {icon}
-      </div>
-
+    <div className="premium-card p-8">
       <h3 className="text-lg font-bold text-slate-950 dark:text-white">
         {title}
       </h3>

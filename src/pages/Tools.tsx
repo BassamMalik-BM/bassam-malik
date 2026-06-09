@@ -2,12 +2,14 @@ import AnimatedPage from '../components/AnimatedPage';
 import ResourceCard from '../components/ResourceCard';
 import SectionHeader from '../components/SectionHeader';
 import { tools } from '../data/tools';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Tools() {
   return (
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
+          <Breadcrumbs />
           <SectionHeader
             eyebrow="Tools"
             title="Interactive tools for smarter crypto learning"

@@ -1,7 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Download } from 'lucide-react';
-import AnimatedPage from '../../components/AnimatedPage';
+import { Download } from 'lucide-react';
 
 export default function DCAPlanner() {
   const [asset, setAsset] = useState('BTC');
@@ -68,16 +66,8 @@ This is a planning tool only. Growth is not guaranteed. Crypto markets are volat
   };
 
   return (
-    <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
-        <div className="container-page">
-          <Link
-            to="/tools"
-            className="mb-8 inline-flex items-center gap-2 text-blue-600 transition hover:text-blue-700"
-          >
-            <ArrowLeft size={18} />
-            Back to Tools
-          </Link>
+      <section>
+        <div>
 
           <div className="premium-card mb-10 p-8 sm:p-10">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-500">
@@ -251,6 +241,5 @@ This is a planning tool only. Growth is not guaranteed. Crypto markets are volat
           </div>
         </div>
       </section>
-    </AnimatedPage>
   );
 }

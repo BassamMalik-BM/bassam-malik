@@ -1,7 +1,4 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import AnimatedPage from '../../components/AnimatedPage';
 
 const mistakesList = [
   'Bought because of FOMO',
@@ -110,16 +107,8 @@ export default function TradingMistakeAnalyzer() {
   }, [selectedMistakes]);
 
   return (
-    <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
-        <div className="container-page">
-          <Link
-            to="/tools"
-            className="mb-8 inline-flex items-center gap-2 text-blue-600 transition hover:text-blue-700"
-          >
-            <ArrowLeft size={18} />
-            Back to Tools
-          </Link>
+      <section>
+        <div>
 
           {/* HERO CARD */}
           <div className="premium-card mb-10 p-8 sm:p-10">
@@ -231,6 +220,5 @@ export default function TradingMistakeAnalyzer() {
           </div>
         </div>
       </section>
-    </AnimatedPage>
   );
 }

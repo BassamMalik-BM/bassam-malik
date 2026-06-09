@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react';
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -5,6 +7,7 @@ export type BlogPost = {
   category: string;
   readingTime: string;
   image: string;
+  date: string;
 };
 
 
@@ -13,8 +16,8 @@ export type LearnPost = {
   title: string;
   description: string;
   category: string;
+  categorySlug: string;
   readingTime: string;
-  content: string[];
 };
 
 export type Resource = {
@@ -31,12 +34,14 @@ export type Tool = {
   type: string;
   cta: string;
   href: string;
-  icon: any;
+  slug: string;
+  icon: LucideIcon;
 };
 
 export type CalculatorItem = {
   title: string;
   description: string;
   path: string;
-  icon: any;
+  slug: string;
+  icon: LucideIcon;
 };

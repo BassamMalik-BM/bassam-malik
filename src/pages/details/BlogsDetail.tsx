@@ -2,6 +2,8 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../../components/AnimatedPage";
 import { blogPosts } from "../../data/blogs";
+import Breadcrumbs from '../../components/Breadcrumbs';
+import ArticleSchema from "../../schemas/ArticleSchema";
 
 // BLOG IMPORTS
 import BestCryptoBooks from "../blogs/BestCryptoBooks";
@@ -30,15 +32,10 @@ export default function BlogsDetail() {
 
   return (
     <AnimatedPage>
+    <ArticleSchema post={post} />
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
-          {/* BACK BUTTON */}
-          <Link
-            to="/blogs"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
-          >
-            <ArrowLeft size={17} /> Back to Blogs
-          </Link>
+          <Breadcrumbs />
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
             {/* BLOG CONTENT */}

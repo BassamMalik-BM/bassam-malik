@@ -1,8 +1,8 @@
-import { Link, Navigate, useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
 import LearnCard from "../components/LearnCard";
 import { learnPosts } from "../data/learn";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
@@ -23,12 +23,7 @@ export default function LearnCategory() {
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
-          <Link
-            to="/learn/categories"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
-          >
-            <ArrowLeft size={17} /> Back to Categories
-          </Link>
+          <Breadcrumbs />
 
           <div className="mb-12">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">

@@ -1,8 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 
 export default function ProfitCalculator() {
   const [buyPrice, setBuyPrice] = useState("");
@@ -39,19 +37,13 @@ export default function ProfitCalculator() {
   }, [buyPrice, sellPrice, investment, feePercent]);
 
   return (
-    <main className="section-padding">
-      <div className="container-page">
+    <main>
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-4xl"
         >
-          <Link to="/calculators"
-  className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
-            >
-           <ArrowLeft size={18} />
-            Back to Calculators
-           </Link>
 
           <div className="mb-8">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">

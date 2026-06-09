@@ -1,13 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  BookOpen,
-  RotateCcw,
-  Star,
-  Trash2,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { BookOpen, RotateCcw, Trash2, } from "lucide-react";
 
 type TradeResult = "Win" | "Loss" | "Break Even";
 type Confidence = "Low" | "Medium" | "High";
@@ -140,19 +133,12 @@ export default function TradingJournalTemplate() {
   };
 
   return (
-    <main className="section-padding">
-      <div className="container-page">
+    <main>
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <Link
-            to="/tools"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
-          >
-            <ArrowLeft size={18} />
-            Back to Tools
-          </Link>
 
           <section className="premium-card mb-8">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">

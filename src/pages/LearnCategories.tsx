@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedPage from "../components/AnimatedPage";
 import { learnPosts } from "../data/learn";
+import Breadcrumbs from '../components/Breadcrumbs';
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
@@ -20,6 +21,7 @@ export default function LearnCategories() {
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
+          <Breadcrumbs />
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
               Learn Categories

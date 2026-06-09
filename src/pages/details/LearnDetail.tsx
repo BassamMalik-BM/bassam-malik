@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../../components/AnimatedPage";
 import { learnPosts } from "../../data/learn";
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 import CryptoSpotTrading from "../learn/CryptoSpotTrading";
 import RiskManagement from "../learn/RiskManagement";
@@ -32,12 +33,7 @@ export default function LearnDetail() {
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
-          <Link
-            to="/learn"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400"
-          >
-            <ArrowLeft size={17} /> Back to Learn
-          </Link>
+          <Breadcrumbs />
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
             {/* CENTER - LEARN CONTENT */}
@@ -90,12 +86,6 @@ export default function LearnDetail() {
                   <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
                     {post.description}
                   </p>
-
-                  <div className="mt-10 space-y-6 text-base leading-8 text-slate-700 dark:text-slate-300">
-                    {post.content.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
 
                   <div className="mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900 dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-200">
                     Educational reminder: crypto markets are volatile. Use this
