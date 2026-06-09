@@ -1,6 +1,7 @@
 import AnimatedPage from "../components/AnimatedPage";
 import FAQItem from "../components/FAQItem";
 import Breadcrumbs from "../components/Breadcrumbs";
+import FAQPageSchema from "../schemas/FAQPageSchema";
 
 const faqs = [
   {
@@ -72,6 +73,8 @@ const faqs = [
 
 export default function FAQ() {
   return (
+    <>
+    <FAQPageSchema faqs={faqs} />
     <AnimatedPage>
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
@@ -104,5 +107,6 @@ export default function FAQ() {
         </div>
       </section>
     </AnimatedPage>
+    </>
   );
 }

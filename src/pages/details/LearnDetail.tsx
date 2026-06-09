@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../../components/AnimatedPage";
 import { learnPosts } from "../../data/learn";
 import Breadcrumbs from '../../components/Breadcrumbs';
+import LearnArticleSchema from "../../schemas/LearnArticleSchema";
 
 import CryptoSpotTrading from "../learn/CryptoSpotTrading";
 import RiskManagement from "../learn/RiskManagement";
@@ -31,6 +32,7 @@ export default function LearnDetail() {
 
   return (
     <AnimatedPage>
+      <LearnArticleSchema post={post} />
       <section className="section-padding bg-slate-50 dark:bg-navy-950">
         <div className="container-page">
           <Breadcrumbs />

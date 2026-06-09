@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Clock, ExternalLink } from "lucide-react";
+import FAQSchema from "../../schemas/FAQSchema";
 
 const books = [
   {
@@ -190,6 +191,8 @@ function FAQItem({
 
 export default function BestCryptoBooks() {
   return (
+    <>
+    <FAQSchema faqs={faqs} />
     <article className="premium-card mx-auto max-w-5xl p-8 sm:p-10 lg:p-12">
       <header>
         <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
@@ -494,5 +497,6 @@ export default function BestCryptoBooks() {
         </div>
       </section>
     </article>
+    </>
   );
 }

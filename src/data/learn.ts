@@ -9,6 +9,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Risk Management',
     categorySlug: 'risk-management',
     readingTime: '10 min read',
+    datePublished: "2026-06-09",
   },
   {
     slug: 'the-importance-of-patience-in-crypto-trading',
@@ -18,6 +19,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Trading Psychology',
     categorySlug: 'trading-psychology',
     readingTime: '11 min read',
+    datePublished: "2026-06-07",
   },
   {
     slug: 'how-to-control-fear-and-greed-in-crypto-trading',
@@ -27,6 +29,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Trading Psychology',
     categorySlug: 'trading-psychology',
     readingTime: '10 min read',
+    datePublished: "2026-06-05",
   },
   {
     slug: 'why-emotional-trading-is-dangerous',
@@ -36,6 +39,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Trading Psychology',
     categorySlug: 'trading-psychology',
     readingTime: '9 min read',
+    datePublished: "2026-06-03",
   },
   {
     slug: 'how-crypto-wallets-work',
@@ -45,6 +49,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Crypto Basics',
     categorySlug: 'crypto-basics',
     readingTime: '9 min read',
+    datePublished: "2026-06-01",
   },
   {
     slug: 'what-is-market-capitalization-in-crypto',
@@ -54,6 +59,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Crypto Basics',
     categorySlug: 'crypto-basics',
     readingTime: '10 min read',
+    datePublished: "2026-05-31",
   },
   {
     slug: 'what-is-crypto-volatility',
@@ -63,6 +69,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Market Concepts',
     categorySlug: 'market-concepts',
     readingTime: '8 min read',
+    datePublished: "2026-05-29",
   },
   {
     slug: 'what-is-crypto-spot-trading',
@@ -72,6 +79,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Spot Trading',
     categorySlug: 'spot-trading',
     readingTime: '8 min read',
+    datePublished: "2026-05-27",
   },
   {
     slug: 'why-risk-management-matters',
@@ -81,6 +89,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Risk Management',
     categorySlug: 'risk-management',
     readingTime: '9 min read',
+    datePublished: "2026-05-25",
   },
   {
     slug: 'how-to-build-a-trading-journal',
@@ -90,6 +99,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Trading Journal',
     categorySlug: 'trading-journal',
     readingTime: '10 min read',
+    datePublished: "2026-05-23",
   },
   {
     slug: 'support-and-resistance-levels',
@@ -99,6 +109,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Chart Basics',
     categorySlug: 'chart-basics',
     readingTime: '5 min read',
+    datePublished: "2026-05-21",
   },
   {
     slug: 'common-mistakes-beginners-make-in-crypto',
@@ -108,6 +119,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Beginner Guide',
     categorySlug: 'beginner-guide',
     readingTime: '6 min read',
+    datePublished: "2026-05-19",
   },
   {
     slug: 'how-to-read-crypto-charts',
@@ -117,6 +129,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Market Concepts',
     categorySlug: 'market-concepts',
     readingTime: '5 min read',
+    datePublished: "2026-05-17",
   },
   {
     slug: 'what-is-bitcoin-and-why-does-it-matter',
@@ -126,6 +139,7 @@ export const learnPosts: LearnPost[] = [
     category: 'Bitcoin Basics',
     categorySlug: 'bitcoin-basics',
     readingTime: '8 min read',
+    datePublished: "2026-05-15",
   },
 ];
 

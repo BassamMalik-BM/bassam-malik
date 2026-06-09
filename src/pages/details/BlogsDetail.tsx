@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../../components/AnimatedPage";
 import { blogPosts } from "../../data/blogs";

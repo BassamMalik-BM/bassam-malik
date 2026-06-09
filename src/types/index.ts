@@ -18,6 +18,7 @@ export type LearnPost = {
   category: string;
   categorySlug: string;
   readingTime: string;
+  datePublished: string;
 };
 
 export type Resource = {
