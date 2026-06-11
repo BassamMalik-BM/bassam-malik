@@ -204,31 +204,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LATEST BLOGS */}
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
-        <div className="container-page">
-          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <SectionHeader
-              eyebrow="Latest blogs"
-              title="Fresh crypto insights for smarter learning"
-              description="Explore beginner-friendly blog posts about crypto books, market analysis tools, psychology, risk awareness, and safer decision-making."
-            />
+{/* FEATURED + LATEST BLOGS */}
+<section className="section-padding bg-slate-50 dark:bg-navy-950">
+  <div className="container-page">
+    {/* FEATURED BLOGS */}
+    <div className="mb-14">
+      <SectionHeader
+        eyebrow="Featured blogs"
+        title="Crypto guides for beginner learning"
+        description="Explore selected beginner-friendly guides about crypto books, market analysis tools, exchanges, and safer decision-making."
+      />
 
-            <Link
-              to="/blogs"
-              className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
-            >
-              View all blogs <ArrowRight size={16} />
-            </Link>
-          </div>
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {blogPosts
+          .filter((post) => post.featured)
+          .slice(0, 3)
+          .map((post) => (
+            <BlogCard key={post.slug} post={post} />
+          ))}
+      </div>
+    </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {blogPosts.slice(0, 3).map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* LATEST BLOGS */}
+    <div className="border-t border-slate-200 pt-14 dark:border-white/10">
+      <SectionHeader
+        eyebrow="Latest blogs"
+        title="Fresh crypto insights for smarter learning"
+        description="Stay updated with the newest beginner-friendly crypto articles, guides, and learning resources."
+      />
+
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {[...blogPosts]
+          .filter((post) => !post.featured)
+          .sort(
+            (a, b) =>
+              new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .slice(0, 3)
+          .map((post) => (
+            <BlogCard key={post.slug} post={post} />
+          ))}
+      </div>
+
+      <div className="mt-8 flex justify-end">
+        <Link
+          to="/blogs"
+          className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
+        >
+          View all blogs <ArrowRight size={16} />
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* TRUST FIRST */}
       <section className="section-padding overflow-hidden bg-slate-50 dark:bg-navy-950">

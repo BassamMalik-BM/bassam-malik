@@ -8,6 +8,7 @@ export type BlogPost = {
   readingTime: string;
   image: string;
   date: string;
+  featured?: boolean;
 };
 
 

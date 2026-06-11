@@ -19,6 +19,7 @@ import HotWalletVsColdWallet from "../blogs/HotWalletVsColdWallet";
 import CanBeginnersMakeMoneyInCrypto from "../blogs/CanBeginnersMakeMoneyInCrypto";
 import BestCryptoExchanges from "../blogs/BestCryptoExchanges";
 import HowLongDoesItTakeToLearnCrypto from "../blogs/HowLongDoesItTakeToLearnCrypto";
+import WhyMostBeginnersQuitCrypto from "../blogs/WhyMostBeginnersQuitCrypto";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -72,6 +73,8 @@ export default function BlogsDetail() {
               <BestCryptoExchanges />
            ) : post.slug === "how-long-does-it-take-to-learn-crypto" ? (
               <HowLongDoesItTakeToLearnCrypto />
+           ) : post.slug === "why-most-beginners-quit-crypto" ? (
+              <WhyMostBeginnersQuitCrypto />
            ) : (
 
                 <article className="premium-card p-8 sm:p-10">

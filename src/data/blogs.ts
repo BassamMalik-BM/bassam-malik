@@ -10,6 +10,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: "12 min read",
     image: "/images/best-crypto-books/hero.png",
     date: "2026-05-28",
+    featured: true
   },
   {
     slug: "best-free-websites-for-crypto-market-analysis",
@@ -20,6 +21,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: "13 min read",
     image: "/images/best-crypto-market-analysis-websites/hero.png",
     date: "2026-05-29",
+    featured: true
   },
   {
     slug: "best-crypto-exchanges-for-beginners",
@@ -30,6 +32,17 @@ export const blogPosts: BlogPost[] = [
     readingTime: "14 min read",
     image: "/images/best-crypto-exchanges/hero.png",
     date: "2026-05-30",
+    featured: true
+  },
+  {
+  slug: "why-most-beginners-quit-crypto",
+  title: "Why Most Beginners Quit Crypto (And How to Avoid Their Mistakes)",
+  description:
+    "Discover why most beginners quit crypto and how to avoid the same traps. Learn how to stay focused on education, patience, risk awareness, and long-term progress.",
+  category: "Beginner Education",
+  readingTime: "9 min read",
+  image: "/images/why-most-beginners-quit-crypto/hero.png",
+  date: "2026-06-11",
   },
   {
     slug: "how-long-does-it-take-to-learn-crypto",
