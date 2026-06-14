@@ -74,39 +74,40 @@ const faqs = [
 export default function FAQ() {
   return (
     <>
-    <FAQPageSchema faqs={faqs} />
-    <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
-        <div className="container-page">
-          <Breadcrumbs />
+      <FAQPageSchema faqs={faqs} />
 
-          <div className="mx-auto max-w-6xl">
-            <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
-              FAQ
-            </p>
+      <AnimatedPage>
+        <section className="section-padding">
+          <div className="container-page">
+            <Breadcrumbs />
 
-            <h1 className="text-center text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-              Frequently Asked Questions
-            </h1>
+            <div className="mx-auto max-w-6xl">
+              <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
+                FAQ
+              </p>
 
-            <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Clear answers to common questions about trading education, risk
-              management, learning resources, and the purpose of Bassam Malik.
-            </p>
+              <h1 className="text-center text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+                Frequently Asked Questions
+              </h1>
 
-            <div className="mt-12 grid gap-4">
-              {faqs.map((faq) => (
-                <FAQItem
-                  key={faq.question}
-                  question={faq.question}
-                  answer={faq.answer}
-                />
-              ))}
+              <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-600 dark:text-slate-300">
+                Clear answers to common questions about trading education, risk
+                management, learning resources, and the purpose of Bassam Malik.
+              </p>
+
+              <div className="mt-12 grid gap-4">
+                {faqs.map((faq) => (
+                  <FAQItem
+                    key={faq.question}
+                    question={faq.question}
+                    answer={faq.answer}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </AnimatedPage>
+        </section>
+      </AnimatedPage>
     </>
   );
 }

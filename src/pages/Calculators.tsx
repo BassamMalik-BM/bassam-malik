@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { calculators } from '../data/calculators';
-import Breadcrumbs from '../components/Breadcrumbs';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { calculators } from "../data/calculators";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function Calculators() {
   return (
-    <main className="section-padding bg-slate-50 dark:bg-navy-950">
+    <main className="section-padding">
       <section className="container-page">
         <Breadcrumbs />
+
         {/* Heading Section */}
         <div className="mb-14 max-w-3xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
@@ -19,8 +20,8 @@ export default function Calculators() {
           </h1>
 
           <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-            Beginner-friendly tools to help you estimate risk,
-            reward, profit, growth, and trade planning.
+            Beginner-friendly tools to help you estimate risk, reward, profit,
+            growth, and trade planning.
           </p>
         </div>
 
@@ -56,7 +57,7 @@ export default function Calculators() {
                   </p>
 
                   {/* CTA */}
-                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-500">
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400">
                     Open calculator →
                   </span>
                 </Link>

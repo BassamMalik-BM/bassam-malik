@@ -35,6 +35,17 @@ export const blogPosts: BlogPost[] = [
     featured: true
   },
   {
+  slug: "why-crypto-feels-confusing-at-first",
+  title: "Why Crypto Feels Confusing at First",
+  description:
+    "Feeling lost in crypto? Learn why crypto feels confusing at first and how beginners can start understanding it better.",
+  category: "Crypto Basics",
+  date: "2026-06-15",
+  readingTime: "15 min read",
+  image: "/images/why-crypto-feels-confusing-at-first/hero.png",
+  featured: false,
+  },
+  {
   slug: "why-most-beginners-quit-crypto",
   title: "Why Most Beginners Quit Crypto (And How to Avoid Their Mistakes)",
   description:

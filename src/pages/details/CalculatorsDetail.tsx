@@ -1,15 +1,15 @@
-import { ArrowRight } from 'lucide-react';
-import { Link, Navigate, useParams } from 'react-router-dom';
-import AnimatedPage from '../../components/AnimatedPage';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import { calculators } from '../../data/calculators';
+import { ArrowRight } from "lucide-react";
+import { Link, Navigate, useParams } from "react-router-dom";
+import AnimatedPage from "../../components/AnimatedPage";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { calculators } from "../../data/calculators";
 
-import Calculator from '../calculators/Calculator';
-import TradeSizeCalculator from '../calculators/TradeSizeCalculator';
-import RiskRewardCalculator from '../calculators/RiskRewardCalculator';
-import ProfitCalculator from '../calculators/ProfitCalculator';
-import CompoundGrowthCalculator from '../calculators/CompoundGrowthCalculator';
-import BreakEvenCalculator from '../calculators/BreakEvenCalculator';
+import Calculator from "../calculators/Calculator";
+import TradeSizeCalculator from "../calculators/TradeSizeCalculator";
+import RiskRewardCalculator from "../calculators/RiskRewardCalculator";
+import ProfitCalculator from "../calculators/ProfitCalculator";
+import CompoundGrowthCalculator from "../calculators/CompoundGrowthCalculator";
+import BreakEvenCalculator from "../calculators/BreakEvenCalculator";
 
 export default function CalculatorsDetail() {
   const { slug } = useParams();
@@ -24,23 +24,23 @@ export default function CalculatorsDetail() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
             <div>
-              {calculator.slug === 'calculator' ? (
+              {calculator.slug === "calculator" ? (
                 <Calculator />
-              ) : calculator.slug === 'trade-size' ? (
+              ) : calculator.slug === "trade-size" ? (
                 <TradeSizeCalculator />
-              ) : calculator.slug === 'risk-reward' ? (
+              ) : calculator.slug === "risk-reward" ? (
                 <RiskRewardCalculator />
-              ) : calculator.slug === 'profit' ? (
+              ) : calculator.slug === "profit" ? (
                 <ProfitCalculator />
-              ) : calculator.slug === 'compound-growth' ? (
+              ) : calculator.slug === "compound-growth" ? (
                 <CompoundGrowthCalculator />
-              ) : calculator.slug === 'break-even' ? (
+              ) : calculator.slug === "break-even" ? (
                 <BreakEvenCalculator />
               ) : (
                 <Navigate to="/calculators" replace />
@@ -48,7 +48,7 @@ export default function CalculatorsDetail() {
             </div>
 
             <aside>
-              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5">
+              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-navy-900">
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   Related Calculators
                 </h3>

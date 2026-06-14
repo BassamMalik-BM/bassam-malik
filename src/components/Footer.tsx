@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaXTwitter, FaFacebook, FaInstagram } from "react-icons/fa6";
+import {
+  FaWhatsapp,
+  FaXTwitter,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa6";
 import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
-  const footerLinks = [
+  const quickLinks = [
+    { name: "About Us", path: "/about" },
     { name: "FAQ", path: "/faq" },
-    { name: "Contact", path: "/contact" },
+    { name: "Sources", path: "/sources" },
+    { name: "Contact Us", path: "/contact" },
+  ];
+
+  const legalLinks = [
+    { name: "Cookies Policy", path: "/cookies-policy" },
     { name: "Risk Disclaimer", path: "/risk-disclaimer" },
-    { name: "About", path: "/about" },
-    { name: "Cookies Policy", path: "/cookies-policy", },
   ];
 
   const socialLinks = [
@@ -57,7 +66,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
       <div className="container-page py-8">
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.8fr_0.8fr_1fr]">
           {/* LEFT */}
           <div>
             <div className="mb-4 flex items-center gap-3">
@@ -83,14 +92,14 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* CENTER */}
+          {/* About */}
           <div>
             <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
-              Quick Links
+              About
             </h3>
 
-            <div className="grid gap-3 text-sm">
-              {footerLinks.map((link) => (
+            <div className="flex flex-col gap-3 text-sm">
+              {quickLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -102,7 +111,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* LEGAL */}
+          <div>
+            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
+              Legal
+            </h3>
+
+            <div className="flex flex-col gap-3 text-sm">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* SOCIAL */}
           <div>
             <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
               Social Media
@@ -136,12 +164,10 @@ export default function Footer() {
       {/* BOTTOM */}
       <div className="border-t border-slate-200 bg-slate-50 py-6 dark:border-white/10 dark:bg-slate-900/60">
         <div className="container-page flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-300 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              © 2026 Bassam Malik · Educational content only. Not financial
-              advice.
-            </p>
-          </div>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            © 2026 Bassam Malik · Educational content only. Not financial
+            advice.
+          </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <Link

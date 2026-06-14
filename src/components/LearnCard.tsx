@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import type { LearnPost } from '../types';
+import { Link } from "react-router-dom";
+import type { LearnPost } from "../types";
 
 type LearnCardProps = {
   post: LearnPost;
@@ -8,7 +8,7 @@ type LearnCardProps = {
 export default function LearnCard({ post }: LearnCardProps) {
   return (
     <Link
-      to={`/learn/${post.slug}`}
+      to={`/learn/categories/${post.categorySlug}/${post.slug}`}
       className="block h-full"
     >
       <article className="premium-card flex h-full flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">

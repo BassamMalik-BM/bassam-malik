@@ -2,7 +2,7 @@ import { Mail, MessageCircle, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 import AnimatedPage from "../components/AnimatedPage";
 import SectionHeader from "../components/SectionHeader";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 type FormState = {
   name: string;
@@ -40,16 +40,13 @@ export default function Contact() {
     }
 
     if (form.message.trim().length < 10) {
-      nextErrors.message =
-        "Message should be at least 10 characters.";
+      nextErrors.message = "Message should be at least 10 characters.";
     }
 
     return nextErrors;
   };
 
-  const handleSubmit = async (
-    event: FormEvent<HTMLFormElement>
-  ) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const validationErrors = validate();
@@ -60,17 +57,14 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "https://formspree.io/f/xeendped",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      );
+      const response = await fetch("https://formspree.io/f/xeendped", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
       if (response.ok) {
         setSubmitted(true);
@@ -86,9 +80,10 @@ export default function Contact() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
+
           <SectionHeader
             eyebrow="Contact"
             title="Have a question about beginner crypto education?"
@@ -102,27 +97,30 @@ export default function Contact() {
                   className="mb-4 text-blue-600 dark:text-blue-400"
                   size={28}
                 />
+
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   Education inquiries
                 </h3>
+
                 <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  Ask about beginner guides, trading journal
-                  structure, risk management basics, or
-                  future educational content.
+                  Ask about beginner guides, trading journal structure, risk
+                  management basics, or future educational content.
                 </p>
               </div>
 
               <div className="premium-card">
                 <MessageCircle
-                  className="mb-4 text-emerald-600 dark:text-emerald-400"
+                  className="mb-4 text-blue-600 dark:text-blue-400"
                   size={28}
                 />
+
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   Professional tone
                 </h3>
+
                 <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  This website keeps communication serious,
-                  clear, and focused on responsible learning.
+                  This website keeps communication serious, clear, and focused
+                  on responsible learning.
                 </p>
               </div>
             </div>
@@ -134,7 +132,8 @@ export default function Contact() {
             >
               {submitted && (
                 <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800 dark:border-emerald-400/20 dark:bg-emerald-500/10 dark:text-emerald-200">
-                  Message sent successfully. I’ll get back to you as soon as possible.
+                  Message sent successfully. I’ll get back to you as soon as
+                  possible.
                 </div>
               )}
 

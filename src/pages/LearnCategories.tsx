@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import AnimatedPage from "../components/AnimatedPage";
 import { learnPosts } from "../data/learn";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
@@ -19,9 +19,10 @@ export default function LearnCategories() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
+
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
               Learn Categories
@@ -41,7 +42,7 @@ export default function LearnCategories() {
             {categories.map((category) => (
               <Link
                 key={category.name}
-                to={`/learn/category/${category.slug}`}
+                to={`/learn/categories/${category.slug}`}
                 className="premium-card group flex h-full flex-col text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <h2 className="text-xl font-bold text-slate-950 dark:text-white">

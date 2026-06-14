@@ -14,15 +14,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
-  background: #f8fafc;
-}
-
-.dark body {
-  background: #06111f;
+  background: transparent;
 }
 
 @layer components {
@@ -39,7 +40,7 @@ body {
   }
 
   .premium-card {
-    @apply rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-premium transition duration-300 hover:-translate-y-1 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.06] dark:shadow-none dark:backdrop-blur-xl;
+    @apply rounded-3xl border border-slate-200/80 bg-white p-6 shadow-premium transition duration-300 hover:-translate-y-1 hover:shadow-glow dark:border-white/10 dark:bg-navy-900 dark:shadow-none;
   }
 
   .button-primary {
@@ -47,15 +48,14 @@ body {
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:border-blue-400 dark:focus:ring-offset-navy-950;
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-white/15 dark:bg-navy-900 dark:text-white dark:hover:border-blue-400 dark:focus:ring-offset-navy-950;
   }
 
   .input-field {
-    @apply w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:placeholder:text-slate-500;
+    @apply w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900 dark:text-white dark:placeholder:text-slate-500;
   }
 }
 
-/* Animated BM navbar logo */
 .bm-live-logo {
   width: 48px;
   height: 48px;

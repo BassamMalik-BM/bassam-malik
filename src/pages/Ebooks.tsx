@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { BookOpen, Lock, ShieldCheck, BarChart3 } from "lucide-react";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const ebooks = [
   {
@@ -28,12 +28,13 @@ export default function Ebooks() {
     <main className="section-padding">
       <div className="container-page">
         <Breadcrumbs />
+
         <motion.section
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
             Premium Learning
           </p>
 
@@ -60,7 +61,7 @@ export default function Ebooks() {
                 className="premium-card group flex h-full flex-col transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
               >
                 <div className="mb-6 flex items-start justify-between gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-emerald-50 text-emerald-600 transition duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-blue-100 text-blue-600 transition duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300">
                     <Icon size={30} />
                   </div>
 
@@ -81,7 +82,7 @@ export default function Ebooks() {
                 <button
                   type="button"
                   disabled
-                  className="mt-6 cursor-not-allowed rounded-2xl bg-slate-200 px-5 py-3.5 text-sm font-semibold text-slate-500 dark:bg-white/10 dark:text-slate-400"
+                  className="mt-6 cursor-not-allowed rounded-2xl bg-slate-200 px-5 py-3.5 text-sm font-semibold text-slate-500 dark:bg-navy-800 dark:text-slate-400"
                 >
                   Launching Soon
                 </button>

@@ -11,7 +11,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       to={`/blogs/${post.slug}`}
       className="block h-full"
     >
-      <article className="premium-card flex h-full flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <article className="premium-card flex h-full flex-col transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl">
         {/* Category + Reading Time */}
         <div className="mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide">
           <span className="rounded-full bg-blue-50 px-3 py-1 text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">

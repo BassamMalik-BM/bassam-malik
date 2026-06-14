@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function PrivacyPolicy() {
   return (
     <main className="section-padding">
       <div className="container-page">
         <Breadcrumbs />
+
         <motion.article
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-4xl"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
             Privacy Policy
           </p>
 
@@ -26,13 +27,14 @@ export default function PrivacyPolicy() {
           <div className="premium-card mt-8 space-y-7 leading-7 text-slate-600 dark:text-slate-300">
             <Section title="1. Introduction">
               Bassam Malik Education respects your privacy. This Privacy Policy
-              explains how information may be collected, used, and protected when
-              you use this website.
+              explains how information may be collected, used, and protected
+              when you use this website.
             </Section>
 
             <Section title="2. Information we may collect">
-              We may collect information you voluntarily provide through the contact
-              form, such as your name, email address, subject, and message.
+              We may collect information you voluntarily provide through the
+              contact form, such as your name, email address, subject, and
+              message.
             </Section>
 
             <Section title="3. How information is used">
@@ -42,25 +44,25 @@ export default function PrivacyPolicy() {
             </Section>
 
             <Section title="4. Cookies and analytics">
-              This website may use basic cookies or analytics tools in the future to
-              understand website performance and visitor behavior. You can control
-              cookies through your browser settings.
+              This website may use basic cookies or analytics tools in the
+              future to understand website performance and visitor behavior. You
+              can control cookies through your browser settings.
             </Section>
 
             <Section title="5. Third-party links">
-              This website may contain links to external platforms such as social
-              media pages or crypto-related platforms. We are not responsible for the
-              privacy practices of third-party websites.
+              This website may contain links to external platforms such as
+              social media pages or crypto-related platforms. We are not
+              responsible for the privacy practices of third-party websites.
             </Section>
 
             <Section title="6. Data security">
-              Reasonable steps are taken to protect information, but no website can
-              guarantee complete security over the internet.
+              Reasonable steps are taken to protect information, but no website
+              can guarantee complete security over the internet.
             </Section>
 
             <Section title="7. Contact">
-              If you have questions about this Privacy Policy, you may contact us
-              through the Contact page.
+              If you have questions about this Privacy Policy, you may contact
+              us through the Contact page.
             </Section>
           </div>
         </motion.article>

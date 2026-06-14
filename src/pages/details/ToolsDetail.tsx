@@ -1,13 +1,13 @@
-import { ArrowRight } from 'lucide-react';
-import { Link, Navigate, useParams } from 'react-router-dom';
-import AnimatedPage from '../../components/AnimatedPage';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import { tools } from '../../data/tools';
+import { ArrowRight } from "lucide-react";
+import { Link, Navigate, useParams } from "react-router-dom";
+import AnimatedPage from "../../components/AnimatedPage";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { tools } from "../../data/tools";
 
-import RiskManagementChecklist from '../tools/RiskManagementChecklist';
-import TradingJournalTemplate from '../tools/TradingJournalTemplate';
-import TradingMistakeAnalyzer from '../tools/TradingMistakeAnalyzer';
-import DCAPlanner from '../tools/DCAPlanner';
+import RiskManagementChecklist from "../tools/RiskManagementChecklist";
+import TradingJournalTemplate from "../tools/TradingJournalTemplate";
+import TradingMistakeAnalyzer from "../tools/TradingMistakeAnalyzer";
+import DCAPlanner from "../tools/DCAPlanner";
 
 export default function ToolsDetail() {
   const { slug } = useParams();
@@ -22,19 +22,19 @@ export default function ToolsDetail() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
             <div>
-              {tool.slug === 'risk-management-checklist' ? (
+              {tool.slug === "risk-management-checklist" ? (
                 <RiskManagementChecklist />
-              ) : tool.slug === 'trading-journal-template' ? (
+              ) : tool.slug === "trading-journal-template" ? (
                 <TradingJournalTemplate />
-              ) : tool.slug === 'trading-mistake-analyzer' ? (
+              ) : tool.slug === "trading-mistake-analyzer" ? (
                 <TradingMistakeAnalyzer />
-              ) : tool.slug === 'dca-planner' ? (
+              ) : tool.slug === "dca-planner" ? (
                 <DCAPlanner />
               ) : (
                 <Navigate to="/tools" replace />
@@ -42,7 +42,7 @@ export default function ToolsDetail() {
             </div>
 
             <aside>
-              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5">
+              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-navy-900">
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   Related Tools
                 </h3>

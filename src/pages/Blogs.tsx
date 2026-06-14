@@ -3,7 +3,7 @@ import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedPage from "../components/AnimatedPage";
 import BlogCard from "../components/BlogCard";
 import { blogPosts } from "../data/blogs";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const POSTS_PER_PAGE = 12;
 
@@ -38,9 +38,10 @@ export default function Blogs() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
+
           {/* HEADER + SEARCH */}
           <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -71,7 +72,7 @@ export default function Blogs() {
                 value={searchTerm}
                 onChange={handleSearchChange}
                 placeholder="Search blogs..."
-                className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500"
+                className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900 dark:text-white dark:placeholder:text-slate-500"
               />
             </div>
           </div>
@@ -107,7 +108,7 @@ export default function Blogs() {
                       setCurrentPage((page) => Math.max(page - 1, 1))
                     }
                     disabled={currentPage === 1}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-blue-400"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
                   >
                     <ChevronLeft size={18} />
                   </button>
@@ -123,7 +124,7 @@ export default function Blogs() {
                         className={`h-11 w-11 rounded-xl text-sm font-bold transition ${
                           isActive
                             ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                            : "border border-slate-200 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-blue-400"
+                            : "border border-slate-200 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-600 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
                         }`}
                       >
                         {pageNumber}
@@ -138,7 +139,7 @@ export default function Blogs() {
                       )
                     }
                     disabled={currentPage === totalPages}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:text-blue-400"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
                   >
                     <ChevronRight size={18} />
                   </button>

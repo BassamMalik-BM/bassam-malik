@@ -47,12 +47,12 @@ const sections = [
 export default function CookiesPolicy() {
   return (
     <AnimatedPage>
-      <main className="section-padding bg-slate-50 text-slate-900 dark:bg-navy-950 dark:text-white">
+      <main className="section-padding text-slate-900 dark:text-white">
         <div className="container-page">
           <Breadcrumbs />
 
           <article className="mx-auto max-w-6xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-300">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
               Website Policy
             </p>
 

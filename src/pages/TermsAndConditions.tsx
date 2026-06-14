@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function TermsAndConditions() {
   return (
     <main className="section-padding">
       <div className="container-page">
         <Breadcrumbs />
+
         <motion.article
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-4xl"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
             Terms & Conditions
           </p>
 

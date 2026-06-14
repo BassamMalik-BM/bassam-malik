@@ -12,7 +12,7 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto max-w-6xl"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-500">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
             About Bassam Malik
           </p>
 

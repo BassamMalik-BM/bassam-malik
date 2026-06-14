@@ -2,7 +2,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import AnimatedPage from "../../components/AnimatedPage";
 import { learnPosts } from "../../data/learn";
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Breadcrumbs from "../../components/Breadcrumbs";
 import LearnArticleSchema from "../../schemas/LearnArticleSchema";
 import SEO from "../../components/SEO";
 
@@ -22,30 +22,50 @@ import PatienceTrading from "../learn/PatienceTrading";
 import AffordToLose from "../learn/AffordToLose";
 
 export default function LearnDetail() {
-  const { slug } = useParams();
+  const { categorySlug, slug } = useParams();
+
   const post = learnPosts.find((item) => item.slug === slug);
 
   if (!post) return <Navigate to="/learn" replace />;
 
+  if (categorySlug && categorySlug !== post.categorySlug) {
+    return (
+      <Navigate
+        to={`/learn/category/${post.categorySlug}/${post.slug}`}
+        replace
+      />
+    );
+  }
+
   const relatedPosts = learnPosts
+    .filter(
+      (item) =>
+        item.slug !== post.slug && item.categorySlug === post.categorySlug
+    )
+    .slice(0, 5);
+
+  const fallbackPosts = learnPosts
     .filter((item) => item.slug !== post.slug)
     .slice(0, 5);
+
+  const learnMorePosts = relatedPosts.length > 0 ? relatedPosts : fallbackPosts;
 
   return (
     <AnimatedPage>
       <LearnArticleSchema post={post} />
+
       <SEO
         title={post.title}
         description={post.description}
-        path={`/learn/${post.slug}`}
+        path={`/learn/category/${post.categorySlug}/${post.slug}`}
         type="article"
       />
-      <section className="section-padding bg-slate-50 dark:bg-navy-950">
+
+      <section className="section-padding">
         <div className="container-page">
           <Breadcrumbs />
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
-            {/* CENTER - LEARN CONTENT */}
             <div>
               {post.slug === "what-is-crypto-spot-trading" ? (
                 <CryptoSpotTrading />
@@ -69,14 +89,16 @@ export default function LearnDetail() {
                 <CryptoWallets />
               ) : post.slug === "why-emotional-trading-is-dangerous" ? (
                 <EmotionalTrading />
-              ) : post.slug === "how-to-control-fear-and-greed-in-crypto-trading" ? (
-               <FearAndGreed />
-              ) : post.slug === "the-importance-of-patience-in-crypto-trading" ? (
-               <PatienceTrading />
-              ) : post.slug === "never-invest-more-than-you-can-afford-to-lose" ? (
-               <AffordToLose />
+              ) : post.slug ===
+                "how-to-control-fear-and-greed-in-crypto-trading" ? (
+                <FearAndGreed />
+              ) : post.slug ===
+                "the-importance-of-patience-in-crypto-trading" ? (
+                <PatienceTrading />
+              ) : post.slug ===
+                "never-invest-more-than-you-can-afford-to-lose" ? (
+                <AffordToLose />
               ) : (
-                
                 <article className="premium-card p-8 sm:p-10">
                   <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
                     <span className="rounded-full bg-blue-50 px-3 py-1 font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
@@ -105,18 +127,17 @@ export default function LearnDetail() {
               )}
             </div>
 
-            {/* RIGHT SIDE - LEARN MORE */}
             <aside>
-              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/5">
+              <div className="sticky top-28 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-navy-900">
                 <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   Learn More
                 </h3>
 
                 <div className="mt-5 divide-y divide-slate-200 dark:divide-white/10">
-                  {relatedPosts.map((item) => (
+                  {learnMorePosts.map((item) => (
                     <Link
                       key={item.slug}
-                      to={`/learn/${item.slug}`}
+                      to={`/learn/category/${item.categorySlug}/${item.slug}`}
                       className="group flex items-center justify-between gap-4 py-4"
                     >
                       <span className="text-sm font-semibold leading-6 text-slate-700 transition group-hover:text-blue-600 dark:text-slate-300 dark:group-hover:text-blue-300">
