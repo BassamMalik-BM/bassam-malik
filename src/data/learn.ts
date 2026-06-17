@@ -2,6 +2,16 @@ import type { LearnPost } from '../types';
 
 export const learnPosts: LearnPost[] = [
   {
+  slug: 'what-is-ethereum-and-why-does-it-matter',
+  title: 'What Is Ethereum and Why Does It Matter?',
+  description:
+    'Learn what Ethereum is, how it works, what smart contracts are, and why Ethereum plays an important role in crypto trading and blockchain technology.',
+  category: 'Ethereum Basics',
+   categorySlug: 'ethereum-basics',
+  readingTime: '12 min read',
+  datePublished: "2026-06-16",
+  },
+  {
     slug: 'never-invest-more-than-you-can-afford-to-lose',
     title: 'Never Invest More Than You Can Afford to Lose in Crypto Trading',
     description:

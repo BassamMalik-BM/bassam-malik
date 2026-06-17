@@ -20,6 +20,7 @@ import EmotionalTrading from "../learn/EmotionalTrading";
 import FearAndGreed from "../learn/FearAndGreed";
 import PatienceTrading from "../learn/PatienceTrading";
 import AffordToLose from "../learn/AffordToLose";
+import WhatIsEthereum from "../learn/WhatIsEthereum";
 
 export default function LearnDetail() {
   const { categorySlug, slug } = useParams();
@@ -98,6 +99,8 @@ export default function LearnDetail() {
               ) : post.slug ===
                 "never-invest-more-than-you-can-afford-to-lose" ? (
                 <AffordToLose />
+              ) : post.slug === "what-is-ethereum-and-why-does-it-matter" ? (
+                <WhatIsEthereum />
               ) : (
                 <article className="premium-card p-8 sm:p-10">
                   <div className="mb-5 flex flex-wrap items-center gap-3 text-sm">
