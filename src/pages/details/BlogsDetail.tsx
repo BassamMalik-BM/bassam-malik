@@ -25,6 +25,7 @@ import BestCryptoExchanges from "../blogs/BestCryptoExchanges";
 import HowLongDoesItTakeToLearnCrypto from "../blogs/HowLongDoesItTakeToLearnCrypto";
 import WhyMostBeginnersQuitCrypto from "../blogs/WhyMostBeginnersQuitCrypto";
 import WhyCryptoFeelsConfusingAtFirst from "../blogs/WhyCryptoFeelsConfusingAtFirst";
+import CryptoMyths from "../blogs/CryptoMyths";
 
 export default function BlogsDetail() {
   const { slug } = useParams();
@@ -118,6 +119,8 @@ export default function BlogsDetail() {
                 <WhyMostBeginnersQuitCrypto />
               ) : post.slug === "why-crypto-feels-confusing-at-first" ? (
                 <WhyCryptoFeelsConfusingAtFirst />  
+              ) : post.slug === "crypto-myths-beginners-should-stop-believing" ? (
+                <CryptoMyths />
               ) : (
                 
                 <article className="premium-card p-8 sm:p-10">

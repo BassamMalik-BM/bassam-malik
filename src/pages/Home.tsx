@@ -284,6 +284,48 @@ function BlogCarousel({ posts }: { posts: BlogPost[] }) {
 }
 
 export default function Home() {
+  const decisionWidget = {
+  tools: [
+    {
+      title: "Trading Journal",
+      text: "Track decisions, emotions, mistakes, and lessons.",
+      link: "/tools/trading-journal",
+    },
+    {
+      title: "Crypto Checklist",
+      text: "Review important points before making decisions.",
+      link: "/tools/crypto-checklist",
+    },
+    {
+      title: "Beginner Roadmap",
+      text: "Follow a structured crypto learning path.",
+      link: "/start-here",
+    },
+  ],
+  calculators: [
+    {
+      title: "Risk Calculator",
+      text: "Estimate how much risk fits your plan.",
+      link: "/calculators/risk-calculator",
+    },
+    {
+      title: "Profit Calculator",
+      text: "Estimate possible profit or loss before acting.",
+      link: "/calculators/profit-calculator",
+    },
+    {
+      title: "Trade Size Calculator",
+      text: "Calculate trade size with better structure.",
+      link: "/calculators/trade-size-calculator",
+    },
+  ],
+};
+
+const [activeDecisionTab, setActiveDecisionTab] =
+  useState<"tools" | "calculators">("tools");
+
+const activeDecisionItems = decisionWidget[activeDecisionTab];
+
   return (
     <AnimatedPage>
       <div className="relative overflow-hidden">
@@ -506,36 +548,107 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TRUST FIRST */}
-        <section className="overflow-hidden py-14 sm:py-16 lg:py-18">
-          <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="relative order-2 flex items-center justify-center lg:order-1">
-              <div className="absolute h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]" />
-              <div className="absolute bottom-0 right-10 h-60 w-60 rounded-full bg-emerald-500/15 blur-[90px]" />
+        {/* TRUST SECTION */}
+<section className="section-padding">
+  <div className="container-page">
 
-              <img
-                src="/images/home-page/crypto-coins.png"
-                alt="Crypto Education"
-                className="relative z-10 w-full max-w-[400px] select-none object-contain"
-              />
-            </div>
+    {/* TOP GRID */}
+    <div className="grid items-center gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      
+      {/* LEFT IMAGE */}
+      <div className="flex justify-end">
+        <img
+          src="/images/home-page/trust-section.png"
+          alt="Bassam Malik crypto education"
+          className="w-full max-w-[520px] object-contain"
+        />
+      </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
-              <SectionHeader
-                eyebrow="Trust first"
-                title="Education without hype, pressure, or unrealistic promises"
-                description="This website is built for beginners who want calm, practical, and responsible crypto education."
-              />
-            </motion.div>
+      {/* RIGHT CONTENT */}
+      <div>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-blue-600 dark:text-blue-400">
+          Trusted Education
+        </p>
+
+        <h2 className="text-3xl font-bold leading-tight text-slate-950 dark:text-white md:text-5xl">
+          Why trust Bassam Malik
+        </h2>
+
+        <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+          Bassam Malik helps beginners learn crypto trading, risk management,
+          wallets, and chart reading through clear, practical education.
+        </p>
+
+        {/* STATS */}
+        <div className="mt-10 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8 dark:border-white/10">
+          <div>
+            <h3 className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              20+
+            </h3>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+              Beginner guides
+            </p>
           </div>
-        </section>
 
+          <div>
+            <h3 className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              10+
+            </h3>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+              Core topics
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              100%
+            </h3>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+              Spot-focused
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* FULL WIDTH SOURCES */}
+    <div className="mt-4 border-t border-slate-200 pt-6 lg:pl-24 dark:border-white/10">
+      <div className="flex items-center gap-8 overflow-hidden">
+        
+        <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.35em] text-blue-600 dark:text-blue-400">
+          Sources
+        </p>
+
+        <div className="relative w-full max-w-[920px] overflow-hidden">
+          <div className="marquee-track flex w-max gap-12 whitespace-nowrap">
+            {[...Array(2)]
+              .flatMap(() => [
+                "Binance Academy",
+                "CoinMarketCap",
+                "CoinGecko",
+                "TradingView",
+                "Bitcoin.org",
+                "Ethereum.org",
+                "Glassnode",
+                "Investopedia",
+              ])
+              .map((source, index) => (
+                <span
+                  key={index}
+                  className="text-sm font-medium text-slate-600 dark:text-slate-300"
+                >
+                  {source}
+                </span>
+              ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+        
         {/* LATEST BLOG CAROUSEL */}
         <section className="py-14 sm:py-16 lg:py-18">
           <div className="container-page">
@@ -559,6 +672,91 @@ export default function Home() {
             />
           </div>
         </section>
+
+        {/* TOOLS + CALCULATORS WIDGET */}
+<section className="section-padding py-14 sm:py-16">
+  <div className="container-page">
+    <div className="rounded-[2rem] border border-slate-200 bg-white/70 p-8 shadow-xl backdrop-blur dark:border-white/10 dark:bg-navy-900/70 sm:p-10">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
+          Tools & Calculators
+        </p>
+
+        <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
+          Make smarter crypto decisions
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-2xl leading-8 text-slate-600 dark:text-slate-300">
+          Use practical tools and calculators to plan better, manage risk, and
+          avoid emotional decisions.
+        </p>
+      </div>
+
+      {/* TABS */}
+      <div className="mt-9 flex justify-center">
+        <div className="inline-flex rounded-2xl border border-slate-200 bg-slate-50 p-1 dark:border-white/10 dark:bg-white/5">
+          <button
+            type="button"
+            onClick={() => setActiveDecisionTab("tools")}
+            className={`rounded-xl px-6 py-3 text-sm font-bold transition ${
+              activeDecisionTab === "tools"
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                : "text-slate-600 hover:text-blue-600 dark:text-slate-300"
+            }`}
+          >
+            Tools
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveDecisionTab("calculators")}
+            className={`rounded-xl px-6 py-3 text-sm font-bold transition ${
+              activeDecisionTab === "calculators"
+                ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                : "text-slate-600 hover:text-blue-600 dark:text-slate-300"
+            }`}
+          >
+            Calculators
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-8 border-t border-slate-200 pt-8 dark:border-white/10">
+        <div className="grid gap-6 md:grid-cols-3">
+          {activeDecisionItems.map((item) => (
+            <Link
+              key={item.title}
+              to={item.link}
+              className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-navy-950"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-950 dark:text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    {item.text}
+                  </p>
+                </div>
+
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-500/10 dark:text-blue-300">
+                  <ArrowRight size={18} />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 border-t border-slate-200 pt-6 text-sm font-semibold text-slate-500 dark:border-white/10 dark:text-slate-400">
+          <span>Beginner-friendly</span>
+          <span>Risk-aware</span>
+          <span>No hype</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* RESOURCES CTA */}
         <section className="py-14 sm:py-16 lg:py-20">

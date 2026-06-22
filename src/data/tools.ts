@@ -3,6 +3,7 @@ import {
   CalendarDays,
   ClipboardCheck,
   NotebookPen,
+  ShieldCheck,
 } from 'lucide-react';
 
 import type { Tool } from '../types';
@@ -51,4 +52,14 @@ export const tools: Tool[] = [
     href: '/tools/dca-planner',
     icon: CalendarDays,
   },
+  {
+  title: 'Trade Setup Analyzer',
+  slug: 'trade-setup-analyzer',
+  description:
+    'Analyze your entry, stop loss, and take profit to calculate risk, reward, position size, and setup quality before trading.',
+  type: 'Interactive Tool',
+  cta: 'Analyze Setup',
+  href: '/tools/trade-setup-analyzer',
+  icon: ShieldCheck,
+ },
 ];

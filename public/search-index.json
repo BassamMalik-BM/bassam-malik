@@ -31,6 +31,16 @@
   },
   {
     "type": "Blog",
+    "title": "Crypto Myths Beginners Should Stop Believing Before Getting Started",
+    "description": "Discover the most common crypto myths beginners believe and learn the honest truth behind them before making any decisions.",
+    "category": "Beginner Guides",
+    "readingTime": "15 min read",
+    "image": "/images/crypto-myths/hero.png",
+    "url": "/blogs/crypto-myths-beginners-should-stop-believing",
+    "keywords": "crypto myths beginners should stop believing before getting started discover the most common crypto myths beginners believe and learn the honest truth behind them before making any decisions. beginner guides crypto myths beginners should stop believing"
+  },
+  {
+    "type": "Blog",
     "title": "Why Crypto Feels Confusing at First",
     "description": "Feeling lost in crypto? Learn why crypto feels confusing at first and how beginners can start understanding it better.",
     "category": "Crypto Basics",
@@ -368,6 +378,16 @@
     "image": "",
     "url": "/tools/dca-planner",
     "keywords": "dca planner plan a simple dollar-cost averaging schedule for crypto learning without emotional buying."
+  },
+  {
+    "type": "Tool",
+    "title": "Trade Setup Analyzer",
+    "description": "Analyze your entry, stop loss, and take profit to calculate risk, reward, position size, and setup quality before trading.",
+    "category": "",
+    "readingTime": "",
+    "image": "",
+    "url": "/tools/trade-setup-analyzer",
+    "keywords": "trade setup analyzer analyze your entry, stop loss, and take profit to calculate risk, reward, position size, and setup quality before trading."
   },
   {
     "type": "Calculator",

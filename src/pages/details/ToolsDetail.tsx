@@ -8,6 +8,7 @@ import RiskManagementChecklist from "../tools/RiskManagementChecklist";
 import TradingJournalTemplate from "../tools/TradingJournalTemplate";
 import TradingMistakeAnalyzer from "../tools/TradingMistakeAnalyzer";
 import DCAPlanner from "../tools/DCAPlanner";
+import TradeSetupAnalyzer from "../tools/TradeSetupAnalyzer";
 
 export default function ToolsDetail() {
   const { slug } = useParams();
@@ -36,6 +37,8 @@ export default function ToolsDetail() {
                 <TradingMistakeAnalyzer />
               ) : tool.slug === "dca-planner" ? (
                 <DCAPlanner />
+              ) : tool.slug === "trade-setup-analyzer" ? (
+                <TradeSetupAnalyzer /> 
               ) : (
                 <Navigate to="/tools" replace />
               )}

@@ -35,6 +35,17 @@ export const blogPosts: BlogPost[] = [
     featured: true
   },
   {
+  slug: "crypto-myths-beginners-should-stop-believing",
+  title: "Crypto Myths Beginners Should Stop Believing Before Getting Started",
+  description:
+    "Discover the most common crypto myths beginners believe and learn the honest truth behind them before making any decisions.",
+  category: "Beginner Guides",
+  readingTime: "15 min read",
+  image: "/images/crypto-myths/hero.png",
+  date: "2026-06-22",
+  featured: false,
+  },
+  {
   slug: "why-crypto-feels-confusing-at-first",
   title: "Why Crypto Feels Confusing at First",
   description:

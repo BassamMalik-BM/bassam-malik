@@ -22,6 +22,8 @@ import CookiesPolicy from "./pages/CookiesPolicy";
 import LearnCategories from "./pages/LearnCategories";
 import LearnCategory from "./pages/LearnCategory";
 import Sources from "./pages/Sources";
+import EditorialPolicy from "./pages/EditorialPolicy";
+import Start from "./pages/Start";
 import NotFound from "./pages/NotFound";
 
 import BlogsDetail from "./pages/details/BlogsDetail";
@@ -55,10 +57,7 @@ export default function App() {
         <Route path="/learn" element={<Learn />} />
         <Route path="/learn/categories" element={<LearnCategories />} />
         <Route path="/learn/categories/:category" element={<LearnCategory />} />
-        <Route
-          path="/learn/categories/:categorySlug/:slug"
-          element={<LearnDetail />}
-        />
+        <Route path="/learn/categories/:categorySlug/:slug" element={<LearnDetail />} />
         <Route path="/learn/:slug" element={<LearnDetail />} />
 
         {/* BLOGS */}
@@ -84,6 +83,8 @@ export default function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/cookies-policy" element={<CookiesPolicy />} />
         <Route path="/sources" element={<Sources />} />
+        <Route path="/editorial-policy" element={<EditorialPolicy />} />
+        <Route path="/start-here" element={<Start />} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />

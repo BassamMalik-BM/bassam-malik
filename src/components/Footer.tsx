@@ -9,15 +9,23 @@ import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
   const quickLinks = [
-    { name: "About Us", path: "/about" },
-    { name: "FAQ", path: "/faq" },
+    { name: "Start Here", path: "/start-here" },
+    { name: "Learn", path: "/learn" },
+    { name: "Blogs", path: "/blogs" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const trustLinks = [
+    { name: "About the Author", path: "/author" },
     { name: "Sources", path: "/sources" },
-    { name: "Contact Us", path: "/contact" },
+    { name: "Editorial Policy", path: "/editorial-policy" },
+    { name: "Risk Disclaimer", path: "/risk-disclaimer" },
   ];
 
   const legalLinks = [
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms & Conditions", path: "/terms-and-conditions" },
     { name: "Cookies Policy", path: "/cookies-policy" },
-    { name: "Risk Disclaimer", path: "/risk-disclaimer" },
   ];
 
   const socialLinks = [
@@ -65,9 +73,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
-      <div className="container-page py-8">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.8fr_0.8fr_1fr]">
-          {/* LEFT */}
+      <div className="container-page py-10">
+        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.9fr_0.9fr_0.9fr_1fr]">
+          {/* BRAND */}
           <div>
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 text-lg font-bold text-white">
@@ -80,26 +88,44 @@ export default function Footer() {
                 </h2>
 
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Learn crypto trading with clarity and confidence.
+                  Learn | Trade | Grow
                 </p>
               </div>
             </div>
 
             <p className="max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Beginner-friendly resources for learning market structure, risk
-              management, trading journals, and safer decision-making in crypto
-              markets.
+              Beginner-friendly crypto education focused on market structure,
+              risk management, trading journals, and safer long-term decision-making.
             </p>
           </div>
 
-          {/* About */}
+          {/* QUICK LINKS */}
           <div>
             <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
-              About
+              Quick Links
             </h3>
 
             <div className="flex flex-col gap-3 text-sm">
               {quickLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-slate-600 transition hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* TRUST */}
+          <div>
+            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
+              Trust & Transparency
+            </h3>
+
+            <div className="flex flex-col gap-3 text-sm">
+              {trustLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -165,29 +191,12 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-slate-50 py-6 dark:border-white/10 dark:bg-slate-900/60">
         <div className="container-page flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-300 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            © 2026 Bassam Malik · Educational content only. Not financial
-            advice.
+            © 2026 Bassam Malik · Educational content only. Not financial advice.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              to="/privacy-policy"
-              className="transition hover:text-blue-600 dark:hover:text-blue-300"
-            >
-              Privacy Policy
-            </Link>
-
-            <span className="hidden text-slate-300 dark:text-slate-600 sm:inline">
-              |
-            </span>
-
-            <Link
-              to="/terms-and-conditions"
-              className="transition hover:text-blue-600 dark:hover:text-blue-300"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            Built for beginners. Focused on clarity, discipline, and long-term growth.
+          </p>
         </div>
       </div>
     </footer>
