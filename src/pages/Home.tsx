@@ -749,9 +749,9 @@ const activeDecisionItems = decisionWidget[activeDecisionTab];
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6 border-t border-slate-200 pt-6 text-sm font-semibold text-slate-500 dark:border-white/10 dark:text-slate-400">
-          <span>Beginner-friendly</span>
-          <span>Risk-aware</span>
-          <span>No hype</span>
+          <span>Learn</span>
+          <span>Trade</span>
+          <span>Grow</span>
         </div>
       </div>
     </div>
