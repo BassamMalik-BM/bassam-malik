@@ -1,152 +1,712 @@
 [
   {
-    "type": "Resource",
-    "title": "Beginner Crypto Guide",
-    "description": "A beginner-friendly guide to understanding crypto markets and responsible learning.",
-    "category": "",
-    "readingTime": "",
-    "image": "",
-    "url": "/downloads/beginner-crypto-guide.pdf",
-    "keywords": "beginner crypto guide a beginner-friendly guide to understanding crypto markets and responsible learning."
+    "type": "Article",
+    "title": "What Is Bitcoin?",
+    "description": "What is Bitcoin explained in plain English. Learn how Bitcoin works, why it has value, and what beginners should know before learning more.",
+    "category": "Bitcoin",
+    "readingTime": "10 min read",
+    "image": "/images/articles/bitcoin/what-is-bitcoin/hero.png",
+    "url": "/learn/bitcoin/what-is-bitcoin",
+    "keywords": "what is bitcoin? what is bitcoin explained in plain english. learn how bitcoin works, why it has value, and what beginners should know before learning more. bitcoin bitcoin what is bitcoin"
   },
   {
-    "type": "Resource",
-    "title": "Crypto Terms Glossary",
-    "description": "Understand common crypto and trading terminology explained in simple words.",
-    "category": "",
-    "readingTime": "",
-    "image": "",
-    "url": "/downloads/crypto-terms-glossary.pdf",
-    "keywords": "crypto terms glossary understand common crypto and trading terminology explained in simple words."
+    "type": "Article",
+    "title": "Who Created Bitcoin?",
+    "description": "Who created Bitcoin explained in plain English. Learn about Satoshi Nakamoto, the Bitcoin Whitepaper, and why Bitcoin's creator remains unknown.",
+    "category": "Bitcoin",
+    "readingTime": "7 min read",
+    "image": "/images/articles/bitcoin/who-created-bitcoin/hero.png",
+    "url": "/learn/bitcoin/who-created-bitcoin",
+    "keywords": "who created bitcoin? who created bitcoin explained in plain english. learn about satoshi nakamoto, the bitcoin whitepaper, and why bitcoin's creator remains unknown. bitcoin bitcoin who created bitcoin"
   },
   {
-    "type": "Resource",
-    "title": "Support & Resistance Guide",
-    "description": "Learn how support and resistance levels work and how beginners identify price zones.",
-    "category": "",
-    "readingTime": "",
-    "image": "",
-    "url": "/downloads/support-resistance-guide.pdf",
-    "keywords": "support & resistance guide learn how support and resistance levels work and how beginners identify price zones."
+    "type": "Article",
+    "title": "Why Was Bitcoin Created?",
+    "description": "Why was Bitcoin created explained in plain English. Learn the problems it was designed to solve and the ideas behind Satoshi Nakamoto's vision.",
+    "category": "Bitcoin",
+    "readingTime": "8 min read",
+    "image": "/images/articles/bitcoin/why-was-bitcoin-created/hero.png",
+    "url": "/learn/bitcoin/why-was-bitcoin-created",
+    "keywords": "why was bitcoin created? why was bitcoin created explained in plain english. learn the problems it was designed to solve and the ideas behind satoshi nakamoto's vision. bitcoin bitcoin why was bitcoin created"
   },
   {
-    "type": "Resource",
-    "title": "Trading Tools & Indicators",
-    "description": "Learn beginner-friendly trading tools and indicators used to understand market behavior.",
-    "category": "",
+    "type": "Article",
+    "title": "What Are Smart Contracts?",
+    "description": "What are smart contracts explained in plain English. Learn how they work, where they're used, and their advantages and limitations.",
+    "category": "Blockchain",
+    "readingTime": "8 min read",
+    "image": "/images/articles/blockchain/what-are-smart-contracts/hero.png",
+    "url": "/learn/blockchain/what-are-smart-contracts",
+    "keywords": "what are smart contracts? what are smart contracts explained in plain english. learn how they work, where they're used, and their advantages and limitations. blockchain blockchain what are smart contracts"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Blockchain?",
+    "description": "What is blockchain explained in plain English. Learn how blockchain works, why it's considered secure, and what beginners should know before learning more.",
+    "category": "Blockchain",
+    "readingTime": "10 min read",
+    "image": "/images/articles/blockchain/what-is-blockchain/hero.png",
+    "url": "/learn/blockchain/what-is-blockchain",
+    "keywords": "what is blockchain? what is blockchain explained in plain english. learn how blockchain works, why it's considered secure, and what beginners should know before learning more. blockchain blockchain what is blockchain"
+  },
+  {
+    "type": "Article",
+    "title": "What Is DeFi?",
+    "description": "What is DeFi explained in plain English. Learn what decentralized finance means, how it works, and what beginners should know before exploring it.",
+    "category": "Blockchain",
+    "readingTime": "8 min read",
+    "image": "/images/articles/blockchain/what-is-defi/hero.png",
+    "url": "/learn/blockchain/what-is-defi",
+    "keywords": "what is defi? what is defi explained in plain english. learn what decentralized finance means, how it works, and what beginners should know before exploring it. blockchain blockchain what is defi"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Web3?",
+    "description": "What is Web3 explained in plain English. Learn how it differs from today's internet, how blockchain fits in, and what beginners should know.",
+    "category": "Blockchain",
+    "readingTime": "8 min read",
+    "image": "/images/articles/blockchain/what-is-web3/hero.png",
+    "url": "/learn/blockchain/what-is-web3",
+    "keywords": "what is web3? what is web3 explained in plain english. learn how it differs from today's internet, how blockchain fits in, and what beginners should know. blockchain blockchain what is web3"
+  },
+  {
+    "type": "Article",
+    "title": "Bitcoin vs Ethereum",
+    "description": "Bitcoin vs Ethereum compared side by side. Understand the differences in purpose, technology, and use cases between the two largest blockchain networks.",
+    "category": "Comparisons",
+    "readingTime": "11 min read",
+    "image": "/images/articles/comparisons/bitcoin-vs-ethereum/hero.png",
+    "url": "/learn/comparisons/bitcoin-vs-ethereum",
+    "keywords": "bitcoin vs ethereum bitcoin vs ethereum compared side by side. understand the differences in purpose, technology, and use cases between the two largest blockchain networks. comparisons comparisons bitcoin vs ethereum"
+  },
+  {
+    "type": "Article",
+    "title": "Hot Wallet vs Cold Wallet",
+    "description": "Hot wallet vs cold wallet compared side by side. Understand the differences, advantages, and trade-offs to make an informed security decision.",
+    "category": "Wallets",
+    "readingTime": "8 min read",
+    "image": "/images/articles/comparisons/hot-wallet-vs-cold-wallet/hero.png",
+    "url": "/learn/wallets/hot-wallet-vs-cold-wallet",
+    "keywords": "hot wallet vs cold wallet hot wallet vs cold wallet compared side by side. understand the differences, advantages, and trade-offs to make an informed security decision. wallets wallets hot wallet vs cold wallet"
+  },
+  {
+    "type": "Article",
+    "title": "Spot Trading vs Futures Trading",
+    "description": "Spot trading vs futures trading compared side by side. Understand the differences in ownership, risk, and profit potential between the two.",
+    "category": "Comparisons",
+    "readingTime": "8 min read",
+    "image": "/images/articles/comparisons/spot-trading-vs-futures/hero.png",
+    "url": "/learn/comparisons/spot-trading-vs-futures",
+    "keywords": "spot trading vs futures trading spot trading vs futures trading compared side by side. understand the differences in ownership, risk, and profit potential between the two. comparisons comparisons spot trading vs futures"
+  },
+  {
+    "type": "Article",
+    "title": "Common Crypto Scams",
+    "description": "Common crypto scams explained in plain English. Learn the major scam types, shared warning signs, and how to reduce your risk as a beginner.",
+    "category": "Crypto Security",
+    "readingTime": "8 min read",
+    "image": "/images/articles/crypto-security/common-crypto-scams/hero.png",
+    "url": "/learn/crypto-security/common-crypto-scams",
+    "keywords": "common crypto scams common crypto scams explained in plain english. learn the major scam types, shared warning signs, and how to reduce your risk as a beginner. crypto security crypto security common crypto scams"
+  },
+  {
+    "type": "Article",
+    "title": "Keeping Crypto Safe",
+    "description": "Learn how to keep your crypto safe with beginner-friendly security habits, common risks to watch for, and why personal responsibility matters in cryptocurrency.",
+    "category": "Crypto Security",
+    "readingTime": "9 min read",
+    "image": "/images/articles/crypto-security/keeping-crypto-safe/hero.png",
+    "url": "/learn/crypto-security/keeping-crypto-safe",
+    "keywords": "keeping crypto safe learn how to keep your crypto safe with beginner-friendly security habits, common risks to watch for, and why personal responsibility matters in cryptocurrency. crypto security crypto security keeping crypto safe"
+  },
+  {
+    "type": "Article",
+    "title": "How Does Cryptocurrency Work?",
+    "description": "How does cryptocurrency work explained in plain English. Learn how transactions are created, verified, recorded, and confirmed, step by step.",
+    "category": "Crypto Basics",
+    "readingTime": "8 min read",
+    "image": "/images/articles/cryptocurrency/how-does-cryptocurrency-works/hero.png",
+    "url": "/learn/crypto-basics/how-does-cryptocurrency-work",
+    "keywords": "how does cryptocurrency work? how does cryptocurrency work explained in plain english. learn how transactions are created, verified, recorded, and confirmed, step by step. crypto basics crypto basics how does cryptocurrency work"
+  },
+  {
+    "type": "Article",
+    "title": "What Is a Crypto Coin?",
+    "description": "What is a crypto coin explained in plain English. Learn how coins work, why they exist, and how they differ from crypto tokens.",
+    "category": "Crypto Basics",
+    "readingTime": "7 min read",
+    "image": "/images/articles/cryptocurrency/what-is-a-crypto-coin/hero.png",
+    "url": "/learn/crypto-basics/what-is-a-crypto-coin",
+    "keywords": "what is a crypto coin? what is a crypto coin explained in plain english. learn how coins work, why they exist, and how they differ from crypto tokens. crypto basics crypto basics what is a crypto coin"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Cryptocurrency?",
+    "description": "What is cryptocurrency explained in plain English. Understand the basics, why it matters, and where to go next in your learning path.",
+    "category": "Crypto Basics",
+    "readingTime": "9 min read",
+    "image": "/images/articles/cryptocurrency/what-is-cryptocurrency/hero.png",
+    "url": "/learn/crypto-basics/what-is-cryptocurrency",
+    "keywords": "what is cryptocurrency? what is cryptocurrency explained in plain english. understand the basics, why it matters, and where to go next in your learning path. crypto basics crypto basics what is cryptocurrency"
+  },
+  {
+    "type": "Article",
+    "title": "How Ethereum Works",
+    "description": "How Ethereum works explained in plain English. Learn how transactions are processed, what validators do, and how smart contracts execute.",
+    "category": "Ethereum",
+    "readingTime": "8 min read",
+    "image": "/images/articles/ethereum/how-ethereum-works/hero.png",
+    "url": "/learn/ethereum/how-ethereum-works",
+    "keywords": "how ethereum works how ethereum works explained in plain english. learn how transactions are processed, what validators do, and how smart contracts execute. ethereum ethereum how ethereum works"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Ethereum?",
+    "description": "What is Ethereum explained in plain English. Learn what Ethereum and Ether actually are, what you can build on it, and why it matters.",
+    "category": "Ethereum",
+    "readingTime": "8 min read",
+    "image": "/images/articles/ethereum/what-is-ethereum/hero.png",
+    "url": "/learn/ethereum/what-is-ethereum",
+    "keywords": "what is ethereum? what is ethereum explained in plain english. learn what ethereum and ether actually are, what you can build on it, and why it matters. ethereum ethereum what is ethereum"
+  },
+  {
+    "type": "Article",
+    "title": "Why Ethereum Is Different",
+    "description": "Why Ethereum was created and what makes it different from Bitcoin and earlier blockchains, explained in plain English.",
+    "category": "Ethereum",
+    "readingTime": "9 min read",
+    "image": "/images/articles/ethereum/why-ethereum-is-different/hero.png",
+    "url": "/learn/ethereum/why-ethereum-is-different",
+    "keywords": "why ethereum is different why ethereum was created and what makes it different from bitcoin and earlier blockchains, explained in plain english. ethereum ethereum why ethereum is different"
+  },
+  {
+    "type": "Article",
+    "title": "How to Choose a Crypto Exchange",
+    "description": "How to choose a crypto exchange explained in plain English. Learn what to compare, warning signs to watch for, and mistakes beginners should avoid.",
+    "category": "Exchanges",
+    "readingTime": "8 min read",
+    "image": "/images/articles/exchanges/how-to-choose-a-crypto-exchange/hero.png",
+    "url": "/learn/exchanges/how-to-choose-a-crypto-exchange",
+    "keywords": "how to choose a crypto exchange how to choose a crypto exchange explained in plain english. learn what to compare, warning signs to watch for, and mistakes beginners should avoid. exchanges exchanges how to choose a crypto exchange"
+  },
+  {
+    "type": "Article",
+    "title": "What Is a Crypto Exchange and How Does It Work?",
+    "description": "What is a crypto exchange explained in plain English. Learn how crypto exchanges work, what you can do on one, and what beginners should know first.",
+    "category": "Exchanges",
+    "readingTime": "10 min read",
+    "image": "/images/articles/exchanges/what-is-a-crypto-exchange/hero.png",
+    "url": "/learn/exchanges/what-is-a-crypto-exchange",
+    "keywords": "what is a crypto exchange and how does it work? what is a crypto exchange explained in plain english. learn how crypto exchanges work, what you can do on one, and what beginners should know first. exchanges exchanges what is a crypto exchange"
+  },
+  {
+    "type": "Article",
+    "title": "What Are Momentum Indicators?",
+    "description": "What are momentum indicators explained in plain English. Learn what momentum means, how these tools work, and how they fit into technical analysis.",
+    "category": "Indicators",
+    "readingTime": "8 min read",
+    "image": "/images/articles/indicators/what-are-momentum-indicators/hero.png",
+    "url": "/learn/indicators/what-are-momentum-indicators",
+    "keywords": "what are momentum indicators? what are momentum indicators explained in plain english. learn what momentum means, how these tools work, and how they fit into technical analysis. indicators indicators what are momentum indicators"
+  },
+  {
+    "type": "Article",
+    "title": "What Are Trading Indicators?",
+    "description": "What are trading indicators explained in plain English. Learn how they work, the main categories, and how beginners should approach using them.",
+    "category": "Indicators",
+    "readingTime": "9 min read",
+    "image": "/images/articles/indicators/what-are-trading-indicators/hero.png",
+    "url": "/learn/indicators/what-are-trading-indicators",
+    "keywords": "what are trading indicators? what are trading indicators explained in plain english. learn how they work, the main categories, and how beginners should approach using them. indicators indicators what are trading indicators"
+  },
+  {
+    "type": "Article",
+    "title": "What Are Volatility Indicators?",
+    "description": "What are volatility indicators explained in plain English. Learn what market volatility means, how these tools work, and how they support trading decisions.",
+    "category": "Indicators",
+    "readingTime": "8 min read",
+    "image": "/images/articles/indicators/what-are-volatility-indicators/hero.png",
+    "url": "/learn/indicators/what-are-volatility-indicators",
+    "keywords": "what are volatility indicators? what are volatility indicators explained in plain english. learn what market volatility means, how these tools work, and how they support trading decisions. indicators indicators what are volatility indicators"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Crypto Volatility?",
+    "description": "What is crypto volatility explained in plain English. Learn why cryptocurrency prices move quickly and why volatility is a normal part of the market.",
+    "category": "Market",
+    "readingTime": "8 min read",
+    "image": "/images/articles/market/what-is-crypto-volatility/hero.png",
+    "url": "/learn/market/what-is-crypto-volatility",
+    "keywords": "what is crypto volatility? what is crypto volatility explained in plain english. learn why cryptocurrency prices move quickly and why volatility is a normal part of the market. market market what is crypto volatility"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Market Capitalization?",
+    "description": "What is market capitalization explained in plain English. Learn how it's calculated, why it matters, and what it doesn't tell you about a cryptocurrency.",
+    "category": "Market",
+    "readingTime": "8 min read",
+    "image": "/images/articles/market/what-is-market-capitalization/hero.png",
+    "url": "/learn/market/what-is-market-capitalization",
+    "keywords": "what is market capitalization? what is market capitalization explained in plain english. learn how it's calculated, why it matters, and what it doesn't tell you about a cryptocurrency. market market what is market capitalization"
+  },
+  {
+    "type": "Article",
+    "title": "What Moves Crypto Prices?",
+    "description": "What moves crypto prices explained in plain English. Learn the major factors behind price movement and why no single cause explains it all.",
+    "category": "Market",
+    "readingTime": "8 min read",
+    "image": "/images/articles/market/what-moves-crypto-prices/hero.png",
+    "url": "/learn/market/what-moves-crypto-prices",
+    "keywords": "what moves crypto prices? what moves crypto prices explained in plain english. learn the major factors behind price movement and why no single cause explains it all. market market what moves crypto prices"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Position Sizing?",
+    "description": "What is position sizing explained in plain English. Learn why it matters, what affects it, and how it protects your trading capital.",
+    "category": "Risk Management",
+    "readingTime": "8 min read",
+    "image": "/images/articles/risk-management/what-is-position-sizing/hero.png",
+    "url": "/learn/risk-management/what-is-position-sizing",
+    "keywords": "what is position sizing? what is position sizing explained in plain english. learn why it matters, what affects it, and how it protects your trading capital. risk management risk management what is position sizing"
+  },
+  {
+    "type": "Article",
+    "title": "What Is the Risk-to-Reward Ratio?",
+    "description": "What is the risk-to-reward ratio explained in plain English. Learn how it's calculated, why it matters, and why win rate isn't everything.",
+    "category": "Risk Management",
+    "readingTime": "8 min read",
+    "image": "/images/articles/risk-management/what-is-the-risk-to-reward-ratio/hero.png",
+    "url": "/learn/risk-management/what-is-the-risk-to-reward-ratio",
+    "keywords": "what is the risk-to-reward ratio? what is the risk-to-reward ratio explained in plain english. learn how it's calculated, why it matters, and why win rate isn't everything. risk management risk management what is the risk to reward ratio"
+  },
+  {
+    "type": "Article",
+    "title": "Why Risk Management Matters",
+    "description": "Learn why risk management is one of the most important skills in crypto and trading, and why protecting your capital matters more than chasing quick profits.",
+    "category": "Risk Management",
+    "readingTime": "8 min read",
+    "image": "/images/articles/risk-management/why-risk-management-matters/hero.png",
+    "url": "/learn/risk-management/why-risk-management-matters",
+    "keywords": "why risk management matters learn why risk management is one of the most important skills in crypto and trading, and why protecting your capital matters more than chasing quick profits. risk management risk management why risk management matters"
+  },
+  {
+    "type": "Article",
+    "title": "What Are Chart Timeframes?",
+    "description": "What are chart timeframes explained in plain English. Learn how timeframes work, common examples, and why they show the same market differently.",
+    "category": "Technical Analysis",
+    "readingTime": "8 min read",
+    "image": "/images/articles/technical-analysis/what-are-chart-timeframes/hero.png",
+    "url": "/learn/technical-analysis/what-are-chart-timeframes",
+    "keywords": "what are chart timeframes? what are chart timeframes explained in plain english. learn how timeframes work, common examples, and why they show the same market differently. technical analysis technical analysis what are chart timeframes"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Technical Analysis?",
+    "description": "What is technical analysis explained in plain English. Learn the core principles, how traders use it, and what it can and cannot do.",
+    "category": "Technical Analysis",
+    "readingTime": "9 min read",
+    "image": "/images/articles/technical-analysis/what-is-technical-analysis/hero.png",
+    "url": "/learn/technical-analysis/what-is-technical-analysis",
+    "keywords": "what is technical analysis? what is technical analysis explained in plain english. learn the core principles, how traders use it, and what it can and cannot do. technical analysis technical analysis what is technical analysis"
+  },
+  {
+    "type": "Article",
+    "title": "What Is a Limit Order?",
+    "description": "What is a limit order explained in plain English. Learn how it works, when traders use it, and its advantages and limitations.",
+    "category": "Trading",
+    "readingTime": "7 min read",
+    "image": "/images/articles/trading/what-is-a-limit-order/hero.png",
+    "url": "/learn/trading/what-is-a-limit-order",
+    "keywords": "what is a limit order? what is a limit order explained in plain english. learn how it works, when traders use it, and its advantages and limitations. trading trading what is a limit order"
+  },
+  {
+    "type": "Article",
+    "title": "What Is a Market Order?",
+    "description": "What is a market order explained in plain English. Learn how it works, when traders use it, and its advantages and limitations.",
+    "category": "Trading",
+    "readingTime": "7 min read",
+    "image": "/images/articles/trading/what-is-a-market-order/hero.png",
+    "url": "/learn/trading/what-is-a-market-order",
+    "keywords": "what is a market order? what is a market order explained in plain english. learn how it works, when traders use it, and its advantages and limitations. trading trading what is a market order"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Futures Trading?",
+    "description": "What is futures trading explained in plain English. Learn how it works, how it differs from spot trading, and the risks beginners should understand.",
+    "category": "Trading",
+    "readingTime": "8 min read",
+    "image": "/images/articles/trading/what-is-futures-trading/hero.png",
+    "url": "/learn/trading/what-is-futures-trading",
+    "keywords": "what is futures trading? what is futures trading explained in plain english. learn how it works, how it differs from spot trading, and the risks beginners should understand. trading trading what is futures trading"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Spot Trading?",
+    "description": "What is spot trading explained in plain English. Learn how spot trading works, where it happens, and why it's the simplest way for beginners to buy cryptocurrency.",
+    "category": "Trading",
+    "readingTime": "9 min read",
+    "image": "/images/articles/trading/what-is-spot-trading/hero.png",
+    "url": "/learn/trading/what-is-spot-trading",
+    "keywords": "what is spot trading? what is spot trading explained in plain english. learn how spot trading works, where it happens, and why it's the simplest way for beginners to buy cryptocurrency. trading trading what is spot trading"
+  },
+  {
+    "type": "Article",
+    "title": "What Is FOMO in Trading?",
+    "description": "What is FOMO in trading explained in plain English. Learn why it happens, how to recognize the warning signs, and how to avoid it.",
+    "category": "Trading Psychology",
+    "readingTime": "7 min read",
+    "image": "/images/articles/trading-psychology/what-is-fomo-in-trading/hero.png",
+    "url": "/learn/trading-psychology/what-is-fomo-in-trading",
+    "keywords": "what is fomo in trading? what is fomo in trading explained in plain english. learn why it happens, how to recognize the warning signs, and how to avoid it. trading psychology trading psychology what is fomo in trading"
+  },
+  {
+    "type": "Article",
+    "title": "What Is Revenge Trading?",
+    "description": "What is revenge trading explained in plain English. Learn why it happens, how to recognize the warning signs, and how to avoid it.",
+    "category": "Trading Psychology",
+    "readingTime": "7 min read",
+    "image": "/images/articles/trading-psychology/what-is-revenge-trading/hero.png",
+    "url": "/learn/trading-psychology/what-is-revenge-trading",
+    "keywords": "what is revenge trading? what is revenge trading explained in plain english. learn why it happens, how to recognize the warning signs, and how to avoid it. trading psychology trading psychology what is revenge trading"
+  },
+  {
+    "type": "Article",
+    "title": "Why Emotional Trading Is Dangerous",
+    "description": "Learn why emotional trading is dangerous, how feelings influence trading decisions, and how beginners can start developing emotional discipline.",
+    "category": "Trading Psychology",
+    "readingTime": "9 min read",
+    "image": "/images/articles/trading-psychology/why-emotional-trading-is-dangerous/hero.png",
+    "url": "/learn/trading-psychology/why-emotional-trading-is-dangerous",
+    "keywords": "why emotional trading is dangerous learn why emotional trading is dangerous, how feelings influence trading decisions, and how beginners can start developing emotional discipline. trading psychology trading psychology why emotional trading is dangerous"
+  },
+  {
+    "type": "Article",
+    "title": "How Crypto Wallets Work",
+    "description": "How crypto wallets work explained in plain English. Learn what public and private keys are, how transactions happen, and why crypto is not stored in a wallet.",
+    "category": "Wallets",
+    "readingTime": "8 min read",
+    "image": "/images/articles/wallets/how-crypto-wallet-works/hero.png",
+    "url": "/learn/wallets/how-crypto-wallets-work",
+    "keywords": "how crypto wallets work how crypto wallets work explained in plain english. learn what public and private keys are, how transactions happen, and why crypto is not stored in a wallet. wallets wallets how crypto wallets work"
+  },
+  {
+    "type": "Article",
+    "title": "What Is a Crypto Wallet?",
+    "description": "What is a crypto wallet explained in plain English. Learn how crypto wallets work, the main types, and what beginners should know before buying any cryptocurrency.",
+    "category": "Wallets",
+    "readingTime": "9 min read",
+    "image": "/images/articles/wallets/what-is-a-crypto-wallet/hero.png",
+    "url": "/learn/wallets/what-is-a-crypto-wallet",
+    "keywords": "what is a crypto wallet? what is a crypto wallet explained in plain english. learn how crypto wallets work, the main types, and what beginners should know before buying any cryptocurrency. wallets wallets what is a crypto wallet"
+  },
+  {
+    "type": "Tool",
+    "title": "Trading Journal",
+    "description": "Record completed trades, review decisions, track mistakes, and identify patterns in your trading behavior.",
+    "category": "Tracking",
     "readingTime": "",
     "image": "",
-    "url": "/downloads/trading-tools-and-indicators.pdf",
-    "keywords": "trading tools & indicators learn beginner-friendly trading tools and indicators used to understand market behavior."
+    "url": "/tools/trading-journal",
+    "keywords": "trading journal record completed trades, review decisions, track mistakes, and identify patterns in your trading behavior. tracking reviewing past trades and improving discipline trading journal"
+  },
+  {
+    "type": "Tool",
+    "title": "Portfolio Manager",
+    "description": "Track owned assets, invested amounts, allocation, average entry prices, and overall portfolio structure.",
+    "category": "Tracking",
+    "readingTime": "",
+    "image": "",
+    "url": "/tools/portfolio-manager",
+    "keywords": "portfolio manager track owned assets, invested amounts, allocation, average entry prices, and overall portfolio structure. tracking managing cryptocurrency holdings in one place portfolio manager"
+  },
+  {
+    "type": "Tool",
+    "title": "Watchlist",
+    "description": "Save assets you want to monitor without adding them to your investment portfolio.",
+    "category": "Tracking",
+    "readingTime": "",
+    "image": "",
+    "url": "/tools/watchlist",
+    "keywords": "watchlist save assets you want to monitor without adding them to your investment portfolio. tracking organizing cryptocurrencies you are researching watchlist"
+  },
+  {
+    "type": "Tool",
+    "title": "Trading Checklist",
+    "description": "Run through a structured pre-trade checklist before entering a position.",
+    "category": "Trading",
+    "readingTime": "",
+    "image": "",
+    "url": "/tools/trading-checklist",
+    "keywords": "trading checklist run through a structured pre-trade checklist before entering a position. trading reducing impulsive and poorly planned trades trading checklist"
   },
   {
     "type": "Tool",
     "title": "Risk Management Checklist",
-    "description": "Use an interactive checklist before, during, and after making a trading decision.",
-    "category": "",
+    "description": "Review important risk rules before taking a trade and confirm that your risk process is being followed.",
+    "category": "Risk Management",
     "readingTime": "",
     "image": "",
     "url": "/tools/risk-management-checklist",
-    "keywords": "risk management checklist use an interactive checklist before, during, and after making a trading decision."
+    "keywords": "risk management checklist review important risk rules before taking a trade and confirm that your risk process is being followed. risk management maintaining consistent risk discipline risk management checklist"
   },
   {
     "type": "Tool",
-    "title": "Trading Journal Template",
-    "description": "Record your trading decisions, emotions, outcomes, and lessons in an interactive journal.",
-    "category": "",
+    "title": "Crypto Security Checklist",
+    "description": "Review account, wallet, password, backup, phishing, and device-security practices.",
+    "category": "Security",
     "readingTime": "",
     "image": "",
-    "url": "/tools/trading-journal-template",
-    "keywords": "trading journal template record your trading decisions, emotions, outcomes, and lessons in an interactive journal."
+    "url": "/tools/security-checklist",
+    "keywords": "crypto security checklist review account, wallet, password, backup, phishing, and device-security practices. security improving personal crypto security habits security checklist"
   },
   {
     "type": "Tool",
-    "title": "Trading Mistake Analyzer",
-    "description": "Analyze common beginner mistakes and get practical suggestions to improve decision-making.",
-    "category": "",
+    "title": "Investment Planner",
+    "description": "Define investment goals, time horizon, contribution plans, allocation targets, and personal investment rules.",
+    "category": "Planning",
     "readingTime": "",
     "image": "",
-    "url": "/tools/trading-mistake-analyzer",
-    "keywords": "trading mistake analyzer analyze common beginner mistakes and get practical suggestions to improve decision-making."
+    "url": "/tools/investment-planner",
+    "keywords": "investment planner define investment goals, time horizon, contribution plans, allocation targets, and personal investment rules. planning building a structured long-term investment plan investment planner"
   },
   {
     "type": "Tool",
-    "title": "DCA Planner",
-    "description": "Plan a simple dollar-cost averaging schedule for crypto learning without emotional buying.",
-    "category": "",
+    "title": "Trade Plan Builder",
+    "description": "Create a structured plan for a potential trade before entering it, including thesis, setup, invalidation, and execution notes.",
+    "category": "Planning",
     "readingTime": "",
     "image": "",
-    "url": "/tools/dca-planner",
-    "keywords": "dca planner plan a simple dollar-cost averaging schedule for crypto learning without emotional buying."
-  },
-  {
-    "type": "Tool",
-    "title": "Trade Setup Analyzer",
-    "description": "Analyze your entry, stop loss, and take profit to calculate risk, reward, position size, and setup quality before trading.",
-    "category": "",
-    "readingTime": "",
-    "image": "",
-    "url": "/tools/trade-setup-analyzer",
-    "keywords": "trade setup analyzer analyze your entry, stop loss, and take profit to calculate risk, reward, position size, and setup quality before trading."
+    "url": "/tools/trade-plan-builder",
+    "keywords": "trade plan builder create a structured plan for a potential trade before entering it, including thesis, setup, invalidation, and execution notes. planning planning individual trades before execution trade plan builder"
   },
   {
     "type": "Calculator",
-    "title": "Calculator",
-    "description": "Use a simple calculator for quick trading-related calculations.",
-    "category": "",
+    "title": "Position Size Calculator",
+    "description": "Calculate an appropriate position size based on your account balance, risk percentage, entry price, and stop-loss price.",
+    "category": "Risk Management",
     "readingTime": "",
     "image": "",
-    "url": "/calculators/calculator",
-    "keywords": "calculator use a simple calculator for quick trading-related calculations."
+    "url": "/calculators/position-size",
+    "keywords": "position size calculator calculate an appropriate position size based on your account balance, risk percentage, entry price, and stop-loss price. risk management planning trade size while controlling account risk position size"
   },
   {
     "type": "Calculator",
-    "title": "Trade Size Calculator",
-    "description": "Estimate trade size based on account balance, risk percentage, entry price, and stop level.",
-    "category": "",
-    "readingTime": "",
-    "image": "",
-    "url": "/calculators/trade-size",
-    "keywords": "trade size calculator estimate trade size based on account balance, risk percentage, entry price, and stop level."
-  },
-  {
-    "type": "Calculator",
-    "title": "Risk / Reward Calculator",
-    "description": "Compare possible risk and reward before making a trading decision.",
-    "category": "",
+    "title": "Risk/Reward Calculator",
+    "description": "Compare the potential risk and reward of a trade using your entry price, stop loss, and profit target.",
+    "category": "Risk Management",
     "readingTime": "",
     "image": "",
     "url": "/calculators/risk-reward",
-    "keywords": "risk / reward calculator compare possible risk and reward before making a trading decision."
+    "keywords": "risk/reward calculator compare the potential risk and reward of a trade using your entry price, stop loss, and profit target. risk management evaluating a trade setup before entering risk reward"
   },
   {
     "type": "Calculator",
-    "title": "Profit Calculator",
-    "description": "Estimate profit or loss after buying and selling crypto.",
-    "category": "",
+    "title": "Profit & Loss Calculator",
+    "description": "Estimate the potential profit or loss of a trade based on entry price, exit price, position size, and trade direction.",
+    "category": "Trading",
     "readingTime": "",
     "image": "",
-    "url": "/calculators/profit",
-    "keywords": "profit calculator estimate profit or loss after buying and selling crypto."
+    "url": "/calculators/profit-loss",
+    "keywords": "profit & loss calculator estimate the potential profit or loss of a trade based on entry price, exit price, position size, and trade direction. trading estimating possible trade outcomes profit loss"
   },
   {
     "type": "Calculator",
-    "title": "Compound Growth Calculator",
-    "description": "Understand how steady growth may affect a portfolio over time.",
-    "category": "",
+    "title": "DCA Calculator",
+    "description": "Estimate how recurring investments may accumulate over time using a dollar-cost averaging strategy.",
+    "category": "Investing",
     "readingTime": "",
     "image": "",
-    "url": "/calculators/compound-growth",
-    "keywords": "compound growth calculator understand how steady growth may affect a portfolio over time."
+    "url": "/calculators/dca",
+    "keywords": "dca calculator estimate how recurring investments may accumulate over time using a dollar-cost averaging strategy. investing planning recurring long-term investments dca"
   },
   {
     "type": "Calculator",
-    "title": "Break-Even Calculator",
-    "description": "See how much growth is needed to recover from a loss.",
-    "category": "",
+    "title": "Compounding Calculator",
+    "description": "Estimate how an investment could grow over time when returns are repeatedly reinvested.",
+    "category": "Investing",
     "readingTime": "",
     "image": "",
-    "url": "/calculators/break-even",
-    "keywords": "break-even calculator see how much growth is needed to recover from a loss."
+    "url": "/calculators/compounding",
+    "keywords": "compounding calculator estimate how an investment could grow over time when returns are repeatedly reinvested. investing understanding the effect of compound growth compounding"
+  },
+  {
+    "type": "Calculator",
+    "title": "Percentage Calculator",
+    "description": "Calculate percentage changes, increases, decreases, and differences between values.",
+    "category": "Trading",
+    "readingTime": "",
+    "image": "",
+    "url": "/calculators/percentage",
+    "keywords": "percentage calculator calculate percentage changes, increases, decreases, and differences between values. trading quickly measuring price and portfolio changes percentage"
+  },
+  {
+    "type": "Calculator",
+    "title": "Liquidation Calculator",
+    "description": "Estimate a potential liquidation price based on entry price, leverage, and position direction.",
+    "category": "Trading",
+    "readingTime": "",
+    "image": "",
+    "url": "/calculators/liquidation",
+    "keywords": "liquidation calculator estimate a potential liquidation price based on entry price, leverage, and position direction. trading understanding the risks of leveraged positions liquidation"
+  },
+  {
+    "type": "Calculator",
+    "title": "Staking Calculator",
+    "description": "Estimate potential staking rewards using the amount staked, annual reward rate, and staking period.",
+    "category": "Crypto",
+    "readingTime": "",
+    "image": "",
+    "url": "/calculators/staking",
+    "keywords": "staking calculator estimate potential staking rewards using the amount staked, annual reward rate, and staking period. crypto estimating potential staking rewards staking"
+  },
+  {
+    "type": "Calculator",
+    "title": "Mining Profitability Calculator",
+    "description": "Estimate mining revenue and profitability using hash rate, power consumption, electricity cost, and other assumptions.",
+    "category": "Crypto",
+    "readingTime": "",
+    "image": "",
+    "url": "/calculators/mining",
+    "keywords": "mining profitability calculator estimate mining revenue and profitability using hash rate, power consumption, electricity cost, and other assumptions. crypto estimating basic cryptocurrency mining profitability mining"
+  },
+  {
+    "type": "Exchange",
+    "title": "Two-factor authentication",
+    "description": "Binance provides spot trading, futures, P2P trading, staking, and access to a broad selection of cryptocurrencies.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/exchanges/binance",
+    "keywords": "two-factor authentication binance provides spot trading, futures, p2p trading, staking, and access to a broad selection of cryptocurrencies. binance discover"
+  },
+  {
+    "type": "Exchange",
+    "title": "Two-factor authentication",
+    "description": "Bitget provides spot trading, futures markets, copy trading, automated tools, and additional cryptocurrency services.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/exchanges/bitget",
+    "keywords": "two-factor authentication bitget provides spot trading, futures markets, copy trading, automated tools, and additional cryptocurrency services. bitget discover"
+  },
+  {
+    "type": "Exchange",
+    "title": "Two-Factor Authentication",
+    "description": "Bybit is a cryptocurrency exchange offering spot markets, futures, options, copy trading, trading bots, and other crypto-related products for both newer and experienced users.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/exchanges/bybit",
+    "keywords": "two-factor authentication bybit is a cryptocurrency exchange offering spot markets, futures, options, copy trading, trading bots, and other crypto-related products for both newer and experienced users. bybit discover"
+  },
+  {
+    "type": "Book",
+    "title": "Broken Money",
+    "description": "Broken Money explains how money evolved, why modern monetary systems face challenges, and how Bitcoin fits into the future of finance.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/broken-money",
+    "keywords": "broken money broken money explains how money evolved, why modern monetary systems face challenges, and how bitcoin fits into the future of finance. broken money discover"
+  },
+  {
+    "type": "Book",
+    "title": "Cryptoassets",
+    "description": "Cryptoassets introduces Bitcoin, Ethereum, blockchain technology, and digital assets while explaining how investors can evaluate and understand this emerging asset class.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/cryptoassets",
+    "keywords": "cryptoassets cryptoassets introduces bitcoin, ethereum, blockchain technology, and digital assets while explaining how investors can evaluate and understand this emerging asset class. cryptoassets discover"
+  },
+  {
+    "type": "Book",
+    "title": "Digital Gold",
+    "description": "Digital Gold tells the history of Bitcoin through the entrepreneurs, developers, investors, and visionaries who helped transform it from an experiment into a global financial phenomenon.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/digital-gold",
+    "keywords": "digital gold digital gold tells the history of bitcoin through the entrepreneurs, developers, investors, and visionaries who helped transform it from an experiment into a global financial phenomenon. digital gold discover"
+  },
+  {
+    "type": "Book",
+    "title": "Inventing Bitcoin",
+    "description": "Inventing Bitcoin breaks down the technology behind Bitcoin into simple concepts, making it one of the easiest books for beginners to understand the world's first cryptocurrency.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/inventing-bitcoin",
+    "keywords": "inventing bitcoin inventing bitcoin breaks down the technology behind bitcoin into simple concepts, making it one of the easiest books for beginners to understand the world's first cryptocurrency. inventing bitcoin discover"
+  },
+  {
+    "type": "Book",
+    "title": "Layered Money",
+    "description": "Layered Money explains the evolution of money, banking, central banks, payment systems, and Bitcoin through the concept of layered monetary networks.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/layered-money",
+    "keywords": "layered money layered money explains the evolution of money, banking, central banks, payment systems, and bitcoin through the concept of layered monetary networks. layered money discover"
+  },
+  {
+    "type": "Book",
+    "title": "Rich Dad Poor Dad",
+    "description": "Rich Dad Poor Dad teaches the importance of financial education, building assets, and developing a long-term wealth mindset through simple stories and practical lessons.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/rich-dad-poor-dad",
+    "keywords": "rich dad poor dad rich dad poor dad teaches the importance of financial education, building assets, and developing a long-term wealth mindset through simple stories and practical lessons. rich dad poor dad discover"
+  },
+  {
+    "type": "Book",
+    "title": "The Bitcoin Standard",
+    "description": "The Bitcoin Standard explores how money developed over time and explains why Bitcoin is considered a form of scarce digital money.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/the-bitcoin-standard",
+    "keywords": "the bitcoin standard the bitcoin standard explores how money developed over time and explains why bitcoin is considered a form of scarce digital money. the bitcoin standard discover"
+  },
+  {
+    "type": "Book",
+    "title": "The Little Book of Common Sense Investing",
+    "description": "The Little Book of Common Sense Investing explains why low-cost index funds have consistently outperformed many actively managed investments over the long term.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/the-little-book-of-common-sense-investing",
+    "keywords": "the little book of common sense investing the little book of common sense investing explains why low-cost index funds have consistently outperformed many actively managed investments over the long term. the little book of common sense investing discover"
+  },
+  {
+    "type": "Book",
+    "title": "The Psychology of Money",
+    "description": "The Psychology of Money explores the emotional and behavioral side of money, investing, and wealth-building through engaging real-world stories and practical lessons.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/books/the-psychology-of-money",
+    "keywords": "the psychology of money the psychology of money explores the emotional and behavioral side of money, investing, and wealth-building through engaging real-world stories and practical lessons. the psychology of money discover"
+  },
+  {
+    "type": "Analysis Website",
+    "title": "CoinGlass",
+    "description": "CoinGlass helps traders monitor liquidation data, open interest, funding rates, ETF flows, whale activity, and other market indicators.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/analysis-websites/coinglass",
+    "keywords": "coinglass coinglass helps traders monitor liquidation data, open interest, funding rates, etf flows, whale activity, and other market indicators. coinglass discover"
+  },
+  {
+    "type": "Analysis Website",
+    "title": "TradingView",
+    "description": "TradingView provides interactive charts, technical indicators, market data, screeners, alerts, and community-published analysis.",
+    "category": "Discover",
+    "readingTime": "",
+    "image": "",
+    "url": "/discover/analysis-websites/tradingview",
+    "keywords": "tradingview tradingview provides interactive charts, technical indicators, market data, screeners, alerts, and community-published analysis. tradingview discover"
   }
 ]

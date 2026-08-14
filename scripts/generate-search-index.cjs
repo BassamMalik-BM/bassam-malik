@@ -1,134 +1,449 @@
 const fs = require("fs");
 const path = require("path");
 
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function fullPath(filePath) {
+  return path.join(process.cwd(), filePath);
+}
+
 function readFile(filePath) {
-  return fs.readFileSync(path.join(process.cwd(), filePath), "utf8");
+  return fs.readFileSync(fullPath(filePath), "utf8");
+}
+
+function fileExists(filePath) {
+  return fs.existsSync(fullPath(filePath));
 }
 
 function cleanText(value = "") {
   return value.replace(/\s+/g, " ").trim();
 }
 
-function extractArticles(fileContent) {
-  const objects = fileContent.match(/\{[\s\S]*?\}/g) || [];
+/* =========================================================
+   RECURSIVELY FIND TYPESCRIPT FILES
+========================================================= */
 
-  return objects
-    .map((object) => {
-      const slug = object.match(/slug:\s*['"`]([^'"`]+)['"`]/)?.[1];
+function getAllTsFiles(directory) {
+  const directoryPath = fullPath(directory);
 
-      const title = object.match(/title:\s*['"`]([^'"`]+)['"`]/)?.[1];
+  if (!fs.existsSync(directoryPath)) {
+    return [];
+  }
 
-      const description =
-        object.match(/description:\s*['"`]([\s\S]*?)['"`]\s*,/) ?. [1];
+  const entries = fs.readdirSync(directoryPath, {
+    withFileTypes: true,
+  });
 
-      const categoryTitle =
-        object.match(/title:\s*['"`]([^'"`]+)['"`][\s\S]*?slug:/)?.[1];
+  const files = [];
 
-      const categorySlug =
-        object.match(/category:\s*\{[\s\S]*?slug:\s*['"`]([^'"`]+)['"`]/)?.[1];
+  for (const entry of entries) {
+    const entryPath = path.join(directoryPath, entry.name);
 
-      const readingTime =
-        object.match(/readingTime:\s*['"`]([^'"`]+)['"`]/)?.[1];
+    if (entry.isDirectory()) {
+      const nestedDirectory = path.join(directory, entry.name);
 
-      const image =
-        object.match(/image:\s*['"`]([^'"`]+)['"`]/)?.[1];
+      files.push(...getAllTsFiles(nestedDirectory));
 
-      if (!slug || !title || !description || !categorySlug) return null;
+      continue;
+    }
 
-      return {
-        type: "Article",
+    if (
+      entry.isFile() &&
+      entry.name.endsWith(".ts") &&
+      entry.name !== "index.ts"
+    ) {
+      files.push(entryPath);
+    }
+  }
 
-        title: cleanText(title),
-
-        description: cleanText(description),
-
-        category: categoryTitle || "",
-
-        readingTime: readingTime || "",
-
-        image: image || "",
-
-        url: `/learn/${categorySlug}/${slug}`,
-
-        keywords: cleanText(
-          `${title}
-          ${description}
-          ${categoryTitle || ""}
-          ${slug.replaceAll("-", " ")}`
-        ).toLowerCase(),
-      };
-    })
-    .filter(Boolean);
+  return files;
 }
 
-function extractSimpleItems(fileContent, type) {
-  const objectMatches = fileContent.match(/\{[\s\S]*?\}/g) || [];
+/* =========================================================
+   BASIC FIELD EXTRACTION
+========================================================= */
 
-  return objectMatches
-    .map((object) => {
-      const title = object.match(/title:\s*['"`]([^'"`]+)['"`]/)?.[1];
+function extractStringField(content, key) {
+  const regex = new RegExp(
+    `${key}:\\s*["'\`]([\\s\\S]*?)["'\`]\\s*,`
+  );
+
+  return content.match(regex)?.[1] || "";
+}
+
+function extractSlug(content) {
+  return (
+    content.match(
+      /slug:\s*["'`]([^"'`]+)["'`]/
+    )?.[1] || ""
+  );
+}
+
+/* =========================================================
+   ARTICLES
+========================================================= */
+
+function extractArticle(fileContent) {
+  const slug = extractSlug(fileContent);
+
+  const title = extractStringField(
+    fileContent,
+    "title"
+  );
+
+  const description = extractStringField(
+    fileContent,
+    "description"
+  );
+
+  const categoryBlock = fileContent.match(
+    /category:\s*\{([\s\S]*?)\}/
+  )?.[1];
+
+  const categorySlug =
+    categoryBlock?.match(
+      /slug:\s*["'`]([^"'`]+)["'`]/
+    )?.[1] || "";
+
+  const categoryTitle =
+    categoryBlock?.match(
+      /title:\s*["'`]([^"'`]+)["'`]/
+    )?.[1] || "";
+
+  const readingTime =
+    extractStringField(
+      fileContent,
+      "readingTime"
+    );
+
+  /*
+    Your article data may use either:
+    heroImage
+    or image
+  */
+
+  const heroImage =
+    extractStringField(
+      fileContent,
+      "heroImage"
+    );
+
+  const image =
+    heroImage ||
+    extractStringField(
+      fileContent,
+      "image"
+    );
+
+  if (
+    !slug ||
+    !title ||
+    !description ||
+    !categorySlug
+  ) {
+    return null;
+  }
+
+  return {
+    type: "Article",
+
+    title: cleanText(title),
+
+    description: cleanText(description),
+
+    category: cleanText(categoryTitle),
+
+    readingTime: cleanText(readingTime),
+
+    image: image || "",
+
+    url: `/learn/${categorySlug}/${slug}`,
+
+    keywords: cleanText(
+      `${title}
+       ${description}
+       ${categoryTitle}
+       ${categorySlug.replaceAll("-", " ")}
+       ${slug.replaceAll("-", " ")}`
+    ).toLowerCase(),
+  };
+}
+
+const articleFiles = getAllTsFiles(
+  "src/data/articles"
+);
+
+const articles = articleFiles
+  .map((filePath) => {
+    const content = fs.readFileSync(
+      filePath,
+      "utf8"
+    );
+
+    return extractArticle(content);
+  })
+  .filter(Boolean);
+
+/* =========================================================
+   TOOLS + CALCULATORS
+========================================================= */
+
+function extractDataObjects(
+  fileContent,
+  type,
+  baseRoute
+) {
+  /*
+    Looks for objects containing:
+      slug
+      title
+      description
+      category
+      bestFor
+  */
+
+  const objectRegex =
+    /\{\s*slug:\s*["'`]([^"'`]+)["'`][\s\S]*?title:\s*["'`]([^"'`]+)["'`][\s\S]*?description:\s*["'`]([\s\S]*?)["'`]\s*,[\s\S]*?category:\s*["'`]([^"'`]+)["'`][\s\S]*?bestFor:\s*["'`]([\s\S]*?)["'`][\s\S]*?\}/g;
+
+  const items = [];
+
+  let match;
+
+  while (
+    (match = objectRegex.exec(fileContent)) !==
+    null
+  ) {
+    const [
+      ,
+      slug,
+      title,
+      description,
+      category,
+      bestFor,
+    ] = match;
+
+    items.push({
+      type,
+
+      title: cleanText(title),
+
+      description: cleanText(description),
+
+      category: cleanText(category),
+
+      readingTime: "",
+
+      image: "",
+
+      url: `${baseRoute}/${slug}`,
+
+      keywords: cleanText(
+        `${title}
+         ${description}
+         ${category}
+         ${bestFor}
+         ${slug.replaceAll("-", " ")}`
+      ).toLowerCase(),
+    });
+  }
+
+  return items;
+}
+
+/* =========================================================
+   TOOLS
+========================================================= */
+
+const tools = fileExists(
+  "src/data/tools/index.ts"
+)
+  ? extractDataObjects(
+      readFile("src/data/tools/index.ts"),
+      "Tool",
+      "/tools"
+    )
+  : [];
+
+/* =========================================================
+   CALCULATORS
+========================================================= */
+
+const calculators = fileExists(
+  "src/data/calculators/index.ts"
+)
+  ? extractDataObjects(
+      readFile(
+        "src/data/calculators/index.ts"
+      ),
+      "Calculator",
+      "/calculators"
+    )
+  : [];
+
+/* =========================================================
+   DISCOVER
+========================================================= */
+
+function extractDiscoverItems(
+  directory,
+  type,
+  baseRoute
+) {
+  const files = getAllTsFiles(directory);
+
+  return files
+    .map((filePath) => {
+      const content = fs.readFileSync(
+        filePath,
+        "utf8"
+      );
+
+      const slug = extractSlug(content);
+
+      const title =
+        extractStringField(
+          content,
+          "title"
+        ) ||
+        extractStringField(
+          content,
+          "name"
+        );
 
       const description =
-        object.match(/description:\s*['"`]([\s\S]*?)['"`]\s*,/)?.[1];
+        extractStringField(
+          content,
+          "shortDescription"
+        ) ||
+        extractStringField(
+          content,
+          "description"
+        );
 
-      const href =
-        object.match(/href:\s*['"`]([^'"`]+)['"`]/)?.[1] ||
-        object.match(/path:\s*['"`]([^'"`]+)['"`]/)?.[1];
-
-      if (!title || !description || !href) return null;
+      if (!slug || !title) {
+        return null;
+      }
 
       return {
         type,
 
         title: cleanText(title),
 
-        description: cleanText(description),
+        description: cleanText(
+          description
+        ),
 
-        category: "",
+        category: "Discover",
 
         readingTime: "",
 
         image: "",
 
-        url: href,
+        url: `${baseRoute}/${slug}`,
 
-        keywords: cleanText(`${title} ${description}`).toLowerCase(),
+        keywords: cleanText(
+          `${title}
+           ${description}
+           ${slug.replaceAll("-", " ")}
+           discover`
+        ).toLowerCase(),
       };
     })
     .filter(Boolean);
 }
 
-const articles = extractArticles(
-  readFile("src/data/articles/index.ts")
+const exchanges = extractDiscoverItems(
+  "src/data/discover/exchanges",
+  "Exchange",
+  "/discover/exchanges"
 );
 
-const resources = extractSimpleItems(
-  readFile("src/data/resources.ts"),
-  "Resource"
+const books = extractDiscoverItems(
+  "src/data/discover/books",
+  "Book",
+  "/discover/books"
 );
 
-const tools = extractSimpleItems(
-  readFile("src/data/tools.ts"),
-  "Tool"
-);
+const analysisWebsites =
+  extractDiscoverItems(
+    "src/data/discover/analysis-websites",
+    "Analysis Website",
+    "/discover/analysis-websites"
+  );
 
-const calculators = extractSimpleItems(
-  readFile("src/data/calculators.ts"),
-  "Calculator"
-);
+/* =========================================================
+   SEARCH INDEX
+========================================================= */
 
 const searchIndex = [
   ...articles,
-  ...resources,
   ...tools,
   ...calculators,
+  ...exchanges,
+  ...books,
+  ...analysisWebsites,
 ];
 
+/*
+  Remove duplicates by URL.
+*/
+
+const uniqueSearchIndex = Array.from(
+  new Map(
+    searchIndex.map((item) => [
+      item.url,
+      item,
+    ])
+  ).values()
+);
+
+/* =========================================================
+   WRITE FILE
+========================================================= */
+
+const outputPath = fullPath(
+  "public/search-index.json"
+);
+
 fs.writeFileSync(
-  path.join(process.cwd(), "public/search-index.json"),
-  JSON.stringify(searchIndex, null, 2)
+  outputPath,
+  JSON.stringify(
+    uniqueSearchIndex,
+    null,
+    2
+  )
+);
+
+/* =========================================================
+   LOG
+========================================================= */
+
+console.log(
+  `✅ Search index generated with ${uniqueSearchIndex.length} items`
 );
 
 console.log(
-  `✅ Search index generated with ${searchIndex.length} items`
+  `📄 Articles: ${articles.length}`
+);
+
+console.log(
+  `🛠 Tools: ${tools.length}`
+);
+
+console.log(
+  `🧮 Calculators: ${calculators.length}`
+);
+
+console.log(
+  `🏦 Exchanges: ${exchanges.length}`
+);
+
+console.log(
+  `📚 Books: ${books.length}`
+);
+
+console.log(
+  `📊 Analysis websites: ${analysisWebsites.length}`
 );

@@ -13,10 +13,10 @@ export default function ArticleSchema({
 }: ArticleSchemaProps) {
   const articleUrl = `${SITE_URL}/learn/${article.category.slug}/${article.slug}`;
 
-  const imageUrl = article.image
-    ? article.image.startsWith("http")
-      ? article.image
-      : `${SITE_URL}${article.image}`
+  const imageUrl = article.heroImage
+    ? article.heroImage.startsWith("http")
+      ? article.heroImage
+      : `${SITE_URL}${article.heroImage}`
     : `${SITE_URL}/images/default-og.jpg`;
 
   const schema = {
