@@ -19,7 +19,7 @@ function cleanText(value = "") {
   return value.replace(/\s+/g, " ").trim();
 }
 
-function extractContentItems(fileContent, type, basePath, dateKey) {
+function extractArticles(fileContent) {
   const objectMatches = fileContent.match(/\{[\s\S]*?\}/g) || [];
 
   return objectMatches
@@ -29,40 +29,37 @@ function extractContentItems(fileContent, type, basePath, dateKey) {
       const description = object.match(
         /description:\s*['"`]([\s\S]*?)['"`]\s*,/
       )?.[1];
-      const category = object.match(/category:\s*['"`]([^'"`]+)['"`]/)?.[1];
 
-      const dateRegex = new RegExp(
-        `${dateKey}:\\s*['"\`]([^'"\`]+)['"\`]`
-      );
-      const date = object.match(dateRegex)?.[1];
+      const categoryTitle = object.match(
+        /category:\s*\{[\s\S]*?title:\s*['"`]([^'"`]+)['"`]/
+      )?.[1];
 
-      if (!slug || !title || !description || !date) return null;
+      const categorySlug = object.match(
+        /category:\s*\{[\s\S]*?slug:\s*['"`]([^'"`]+)['"`]/
+      )?.[1];
+
+      const updatedAt =
+        object.match(/updatedAt:\s*['"`]([^'"`]+)['"`]/)?.[1] ||
+        new Date().toISOString();
+
+      if (!slug || !title || !description || !categorySlug) return null;
 
       return {
-        type,
+        type: "Article",
         slug,
         title: cleanText(title),
         description: cleanText(description),
-        category: category || "",
-        date,
-        url: `${siteUrl}${basePath}/${slug}`,
+        category: categoryTitle || "Learn",
+        date: updatedAt,
+        url: `${siteUrl}/learn/${categorySlug}/${slug}`,
       };
     })
     .filter(Boolean);
 }
 
-const blogsFile = readFile("src/data/blogs.ts");
-const learnFile = readFile("src/data/learn.ts");
+const articlesFile = readFile("src/data/articles/index.ts");
 
-const blogs = extractContentItems(blogsFile, "Blog", "/blogs", "date");
-const learn = extractContentItems(
-  learnFile,
-  "Learn",
-  "/learn",
-  "datePublished"
-);
-
-const items = [...blogs, ...learn].sort(
+const items = extractArticles(articlesFile).sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
@@ -71,7 +68,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>Bassam Malik</title>
     <link>${siteUrl}</link>
-    <description>Trading education, market analysis, risk management, trading psychology, calculators, and learning resources.</description>
+    <description>Beginner-friendly cryptocurrency education, Bitcoin, blockchain, wallets, trading, risk management, security, and market learning resources.</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items

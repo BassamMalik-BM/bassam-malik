@@ -1,25 +1,20 @@
 import { Link } from "react-router-dom";
-import {
-  FaWhatsapp,
-  FaXTwitter,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter, FaFacebook, FaInstagram, } from "react-icons/fa6";
 import { SiBinance } from "react-icons/si";
 
 export default function Footer() {
   const quickLinks = [
     { name: "Start Here", path: "/start-here" },
-    { name: "Learn", path: "/learn" },
-    { name: "Blogs", path: "/blogs" },
-    { name: "Contact", path: "/contact" },
+    { name: "About", path: "/about" },
+    { name: "About the Author", path: "/author" },
+    { name: "Sources", path: "/sources" },
   ];
 
   const trustLinks = [
-    { name: "About the Author", path: "/author" },
-    { name: "Sources", path: "/sources" },
+    { name: "FAQ", path: "/faq" },
     { name: "Editorial Policy", path: "/editorial-policy" },
     { name: "Risk Disclaimer", path: "/risk-disclaimer" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const legalLinks = [
@@ -72,13 +67,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-slate-950">
-      <div className="container-page py-10">
-        <div className="grid gap-10 lg:grid-cols-[1.5fr_0.9fr_0.9fr_0.9fr_1fr]">
+    <footer className="relative border-t border-slate-200 bg-white/80 backdrop-blur-sm dark:border-white/10 dark:bg-slate-950/80">
+      {/* MAIN FOOTER */}
+      <div className="container-page py-14 sm:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.1fr] lg:gap-12">
           {/* BRAND */}
           <div>
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 text-lg font-bold text-white">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 font-bold text-white">
                 BM
               </div>
 
@@ -93,16 +89,17 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-300">
               Beginner-friendly crypto education focused on market structure,
-              risk management, trading journals, and safer long-term decision-making.
+              risk management, practical tools, and responsible long-term
+              decision-making.
             </p>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* About */}
           <div>
-            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
-              Quick Links
+            <h3 className="mb-5 font-bold text-slate-950 dark:text-white">
+              About
             </h3>
 
             <div className="flex flex-col gap-3 text-sm">
@@ -120,7 +117,7 @@ export default function Footer() {
 
           {/* TRUST */}
           <div>
-            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
+            <h3 className="mb-5 font-bold text-slate-950 dark:text-white">
               Trust & Transparency
             </h3>
 
@@ -139,7 +136,7 @@ export default function Footer() {
 
           {/* LEGAL */}
           <div>
-            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
+            <h3 className="mb-5 font-bold text-slate-950 dark:text-white">
               Legal
             </h3>
 
@@ -158,11 +155,11 @@ export default function Footer() {
 
           {/* SOCIAL */}
           <div>
-            <h3 className="mb-4 font-bold text-slate-950 dark:text-white">
+            <h3 className="mb-5 font-bold text-slate-950 dark:text-white">
               Social Media
             </h3>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
 
@@ -173,10 +170,10 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.name}
-                    className={`group flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 ${social.glow}`}
+                    className={`group flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 ${social.glow}`}
                   >
                     <Icon
-                      size={22}
+                      size={20}
                       className={`transition duration-300 group-hover:scale-110 ${social.color}`}
                     />
                   </a>
@@ -188,14 +185,16 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM */}
-      <div className="border-t border-slate-200 bg-slate-50 py-6 dark:border-white/10 dark:bg-slate-900/60">
-        <div className="container-page flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-300 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            © 2026 Bassam Malik · Educational content only. Not financial advice.
+      <div className="border-t border-slate-200 bg-slate-50/80 dark:border-white/10 dark:bg-slate-900/60">
+        <div className="container-page flex flex-col gap-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400 md:flex-row md:items-center md:justify-between md:text-left">
+          <p>
+            © 2026 Bassam Malik · Educational content only. Not financial
+            advice.
           </p>
 
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Built for beginners. Focused on clarity, discipline, and long-term growth.
+          <p>
+            Built for beginners. Focused on clarity, discipline, and long-term
+            growth.
           </p>
         </div>
       </div>

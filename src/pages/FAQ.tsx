@@ -1,6 +1,5 @@
 import AnimatedPage from "../components/AnimatedPage";
 import FAQItem from "../components/FAQItem";
-import Breadcrumbs from "../components/Breadcrumbs";
 import FAQPageSchema from "../schemas/FAQPageSchema";
 
 const faqs = [
@@ -42,7 +41,7 @@ const faqs = [
   {
     question: "What are trading calculators used for?",
     answer:
-      "Trading calculators help estimate values such as position size, risk-to-reward ratios, profit scenarios, compound growth, and break-even levels. They are designed to support planning and risk awareness before making decisions.",
+      "Trading calculators help estimate values such as position size, risk-to-reward ratios, profit scenarios, compound growth, percentage changes, liquidation estimates, staking rewards, and other planning scenarios. They are designed to support learning, planning, and risk awareness before making decisions.",
   },
   {
     question: "Why should I use a trading journal?",
@@ -57,17 +56,27 @@ const faqs = [
   {
     question: "What markets can these lessons apply to?",
     answer:
-      "Many of the concepts discussed on this website, such as risk management, chart analysis, trading psychology, and journaling, can be useful across different financial markets. The educational focus is on building strong fundamentals that can support better decision-making.",
+      "Many of the concepts discussed on this website, such as risk management, chart analysis, trading psychology, market structure, and journaling, can be useful across different financial markets. Bassam Malik places a strong focus on cryptocurrency education while also teaching broader trading principles.",
   },
   {
     question: "Can educational content guarantee profits?",
     answer:
-      "No. No educational resource, strategy, indicator, or tool can guarantee profits. Markets are uncertain and involve risk. Education can improve understanding and decision-making, but outcomes will always depend on market conditions and individual decisions.",
+      "No. No educational resource, strategy, indicator, calculator, or tool can guarantee profits. Markets are uncertain and involve risk. Education can improve understanding and decision-making, but outcomes will always depend on market conditions and individual decisions.",
+  },
+  {
+    question: "What can I find in the Discover section?",
+    answer:
+      "The Discover section contains curated directories designed to help beginners compare useful resources such as cryptocurrency exchanges, books, and analysis websites. These areas are kept separate from educational articles so learners can clearly distinguish education from recommendations and resource comparisons.",
+  },
+  {
+    question: "Where does Bassam Malik get its information?",
+    answer:
+      "Educational content is researched using official documentation, established market-data providers, regulatory sources, financial education websites, exchange documentation, and other reliable sources. You can view the main references used across the website on the Sources page.",
   },
   {
     question: "What is the goal of Bassam Malik?",
     answer:
-      "The goal of Bassam Malik is to help beginner traders learn with clarity, manage risk responsibly, build good habits, and make more informed decisions through educational content, tools, calculators, and practical resources.",
+      "The goal of Bassam Malik is to help beginner traders and cryptocurrency learners understand complex topics with more clarity, manage risk responsibly, build better habits, and make more informed decisions through educational content, calculators, tools, and curated resources.",
   },
 ];
 
@@ -77,36 +86,33 @@ export default function FAQ() {
       <FAQPageSchema faqs={faqs} />
 
       <AnimatedPage>
-        <section className="section-padding">
-          <div className="container-page">
-            <Breadcrumbs />
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
+              FAQ
+            </p>
 
-            <div className="mx-auto max-w-6xl">
-              <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
-                FAQ
-              </p>
+            <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+              Frequently Asked Questions
+            </h1>
 
-              <h1 className="text-center text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-                Frequently Asked Questions
-              </h1>
-
-              <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-slate-600 dark:text-slate-300">
-                Clear answers to common questions about trading education, risk
-                management, learning resources, and the purpose of Bassam Malik.
-              </p>
-
-              <div className="mt-12 grid gap-4">
-                {faqs.map((faq) => (
-                  <FAQItem
-                    key={faq.question}
-                    question={faq.question}
-                    answer={faq.answer}
-                  />
-                ))}
-              </div>
-            </div>
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+              Clear answers to common questions about crypto and trading
+              education, risk management, calculators, learning resources,
+              and the purpose of Bassam Malik.
+            </p>
           </div>
-        </section>
+
+          <div className="mt-12 grid gap-4">
+            {faqs.map((faq) => (
+              <FAQItem
+                key={faq.question}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </div>
+        </div>
       </AnimatedPage>
     </>
   );

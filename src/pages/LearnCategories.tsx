@@ -1,70 +1,80 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import AnimatedPage from "../components/AnimatedPage";
-import { learnPosts } from "../data/learn";
-import Breadcrumbs from "../components/Breadcrumbs";
 
-function slugify(text: string) {
-  return text.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
-}
+import AnimatedPage from "../components/AnimatedPage";
+import { articles } from "../data/articles";
+
+const categories = [
+  { title: "Crypto Basics", slug: "crypto-basics" },
+  { title: "Bitcoin", slug: "bitcoin" },
+  { title: "Ethereum", slug: "ethereum" },
+  { title: "Blockchain", slug: "blockchain" },
+  { title: "Wallets", slug: "wallets" },
+  { title: "Exchanges", slug: "exchanges" },
+  { title: "Trading", slug: "trading" },
+  { title: "Technical Analysis", slug: "technical-analysis" },
+  { title: "Risk Management", slug: "risk-management" },
+  { title: "Trading Psychology", slug: "trading-psychology" },
+  { title: "Crypto Security", slug: "crypto-security" },
+  { title: "Market", slug: "market" },
+  { title: "Comparisons", slug: "comparisons" },
+  { title: "Indicators", slug: "indicators" },
+];
 
 export default function LearnCategories() {
-  const categories = Array.from(
-    new Set(learnPosts.map((post) => post.category))
-  ).map((category) => ({
-    name: category,
-    count: learnPosts.filter((post) => post.category === category).length,
-    slug: slugify(category),
+  const categoriesWithCounts = categories.map((category) => ({
+    ...category,
+    count: articles.filter(
+      (article) => article.category.slug === category.slug,
+    ).length,
   }));
 
   return (
     <AnimatedPage>
-      <section className="section-padding">
-        <div className="container-page">
-          <Breadcrumbs />
+      <div>
+        {/* Header */}
+        <div className="mb-14">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
+            Learn
+          </p>
 
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
-              Learn Categories
-            </p>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
+            Browse Categories
+          </h1>
 
-            <h1 className="text-4xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
-              Explore Learn Topics
-            </h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+            Choose a topic to explore beginner-friendly crypto lessons in a
+            structured way.
+          </p>
+        </div>
 
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Browse beginner-friendly lessons by topic, from market basics and
-              risk management to trading psychology and chart education.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => (
-              <Link
-                key={category.name}
-                to={`/learn/categories/${category.slug}`}
-                className="premium-card group flex h-full flex-col text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-                  {category.name}
-                </h2>
-
-                <p className="mt-3 text-sm font-semibold text-slate-500 dark:text-slate-400">
-                  {category.count} lesson{category.count !== 1 ? "s" : ""}
+        {/* Categories */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {categoriesWithCounts.map((category) => (
+            <Link
+              key={category.slug}
+              to={`/learn/${category.slug}`}
+              className="premium-card group flex min-h-[180px] flex-col justify-between"
+            >
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-blue-600 dark:text-blue-400">
+                  {category.count} article
+                  {category.count !== 1 ? "s" : ""}
                 </p>
 
-                <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400">
-                  View Lessons
-                  <ArrowRight
-                    size={16}
-                    className="transition group-hover:translate-x-1"
-                  />
-                </span>
-              </Link>
-            ))}
-          </div>
+                <h2 className="text-2xl font-bold text-slate-950 transition group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+                  {category.title}
+                </h2>
+              </div>
+
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition group-hover:text-blue-600 dark:text-slate-400 dark:group-hover:text-blue-400">
+                View Articles
+                <ArrowRight size={16} />
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
+      </div>
     </AnimatedPage>
   );
 }

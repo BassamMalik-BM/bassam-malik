@@ -1,32 +1,42 @@
-import type { BlogPost } from "../types";
+import type { ArticleData } from "../data/articles/articleTypes";
 
 const SITE_URL = "https://bassammalik.com";
 const AUTHOR_NAME = "Bassam Malik";
 const SITE_NAME = "Bassam Malik";
 
 type ArticleSchemaProps = {
-  post: BlogPost;
+  article: ArticleData;
 };
 
-export default function ArticleSchema({ post }: ArticleSchemaProps) {
-  const articleUrl = `${SITE_URL}/blogs/${post.slug}`;
-  const imageUrl = post.image.startsWith("http")
-    ? post.image
-    : `${SITE_URL}${post.image}`;
+export default function ArticleSchema({
+  article,
+}: ArticleSchemaProps) {
+  const articleUrl = `${SITE_URL}/learn/${article.category.slug}/${article.slug}`;
+
+  const imageUrl = article.image
+    ? article.image.startsWith("http")
+      ? article.image
+      : `${SITE_URL}${article.image}`
+    : `${SITE_URL}/images/default-og.jpg`;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.description,
+
+    headline: article.title,
+    description: article.description,
+
     image: imageUrl,
-    datePublished: post.date,
-    dateModified: post.date,
+
+    datePublished: article.updatedAt,
+    dateModified: article.updatedAt,
+
     author: {
       "@type": "Person",
       name: AUTHOR_NAME,
       url: SITE_URL,
     },
+
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -36,6 +46,7 @@ export default function ArticleSchema({ post }: ArticleSchemaProps) {
         url: `${SITE_URL}/favicon.ico`,
       },
     },
+
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": articleUrl,
@@ -45,7 +56,9 @@ export default function ArticleSchema({ post }: ArticleSchemaProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema),
+      }}
     />
   );
 }

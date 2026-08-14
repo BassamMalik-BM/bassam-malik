@@ -1,8 +1,8 @@
 import { Mail, MessageCircle, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
+
 import AnimatedPage from "../components/AnimatedPage";
 import SectionHeader from "../components/SectionHeader";
-import Breadcrumbs from "../components/Breadcrumbs";
 
 type FormState = {
   name: string;
@@ -55,16 +55,20 @@ export default function Contact() {
     if (Object.keys(validationErrors).length > 0) return;
 
     setLoading(true);
+    setSubmitted(false);
 
     try {
-      const response = await fetch("https://formspree.io/f/xeendped", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+      const response = await fetch(
+        "https://formspree.io/f/xeendped",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(form),
         },
-        body: JSON.stringify(form),
-      });
+      );
 
       if (response.ok) {
         setSubmitted(true);
@@ -80,158 +84,161 @@ export default function Contact() {
 
   return (
     <AnimatedPage>
-      <section className="section-padding">
-        <div className="container-page">
-          <Breadcrumbs />
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          eyebrow="Contact"
+          title="Have a question about beginner crypto education?"
+          description="Send a message about educational resources, website content, tools, calculators, or general cryptocurrency learning questions."
+        />
 
-          <SectionHeader
-            eyebrow="Contact"
-            title="Have a question about beginner crypto education?"
-            description="Send a message about resources, blog topics, or general spot trading education questions."
-          />
+        <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          {/* Contact information */}
+          <div className="grid gap-5">
+            <div className="premium-card">
+              <Mail
+                className="mb-4 text-blue-600 dark:text-blue-400"
+                size={28}
+              />
 
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="grid gap-5">
-              <div className="premium-card">
-                <Mail
-                  className="mb-4 text-blue-600 dark:text-blue-400"
-                  size={28}
-                />
+              <h3 className="text-xl font-bold text-slate-950 dark:text-white">
+                Education inquiries
+              </h3>
 
-                <h3 className="text-xl font-bold text-slate-950 dark:text-white">
-                  Education inquiries
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  Ask about beginner guides, trading journal structure, risk
-                  management basics, or future educational content.
-                </p>
-              </div>
-
-              <div className="premium-card">
-                <MessageCircle
-                  className="mb-4 text-blue-600 dark:text-blue-400"
-                  size={28}
-                />
-
-                <h3 className="text-xl font-bold text-slate-950 dark:text-white">
-                  Professional tone
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  This website keeps communication serious, clear, and focused
-                  on responsible learning.
-                </p>
-              </div>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Ask about beginner guides, crypto education, trading
+                concepts, tools, calculators, risk management, or future
+                learning resources.
+              </p>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="premium-card space-y-5"
-              noValidate
-            >
-              {submitted && (
-                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800 dark:border-emerald-400/20 dark:bg-emerald-500/10 dark:text-emerald-200">
-                  Message sent successfully. I’ll get back to you as soon as
-                  possible.
-                </div>
-              )}
+            <div className="premium-card">
+              <MessageCircle
+                className="mb-4 text-blue-600 dark:text-blue-400"
+                size={28}
+              />
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Name
-                  <input
-                    className="input-field"
-                    value={form.name}
-                    onChange={(e) =>
-                      setForm({
-                        ...form,
-                        name: e.target.value,
-                      })
-                    }
-                    placeholder="Your name"
-                  />
-                  {errors.name && (
-                    <span className="text-xs text-red-500">
-                      {errors.name}
-                    </span>
-                  )}
-                </label>
+              <h3 className="text-xl font-bold text-slate-950 dark:text-white">
+                Clear communication
+              </h3>
 
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Email
-                  <input
-                    type="email"
-                    className="input-field"
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({
-                        ...form,
-                        email: e.target.value,
-                      })
-                    }
-                    placeholder="you@example.com"
-                  />
-                  {errors.email && (
-                    <span className="text-xs text-red-500">
-                      {errors.email}
-                    </span>
-                  )}
-                </label>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Messages are handled with a focus on clear, professional,
+                and responsible communication.
+              </p>
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <form
+            onSubmit={handleSubmit}
+            className="premium-card space-y-5"
+            noValidate
+          >
+            {submitted && (
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-800 dark:border-emerald-400/20 dark:bg-emerald-500/10 dark:text-emerald-200">
+                Message sent successfully. I’ll get back to you as soon as
+                possible.
               </div>
+            )}
 
+            <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                Subject
+                Name
                 <input
                   className="input-field"
-                  value={form.subject}
+                  value={form.name}
                   onChange={(e) =>
                     setForm({
                       ...form,
-                      subject: e.target.value,
+                      name: e.target.value,
                     })
                   }
-                  placeholder="How can we help?"
+                  placeholder="Your name"
                 />
-                {errors.subject && (
+
+                {errors.name && (
                   <span className="text-xs text-red-500">
-                    {errors.subject}
+                    {errors.name}
                   </span>
                 )}
               </label>
 
               <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                Message
-                <textarea
-                  className="input-field min-h-36 resize-y"
-                  value={form.message}
+                Email
+                <input
+                  type="email"
+                  className="input-field"
+                  value={form.email}
                   onChange={(e) =>
                     setForm({
                       ...form,
-                      message: e.target.value,
+                      email: e.target.value,
                     })
                   }
-                  placeholder="Write your message..."
+                  placeholder="you@example.com"
                 />
-                {errors.message && (
+
+                {errors.email && (
                   <span className="text-xs text-red-500">
-                    {errors.message}
+                    {errors.email}
                   </span>
                 )}
               </label>
+            </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="button-primary w-full sm:w-auto disabled:opacity-70"
-              >
-                <Send className="mr-2" size={17} />
-                {loading ? "Sending..." : "Send Message"}
-              </button>
-            </form>
-          </div>
+            <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+              Subject
+              <input
+                className="input-field"
+                value={form.subject}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    subject: e.target.value,
+                  })
+                }
+                placeholder="How can we help?"
+              />
+
+              {errors.subject && (
+                <span className="text-xs text-red-500">
+                  {errors.subject}
+                </span>
+              )}
+            </label>
+
+            <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+              Message
+              <textarea
+                className="input-field min-h-36 resize-y"
+                value={form.message}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    message: e.target.value,
+                  })
+                }
+                placeholder="Write your message..."
+              />
+
+              {errors.message && (
+                <span className="text-xs text-red-500">
+                  {errors.message}
+                </span>
+              )}
+            </label>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="button-primary w-full sm:w-auto disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              <Send className="mr-2" size={17} />
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
-      </section>
+      </div>
     </AnimatedPage>
   );
 }

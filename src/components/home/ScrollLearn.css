@@ -1,0 +1,205 @@
+.scroll-learn-section {
+  width: 100%;
+  padding: 70px 0;
+}
+
+.scroll-learn-header {
+  margin-bottom: 32px;
+}
+
+/* =====================================================
+   CARD STACK
+===================================================== */
+
+.scroll-learn-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 180px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 95px;
+}
+
+.scroll-learn-card {
+  position: sticky;
+
+  /* Keeps the heading visible above the stacked cards */
+  top: 220px;
+
+  height: 42vh;
+  min-height: 360px;
+  max-height: 410px;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.scroll-learn-card-body {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  background: rgba(255, 255, 255, 0.98);
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.14);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.scroll-learn-content {
+  padding: 34px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.scroll-learn-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-learn-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.scroll-learn-card-body:hover
+  .scroll-learn-image img {
+  transform: scale(1.03);
+}
+
+.scroll-learn-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.38),
+      transparent 45%
+    );
+}
+
+.scroll-learn-category {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: rgba(0, 0, 0, 0.25);
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.scroll-learn-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 36px;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.dark .scroll-learn-card-body {
+  background: rgba(15, 23, 42, 0.98);
+
+  border-color: rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* =====================================================
+   MOBILE / TABLET
+===================================================== */
+
+@media (max-width: 1023px) {
+  .scroll-learn-section {
+    padding: 55px 0;
+  }
+
+  .scroll-learn-header {
+    margin-bottom: 32px;
+  }
+
+  .scroll-learn-cards {
+    display: block;
+    padding-bottom: 0;
+  }
+
+  .scroll-learn-card {
+    position: relative;
+    top: auto;
+
+    height: auto;
+    min-height: auto;
+    max-height: none;
+
+    margin-bottom: 24px;
+  }
+
+  .scroll-learn-card-body {
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-learn-content {
+    padding: 28px;
+  }
+
+  .scroll-learn-image {
+    height: 260px;
+  }
+
+  .scroll-learn-footer {
+    margin-top: 28px;
+  }
+}

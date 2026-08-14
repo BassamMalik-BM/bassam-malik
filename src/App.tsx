@@ -1,49 +1,58 @@
 import { Route, Routes } from "react-router-dom";
+
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
-import BreadcrumbSchema from "./schemas/BreadcrumbSchema";
 import CookieConsent from "./components/CookieConsent";
 
+import BreadcrumbSchema from "./schemas/BreadcrumbSchema";
+import SiteBackground from "./layouts/SiteBackground";
+import PageLayout from "./layouts/PageLayout";
+
 import Home from "./pages/Home";
+
 import Learn from "./pages/Learn";
-import Blogs from "./pages/Blogs";
-import Resources from "./pages/Resources";
-import Tools from "./pages/Tools";
-import Calculators from "./pages/Calculators";
+import LearnCategories from "./pages/LearnCategories";
+import LearnCategory from "./pages/LearnCategory";
+import ArticlePage from "./pages/ArticlePage";
+
+import Discover from "./pages/Discover";
+import DiscoverPage from "./pages/DiscoverPage";
+
+import DiscoverExchanges from "./pages/discover/DiscoverExchanges";
+import DiscoverExchangePage from "./pages/discover/DiscoverExchangePage";
+
+import DiscoverBooks from "./pages/discover/DiscoverBooks";
+import DiscoverBookPage from "./pages/discover/DiscoverBookPage";
+
+import DiscoverAnalysisWebsites from "./pages/discover/DiscoverAnalysisWebsites";
+import DiscoverAnalysisWebsitePage from "./pages/discover/DiscoverAnalysisWebsitePage";
+
+import CalculatorsPage from "./pages/calculators/CalculatorsPage";
+import CalculatorDetailPage from "./pages/calculators/CalculatorDetailPage";
+
+import ToolsPage from "./pages/tools/ToolsPage";
+import ToolDetailPage from "./pages/tools/ToolDetailPage";
+
 import Ebooks from "./pages/Ebooks";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Start from "./pages/Start";
+
+import Sources from "./pages/Sources";
+import EditorialPolicy from "./pages/EditorialPolicy";
 import RiskDisclaimer from "./pages/RiskDisclaimer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CookiesPolicy from "./pages/CookiesPolicy";
-import LearnCategories from "./pages/LearnCategories";
-import LearnCategory from "./pages/LearnCategory";
-import Sources from "./pages/Sources";
-import EditorialPolicy from "./pages/EditorialPolicy";
-import Start from "./pages/Start";
-import NotFound from "./pages/NotFound";
 
-import BlogsDetail from "./pages/details/BlogsDetail";
-import LearnDetail from "./pages/details/LearnDetail";
-import CalculatorsDetail from "./pages/details/CalculatorsDetail";
-import ToolsDetail from "./pages/details/ToolsDetail";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen text-slate-900 transition-colors dark:text-slate-100">
-      {/* GLOBAL FIXED BACKGROUND */}
-      <div
-        className="
-          fixed inset-0 -z-10
-          bg-[#f8fafc]
-          bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.20),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_35%)]
-          dark:bg-[#020817]
-          dark:bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.20),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.16),transparent_35%),linear-gradient(180deg,#020817,#07111f)]
-        "
-      />
+    <div className="relative min-h-screen">
+      <SiteBackground />
 
       <ScrollToTop />
       <Navbar />
@@ -51,43 +60,81 @@ export default function App() {
       <CookieConsent />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<PageLayout />}>
+          {/* HOME */}
+          <Route path="/" element={<Home />} />
 
-        {/* LEARN */}
-        <Route path="/learn" element={<Learn />} />
-        <Route path="/learn/categories" element={<LearnCategories />} />
-        <Route path="/learn/categories/:category" element={<LearnCategory />} />
-        <Route path="/learn/categories/:categorySlug/:slug" element={<LearnDetail />} />
-        <Route path="/learn/:slug" element={<LearnDetail />} />
+          {/* LEARN */}
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/learn/categories" element={<LearnCategories />} />
+          <Route path="/learn/:category" element={<LearnCategory />} />
+          <Route path="/learn/:category/:slug" element={<ArticlePage />} />
 
-        {/* BLOGS */}
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:slug" element={<BlogsDetail />} />
+          {/* DISCOVER */}
+          <Route path="/discover" element={<Discover />} />
+          <Route path="/discover/:slug" element={<DiscoverPage />} />
 
-        {/* TOOLS */}
-        <Route path="/tools" element={<Tools />} />
-        <Route path="/tools/:slug" element={<ToolsDetail />} />
+          <Route
+            path="/discover/exchanges"
+            element={<DiscoverExchanges />}
+          />
 
-        {/* CALCULATORS */}
-        <Route path="/calculators" element={<Calculators />} />
-        <Route path="/calculators/:slug" element={<CalculatorsDetail />} />
+          <Route
+            path="/discover/exchanges/:slug"
+            element={<DiscoverExchangePage />}
+          />
 
-        {/* OTHER PAGES */}
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/ebooks" element={<Ebooks />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/risk-disclaimer" element={<RiskDisclaimer />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/cookies-policy" element={<CookiesPolicy />} />
-        <Route path="/sources" element={<Sources />} />
-        <Route path="/editorial-policy" element={<EditorialPolicy />} />
-        <Route path="/start-here" element={<Start />} />
+          <Route
+            path="/discover/books"
+            element={<DiscoverBooks />}
+          />
 
-        {/* 404 */}
-        <Route path="*" element={<NotFound />} />
+          <Route
+            path="/discover/books/:slug"
+            element={<DiscoverBookPage />}
+          />
+
+          <Route
+            path="/discover/analysis-websites"
+            element={<DiscoverAnalysisWebsites />}
+          />
+
+          <Route
+            path="/discover/analysis-websites/:slug"
+            element={<DiscoverAnalysisWebsitePage />}
+          />
+
+          <Route path="/calculators" element={<CalculatorsPage />} />
+          <Route path="/calculators/:slug" element={<CalculatorDetailPage />} />
+
+          <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/tools/:slug" element={<ToolDetailPage />} />
+
+          {/* OTHER PAGES */}
+          <Route path="/ebooks" element={<Ebooks />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/start-here" element={<Start />} />
+
+          <Route path="/sources" element={<Sources />} />
+          <Route path="/editorial-policy" element={<EditorialPolicy />} />
+          <Route path="/risk-disclaimer" element={<RiskDisclaimer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+
+          <Route
+            path="/cookies-policy"
+            element={<CookiesPolicy />}
+          />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
 
       <Footer />

@@ -1,5 +1,4 @@
 import AnimatedPage from "../components/AnimatedPage";
-import Breadcrumbs from "../components/Breadcrumbs";
 
 const sections = [
   {
@@ -47,54 +46,48 @@ const sections = [
 export default function CookiesPolicy() {
   return (
     <AnimatedPage>
-      <main className="section-padding text-slate-900 dark:text-white">
-        <div className="container-page">
-          <Breadcrumbs />
+      <article className="mx-auto max-w-6xl">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
+          Website Policy
+        </p>
 
-          <article className="mx-auto max-w-6xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
-              Website Policy
-            </p>
+        <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
+          Cookies Policy
+        </h1>
 
-            <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-              Cookies Policy
-            </h1>
+        <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+          This page explains how cookies and similar technologies may be used
+          on Bassam Malik to improve functionality, performance, analytics,
+          and the overall browsing experience.
+        </p>
 
-            <p className="mt-6 max-w-5xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              This page explains how cookies and similar technologies may be used
-              on Bassam Malik to improve functionality, performance, analytics,
-              and the overall browsing experience.
-            </p>
-
-            <div className="premium-card mt-10 p-8 sm:p-10">
-              <p className="leading-8 text-slate-700 dark:text-slate-300">
-                Bassam Malik is an educational website. Cookies and analytics
-                tools are used to understand performance, improve content, and
-                support a better user experience.
-              </p>
-            </div>
-
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {sections.map((section) => (
-                <section key={section.title} className="premium-card p-8">
-                  <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-                    {section.title}
-                  </h2>
-
-                  <p className="mt-4 leading-8 text-slate-700 dark:text-slate-300">
-                    {section.content}
-                  </p>
-                </section>
-              ))}
-            </div>
-
-            <div className="mt-10 rounded-3xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900 dark:border-amber-400/20 dark:bg-amber-500/10 dark:text-amber-200">
-              Last updated: June 2026. This policy is for general informational
-              purposes and may be updated as the website grows.
-            </div>
-          </article>
+        <div className="premium-card mt-10 p-8 sm:p-10">
+          <p className="leading-8 text-slate-700 dark:text-slate-300">
+            Bassam Malik is an educational website. Cookies and analytics
+            tools are used to understand performance, improve content, and
+            support a better user experience.
+          </p>
         </div>
-      </main>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {sections.map((section) => (
+            <section key={section.title} className="premium-card p-8">
+              <h2 className="text-xl font-bold text-slate-950 dark:text-white">
+                {section.title}
+              </h2>
+
+              <p className="mt-4 leading-8 text-slate-700 dark:text-slate-300">
+                {section.content}
+              </p>
+            </section>
+          ))}
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-white/70 p-5 text-sm leading-6 text-slate-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300">
+          Last updated: June 2026. This policy is for general informational
+          purposes and may be updated as the website grows.
+        </div>
+      </article>
     </AnimatedPage>
   );
 }
