@@ -132,9 +132,11 @@ export default function Navbar() {
           onClick={closeNavigation}
           aria-label="Bassam Malik home"
         >
-          <div className="bm-live-logo">
-            <span>BM</span>
-          </div>
+          <img
+            src="/logo.png"
+            alt="Bassam Malik"
+            className="h-14 w-14 object-contain"
+          />
         </NavLink>
 
         {/* Desktop navigation */}
