@@ -82,13 +82,10 @@ export const inventingBitcoin: BookData = {
     "Readers looking for investment strategies",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B0fab3PBT",
 
   publishedYear: 2019,
   pageCount: 170,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

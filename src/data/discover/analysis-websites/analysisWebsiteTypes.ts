@@ -56,8 +56,6 @@ export interface AnalysisWebsiteData {
   officialWebsite: string;
   referralUrl?: string;
 
-  affiliateDisclosure?: string;
-
   featured?: boolean;
   updatedAt: string;
 }

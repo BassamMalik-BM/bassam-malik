@@ -84,13 +84,10 @@ export const theLittleBookOfCommonSenseInvesting: BookData = {
     "Active traders seeking short-term trading strategies",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B0gXjkllP",
 
   publishedYear: 2007,
   pageCount: 304,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

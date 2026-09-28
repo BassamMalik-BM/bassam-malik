@@ -82,13 +82,10 @@ export const richDadPoorDad: BookData = {
     "People seeking cryptocurrency-specific education",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B07CWMnYx",
 
   publishedYear: 1997,
   pageCount: 336,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

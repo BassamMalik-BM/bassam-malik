@@ -82,14 +82,11 @@ export const brokenMoney: BookData = {
     "People seeking a quick and lightweight introduction to Bitcoin",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B0bLEaETu",
 
   publishedYear: 2023,
 
   pageCount: 500,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

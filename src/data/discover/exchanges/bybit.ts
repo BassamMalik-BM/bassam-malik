@@ -139,10 +139,7 @@ export const bybit: ExchangeData = {
   ],
 
   officialWebsite: "https://www.bybit.com",
-  referralUrl: "YOUR_BYBIT_REFERRAL_LINK",
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you register or use eligible services through referral links. This does not increase your cost.",
+  referralUrl: "https://www.bybit.com/invite?ref=LMELOBL&medium=referral&utm_campaign=evergreen",
 
   foundedYear: 2018,
   headquarters: "Dubai, United Arab Emirates",

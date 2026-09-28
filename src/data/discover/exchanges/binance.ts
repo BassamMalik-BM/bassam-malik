@@ -98,10 +98,7 @@ export const binance: ExchangeData = {
   ],
 
   officialWebsite: "https://www.binance.com",
-  referralUrl: "YOUR_BINANCE_REFERRAL_URL",
-
-  affiliateDisclosure:
-    "BassamMalik.com may receive a commission when a user creates an account through an eligible referral link. This does not increase the cost to the user.",
+  referralUrl: "https://www.binance.com/register?ref=754320279",
 
   foundedYear: 2017,
   availability: ["Availability and services vary by country"],

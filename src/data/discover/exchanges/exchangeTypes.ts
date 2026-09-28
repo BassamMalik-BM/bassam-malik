@@ -44,8 +44,6 @@ export interface ExchangeData {
   officialWebsite: string;
   referralUrl?: string;
 
-  affiliateDisclosure: string;
-
   foundedYear?: number;
   headquarters?: string;
   availability?: string[];

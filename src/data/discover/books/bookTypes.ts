@@ -63,7 +63,6 @@ export interface BookData {
   pageCount?: number;
   pages?: number;
 
-  affiliateDisclosure?: string;
   featured?: boolean;
 
   updatedAt: string;

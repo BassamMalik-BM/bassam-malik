@@ -82,13 +82,10 @@ export const cryptoassets: BookData = {
     "Short-term day traders looking for trading strategies",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B09xl1nma",
 
   publishedYear: 2017,
   pageCount: 368,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

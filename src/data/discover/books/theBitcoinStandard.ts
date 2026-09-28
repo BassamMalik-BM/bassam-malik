@@ -74,10 +74,7 @@ export const theBitcoinStandard: BookData = {
     "Readers seeking a technical programming manual",
   ],
 
-  purchaseUrl: "YOUR_BOOK_AFFILIATE_URL",
-
-  affiliateDisclosure:
-    "BassamMalik.com may receive a commission when a book is purchased through an eligible affiliate link. This does not increase the price paid by the reader.",
+  purchaseUrl: "https://link.amazon/B01xYupkJ",
 
   publishedYear: 2018,
   featured: true,

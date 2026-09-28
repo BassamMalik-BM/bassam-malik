@@ -83,19 +83,6 @@ export default function DiscoverBookPage() {
         </div>
       </section>
 
-      {/* Affiliate disclosure */}
-      {book.affiliateDisclosure && (
-        <section className="rounded-2xl border border-emerald-400/30 bg-emerald-50/70 p-5 dark:border-emerald-400/20 dark:bg-emerald-400/5">
-          <p className="font-semibold text-emerald-600 dark:text-emerald-300">
-            Affiliate disclosure
-          </p>
-
-          <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-            {book.affiliateDisclosure}
-          </p>
-        </section>
-      )}
-
       {/* Score breakdown */}
       <section>
         <h2 className="text-3xl font-bold text-slate-950 dark:text-white">

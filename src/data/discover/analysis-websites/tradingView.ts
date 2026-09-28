@@ -84,10 +84,7 @@ export const tradingView: AnalysisWebsiteData = {
   ],
 
   officialWebsite: "https://www.tradingview.com",
-  referralUrl: "YOUR_TRADINGVIEW_REFERRAL_URL",
-
-  affiliateDisclosure:
-    "BassamMalik.com may receive a commission when a user signs up through an eligible referral link. This does not increase the price paid by the user.",
+  referralUrl: "https://www.tradingview.com/pricing/?share_your_love=bassammalik24",
 
   featured: true,
   updatedAt: "2026-07-16",

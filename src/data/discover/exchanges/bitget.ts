@@ -112,10 +112,7 @@ export const bitget: ExchangeData = {
   ],
 
   officialWebsite: "https://www.bitget.com",
-  referralUrl: "YOUR_BITGET_REFERRAL_URL",
-
-  affiliateDisclosure:
-    "BassamMalik.com may receive a commission when a user creates an account through an eligible referral link. This does not increase the cost paid by the user.",
+  referralUrl: "https://share.bitget.com/u/0ZYY0D13",
 
   foundedYear: 2018,
 

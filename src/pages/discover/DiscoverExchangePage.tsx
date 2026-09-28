@@ -120,20 +120,6 @@ export default function DiscoverExchangePage() {
         </div>
       </section>
 
-      {/* Affiliate disclosure */}
-      <section
-        aria-label="Affiliate disclosure"
-        className="rounded-2xl border border-emerald-400/30 bg-emerald-50/70 p-5 dark:border-emerald-400/20 dark:bg-emerald-400/5"
-      >
-        <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-300">
-          Affiliate disclosure
-        </p>
-
-        <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-          {exchange.affiliateDisclosure}
-        </p>
-      </section>
-
       {/* Best for */}
       <section>
         <div className="max-w-3xl">
@@ -474,10 +460,6 @@ export default function DiscoverExchangePage() {
               Review the exchange&apos;s current fees, supported products,
               regional availability, and account requirements before signing
               up.
-            </p>
-
-            <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              {exchange.affiliateDisclosure}
             </p>
           </div>
 

@@ -82,13 +82,10 @@ export const thePsychologyOfMoney: BookData = {
     "Developers seeking blockchain or cryptocurrency technology content",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B0eeAta7s",
 
   publishedYear: 2020,
   pageCount: 256,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 

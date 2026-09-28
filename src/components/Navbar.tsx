@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import AnimatedLogo from "./AnimatedLogo";
 
 const navLinks = [
   {
@@ -132,11 +133,7 @@ export default function Navbar() {
           onClick={closeNavigation}
           aria-label="Bassam Malik home"
         >
-          <img
-            src="/logo.png"
-            alt="Bassam Malik"
-            className="h-14 w-14 object-contain"
-          />
+          <AnimatedLogo />
         </NavLink>
 
         {/* Desktop navigation */}

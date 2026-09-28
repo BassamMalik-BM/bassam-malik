@@ -89,10 +89,7 @@ export const coinglass: AnalysisWebsiteData = {
 
   officialWebsite: "https://www.coinglass.com",
 
-  referralUrl: "YOUR_COINGLASS_REFERRAL_LINK",
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you sign up through an eligible referral link. This does not increase your cost.",
+  referralUrl: "https://www.coinglass.com/?ref_code=XRXDPE",
 
   updatedAt: "2026-07-17",
 };

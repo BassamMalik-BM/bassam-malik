@@ -81,13 +81,10 @@ export const digitalGold: BookData = {
     "Traders seeking market strategies",
   ],
 
-  purchaseUrl: "YOUR_AMAZON_AFFILIATE_LINK",
+  purchaseUrl: "https://link.amazon/B02CrsnS9",
 
   publishedYear: 2015,
   pageCount: 416,
-
-  affiliateDisclosure:
-    "BassamMalik.com may earn a commission if you purchase through eligible affiliate links. This does not increase the price you pay.",
 
   featured: true,
 
