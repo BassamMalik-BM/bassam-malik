@@ -1,113 +1,262 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  Search,
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-} from "lucide-react";
+import { useMemo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 import AnimatedPage from "../components/AnimatedPage";
 import { articles } from "../data/articles";
 
 const POSTS_PER_PAGE = 12;
 
+// Build categories from the articles so counts stay up to date.
+const categories = Array.from(
+  new Set(articles.map((article) => article.category.slug)),
+).map((slug) => {
+  const matchingArticles = articles.filter(
+    (article) => article.category.slug === slug,
+  );
+
+  return {
+    slug,
+    title: matchingArticles[0].category.title,
+    count: matchingArticles.length,
+  };
+});
+
+const paginationButtonClass =
+  "flex h-11 w-11 items-center justify-center rounded-xl border " +
+  "border-slate-200 bg-white text-slate-700 transition " +
+  "hover:border-blue-400 hover:text-blue-600 " +
+  "disabled:cursor-not-allowed disabled:opacity-40 " +
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 " +
+  "dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 " +
+  "dark:hover:text-blue-400";
+
 export default function Learn() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchTerm = searchParams.get("q") ?? "";
+  const requestedCategory = searchParams.get("category") ?? "";
+
+  const selectedCategory = categories.some(
+    (category) => category.slug === requestedCategory,
+  )
+    ? requestedCategory
+    : "";
+
+  const categoryTitle = categories.find(
+    (category) => category.slug === selectedCategory,
+  )?.title;
 
   const filteredArticles = useMemo(() => {
     const search = searchTerm.trim().toLowerCase();
 
-    if (!search) return articles;
-
     return articles.filter((article) => {
-      return (
+      const matchesCategory =
+        !selectedCategory ||
+        article.category.slug === selectedCategory;
+
+      const matchesSearch =
+        !search ||
         article.title.toLowerCase().includes(search) ||
         article.description.toLowerCase().includes(search) ||
-        article.category.title.toLowerCase().includes(search)
-      );
-    });
-  }, [searchTerm]);
+        article.category.title.toLowerCase().includes(search);
 
-  const totalPages = Math.ceil(
-    filteredArticles.length / POSTS_PER_PAGE,
+      return matchesCategory && matchesSearch;
+    });
+  }, [searchTerm, selectedCategory]);
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredArticles.length / POSTS_PER_PAGE),
   );
 
-  const startIndex =
-    (currentPage - 1) * POSTS_PER_PAGE;
+  const requestedPage = Number(searchParams.get("page") ?? "1");
+
+  const currentPage = Math.min(
+    Number.isSafeInteger(requestedPage) && requestedPage > 0
+      ? requestedPage
+      : 1,
+    totalPages,
+  );
+
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
 
   const currentArticles = filteredArticles.slice(
     startIndex,
     startIndex + POSTS_PER_PAGE,
   );
 
-  const handleSearchChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    setSearchTerm(event.target.value);
-    setCurrentPage(1);
-  };
+  const hasFilters = Boolean(
+    searchTerm.length > 0 || requestedCategory,
+  );
+
+  function updateFilter(name: "q" | "category", value: string) {
+    setSearchParams(
+      (previousParams) => {
+        const nextParams = new URLSearchParams(previousParams);
+
+        if (value) {
+          nextParams.set(name, value);
+        } else {
+          nextParams.delete(name);
+        }
+
+        // Start from the first page whenever a filter changes.
+        nextParams.delete("page");
+
+        return nextParams;
+      },
+      // Avoid adding a browser-history entry for every keystroke.
+      { replace: name === "q" },
+    );
+  }
+
+  function clearFilters() {
+    setSearchParams((previousParams) => {
+      const nextParams = new URLSearchParams(previousParams);
+
+      nextParams.delete("q");
+      nextParams.delete("category");
+      nextParams.delete("page");
+
+      return nextParams;
+    });
+  }
+
+  function changePage(page: number) {
+    const nextPage = Math.min(Math.max(page, 1), totalPages);
+
+    setSearchParams((previousParams) => {
+      const nextParams = new URLSearchParams(previousParams);
+
+      if (nextPage === 1) {
+        nextParams.delete("page");
+      } else {
+        nextParams.set("page", String(nextPage));
+      }
+
+      return nextParams;
+    });
+  }
 
   return (
     <AnimatedPage>
       <div>
         {/* Header */}
-        <div className="mb-14 grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
+        <div className="mb-10">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
+            Learn Crypto
+          </p>
+
+          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
+            Learn crypto with clarity
+          </h1>
+
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+            Explore beginner-friendly crypto lessons. Search for a
+            topic or choose a category to find your next article.
+          </p>
+        </div>
+
+        {/* Search and category filter */}
+        <div className="mb-6 grid gap-5 md:grid-cols-[minmax(0,1fr)_280px]">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
-              Learn Crypto
-            </p>
-
-            <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white md:text-5xl">
-              Learn crypto with clarity
-            </h1>
-
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Browse all beginner-friendly crypto articles, or explore
-              by category if you want a more structured path.
-            </p>
-
-            <Link
-              to="/learn/categories"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
+            <label
+              htmlFor="learn-search"
+              className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300"
             >
-              Browse categories
-              <ArrowRight size={16} />
-            </Link>
+              Search articles
+            </label>
+
+            <div className="relative">
+              <Search
+                size={20}
+                aria-hidden="true"
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+              />
+
+              <input
+                id="learn-search"
+                type="search"
+                value={searchTerm}
+                onChange={(event) =>
+                  updateFilter("q", event.target.value)
+                }
+                placeholder="Search Bitcoin, wallets, trading..."
+                className="w-full rounded-2xl border border-slate-200 bg-white/80 py-4 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900/80 dark:text-white dark:placeholder:text-slate-500"
+              />
+            </div>
           </div>
 
-          {/* Search */}
-          <div className="relative w-full">
-            <Search
-              size={20}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-            />
+          <div>
+            <label
+              htmlFor="learn-category"
+              className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300"
+            >
+              Category
+            </label>
 
-            <input
-              type="search"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              placeholder="Search articles..."
-              className="w-full rounded-2xl border border-slate-200 bg-white/80 py-4 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900/80 dark:text-white dark:placeholder:text-slate-500"
-            />
+            <select
+              id="learn-category"
+              value={selectedCategory}
+              onChange={(event) =>
+                updateFilter("category", event.target.value)
+              }
+              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-4 pr-8 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900 dark:text-white"
+            >
+              <option value="">
+                All categories ({articles.length})
+              </option>
+
+              {categories.map((category) => (
+                <option key={category.slug} value={category.slug}>
+                  {category.title} ({category.count})
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Search results count */}
-        {searchTerm.trim() && (
-          <p className="mb-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-            Showing{" "}
+        {/* Results and reset */}
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
+          <p
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="text-sm font-medium text-slate-600 dark:text-slate-300"
+          >
             <span className="font-bold text-slate-950 dark:text-white">
               {filteredArticles.length}
             </span>{" "}
-            result
-            {filteredArticles.length !== 1 ? "s" : ""} for{" "}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">
-              "{searchTerm}"
-            </span>
+            article{filteredArticles.length !== 1 ? "s" : ""}
+            {categoryTitle && (
+              <>
+                {" "}in{" "}
+                <span className="font-semibold text-blue-600 dark:text-blue-400">
+                  {categoryTitle}
+                </span>
+              </>
+            )}
+            {searchTerm.trim() && (
+              <>
+                {" "}matching{" "}
+                <span className="font-semibold text-slate-950 dark:text-white">
+                  “{searchTerm.trim()}”
+                </span>
+              </>
+            )}
           </p>
-        )}
+
+          {hasFilters && (
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="rounded-lg px-3 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:bg-blue-500/10"
+            >
+              Clear filters
+            </button>
+          )}
+        </div>
 
         {/* Articles */}
         {currentArticles.length > 0 ? (
@@ -115,9 +264,9 @@ export default function Learn() {
             <div className="grid auto-rows-fr gap-6 md:grid-cols-2 lg:grid-cols-3">
               {currentArticles.map((article) => (
                 <Link
-                  key={article.slug}
+                  key={`${article.category.slug}/${article.slug}`}
                   to={`/learn/${article.category.slug}/${article.slug}`}
-                  className="premium-card group flex flex-col"
+                  className="premium-card group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {article.heroImage && (
                     <div className="mb-5 overflow-hidden rounded-2xl">
@@ -151,68 +300,73 @@ export default function Learn() {
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="mt-12 flex items-center justify-center gap-2">
+              <nav
+                aria-label="Article pagination"
+                className="mt-12 flex flex-wrap items-center justify-center gap-2"
+              >
                 <button
-                  onClick={() =>
-                    setCurrentPage((page) =>
-                      Math.max(page - 1, 1),
-                    )
-                  }
+                  type="button"
+                  aria-label="Previous page"
+                  onClick={() => changePage(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
+                  className={paginationButtonClass}
                 >
-                  <ChevronLeft size={18} />
+                  <ChevronLeft size={18} aria-hidden="true" />
                 </button>
 
-                {Array.from(
-                  { length: totalPages },
-                  (_, index) => {
-                    const pageNumber = index + 1;
-                    const isActive =
-                      currentPage === pageNumber;
+                {Array.from({ length: totalPages }, (_, index) => {
+                  const pageNumber = index + 1;
+                  const isActive = currentPage === pageNumber;
 
-                    return (
-                      <button
-                        key={pageNumber}
-                        onClick={() =>
-                          setCurrentPage(pageNumber)
-                        }
-                        className={`h-11 w-11 rounded-xl text-sm font-bold transition ${
-                          isActive
-                            ? "bg-blue-600 text-white shadow-lg shadow-blue-500/25"
-                            : "border border-slate-200 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-600 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
-                        }`}
-                      >
-                        {pageNumber}
-                      </button>
-                    );
-                  },
-                )}
+                  return (
+                    <button
+                      key={pageNumber}
+                      type="button"
+                      aria-label={`Page ${pageNumber}`}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={() => changePage(pageNumber)}
+                      className={
+                        isActive
+                          ? "flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-sm font-bold text-white shadow-lg shadow-blue-500/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          : `${paginationButtonClass} text-sm font-bold`
+                      }
+                    >
+                      {pageNumber}
+                    </button>
+                  );
+                })}
 
                 <button
-                  onClick={() =>
-                    setCurrentPage((page) =>
-                      Math.min(page + 1, totalPages),
-                    )
-                  }
+                  type="button"
+                  aria-label="Next page"
+                  onClick={() => changePage(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-blue-400 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-navy-900 dark:text-slate-300 dark:hover:text-blue-400"
+                  className={paginationButtonClass}
                 >
-                  <ChevronRight size={18} />
+                  <ChevronRight size={18} aria-hidden="true" />
                 </button>
-              </div>
+              </nav>
             )}
           </>
         ) : (
-          <div className="premium-card text-center">
+          <div className="premium-card py-12 text-center">
             <p className="text-lg font-semibold text-slate-950 dark:text-white">
-              Not found
+              No articles found
             </p>
 
             <p className="mt-2 text-slate-600 dark:text-slate-300">
-              Try searching for Bitcoin, wallets, trading, risk, or
-              blockchain.
+              Try another keyword or choose a different category.
             </p>
+
+            {hasFilters && (
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              >
+                Show all articles
+              </button>
+            )}
           </div>
         )}
       </div>

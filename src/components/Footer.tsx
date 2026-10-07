@@ -88,9 +88,13 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-600 font-bold text-white">
-                BM
-              </div>
+               <img
+                 src="/logo.png"
+                 alt="Bassam Malik logo"
+                 width={44}
+                 height={44}
+                 className="h-11 w-11 shrink-0 object-contain"
+                />
 
               <div>
                 <h2 className="font-bold text-slate-950 dark:text-white">

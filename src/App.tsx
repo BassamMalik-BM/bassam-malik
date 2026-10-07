@@ -16,6 +16,8 @@ import LearnCategories from "./pages/LearnCategories";
 import LearnCategory from "./pages/LearnCategory";
 import ArticlePage from "./pages/ArticlePage";
 
+import Resources from "./pages/Resources";
+
 import Discover from "./pages/Discover";
 import DiscoverPage from "./pages/DiscoverPage";
 
@@ -69,6 +71,9 @@ export default function App() {
           <Route path="/learn/categories" element={<LearnCategories />} />
           <Route path="/learn/:category" element={<LearnCategory />} />
           <Route path="/learn/:category/:slug" element={<ArticlePage />} />
+
+          {/* RESOURCES */}
+          <Route path="/resources" element={<Resources />} />
 
           {/* DISCOVER */}
           <Route path="/discover" element={<Discover />} />

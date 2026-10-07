@@ -5,6 +5,10 @@ import AnimatedLogo from "./AnimatedLogo";
 
 const navLinks = [
   {
+    name: "Resources",
+    path: "/resources",
+  },
+  {
     name: "Tools",
     path: "/tools",
   },
@@ -19,19 +23,6 @@ const navLinks = [
   {
     name: "Contact",
     path: "/contact",
-  },
-];
-
-const learnDropdownLinks = [
-  {
-    name: "Learning Center",
-    description: "Browse all crypto articles",
-    path: "/learn",
-  },
-  {
-    name: "Categories",
-    description: "Explore articles by topic",
-    path: "/learn/categories",
   },
 ];
 
@@ -55,7 +46,6 @@ const discoverDropdownLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLearnOpen, setIsLearnOpen] = useState(false);
   const [isDiscoverOpen, setIsDiscoverOpen] = useState(false);
 
   const [isDark, setIsDark] = useState(
@@ -71,7 +61,6 @@ export default function Navbar() {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
-        setIsLearnOpen(false);
         setIsDiscoverOpen(false);
       }
     };
@@ -85,7 +74,6 @@ export default function Navbar() {
 
   const closeNavigation = () => {
     setIsOpen(false);
-    setIsLearnOpen(false);
     setIsDiscoverOpen(false);
   };
 
@@ -142,78 +130,20 @@ export default function Navbar() {
             Home
           </NavLink>
 
-          {/* Learn dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => {
-              setIsLearnOpen(true);
-              setIsDiscoverOpen(false);
-            }}
-            onMouseLeave={() => setIsLearnOpen(false)}
-          >
-            <NavLink
-              to="/learn"
-              className={({ isActive }) =>
-                desktopDropdownParentClass(isActive, isLearnOpen)
-              }
-              onFocus={() => {
-                setIsLearnOpen(true);
-                setIsDiscoverOpen(false);
-              }}
-              onClick={() => setIsDiscoverOpen(false)}
-            >
-              Learn
-
-              <ChevronDown
-                size={15}
-                aria-hidden="true"
-                className={`transition-transform duration-200 ${
-                  isLearnOpen ? "rotate-180" : ""
-                }`}
-              />
-            </NavLink>
-
-            {isLearnOpen && (
-              <div className="absolute left-0 top-full z-50 pt-3">
-                <div className="w-72 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-navy-900">
-                  {learnDropdownLinks.map((link) => (
-                    <NavLink
-                      key={link.path}
-                      to={link.path}
-                      onClick={closeNavigation}
-                      className={dropdownItemClass}
-                    >
-                      {({ isActive }) => (
-                        <>
-                          <p
-                            className={`font-semibold ${
-                              isActive
-                                ? "text-blue-700 dark:text-blue-300"
-                                : "text-slate-900 dark:text-white"
-                            }`}
-                          >
-                            {link.name}
-                          </p>
-
-                          <p className="mt-1 text-sm leading-5 text-slate-500 dark:text-slate-400">
-                            {link.description}
-                          </p>
-                        </>
-                      )}
-                    </NavLink>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          {/* Learn link */}
+<NavLink
+  to="/learn"
+  className={linkClass}
+  onFocus={() => setIsDiscoverOpen(false)}
+  onClick={closeNavigation}
+>
+  Learn
+</NavLink>
 
           {/* Discover dropdown */}
           <div
             className="relative"
-            onMouseEnter={() => {
-              setIsDiscoverOpen(true);
-              setIsLearnOpen(false);
-            }}
+            onMouseEnter={() => setIsDiscoverOpen(true)}
             onMouseLeave={() => setIsDiscoverOpen(false)}
           >
             <NavLink
@@ -221,11 +151,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 desktopDropdownParentClass(isActive, isDiscoverOpen)
               }
-              onFocus={() => {
-                setIsDiscoverOpen(true);
-                setIsLearnOpen(false);
-              }}
-              onClick={() => setIsLearnOpen(false)}
+              onFocus={() => setIsDiscoverOpen(true)}
             >
               Discover
 
@@ -328,39 +254,14 @@ export default function Navbar() {
               Home
             </NavLink>
 
-            {/* Mobile Learn section */}
-            <div className="rounded-2xl bg-slate-50 p-2 dark:bg-white/5">
-              <NavLink
-                to="/learn"
-                onClick={closeNavigation}
-                className={({ isActive }) =>
-                  `block rounded-xl px-3 py-2 text-xs font-bold uppercase tracking-wide transition ${
-                    isActive
-                      ? "text-blue-700 dark:text-blue-300"
-                      : "text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
-                  }`
-                }
-              >
-                Learn
-              </NavLink>
-
-              <div className="mt-1 grid gap-1">
-                {learnDropdownLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    className={mobileSubLinkClass}
-                    onClick={closeNavigation}
-                  >
-                    <div className="font-medium">{link.name}</div>
-
-                    <div className="mt-1 text-xs font-normal text-slate-500 dark:text-slate-400">
-                      {link.description}
-                    </div>
-                  </NavLink>
-                ))}
-              </div>
-            </div>
+            {/* Mobile Learn link */}
+            <NavLink
+              to="/learn"
+              className={linkClass}
+              onClick={closeNavigation}
+            >
+              Learn
+            </NavLink>
 
             {/* Mobile Discover section */}
             <div className="rounded-2xl bg-slate-50 p-2 dark:bg-white/5">
