@@ -3,11 +3,13 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 import AnimatedPage from "../components/AnimatedPage";
+import CategoryFilter from "../components/CategoryFilter";
+import SEO from "../components/SEO";
 import { articles } from "../data/articles";
 
 const POSTS_PER_PAGE = 12;
 
-// Build categories from the articles so counts stay up to date.
+// Build categories from article data so counts stay up to date.
 const categories = Array.from(
   new Set(articles.map((article) => article.category.slug)),
 ).map((slug) => {
@@ -35,25 +37,30 @@ export default function Learn() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const searchTerm = searchParams.get("q") ?? "";
-  const requestedCategory = searchParams.get("category") ?? "";
 
-  const selectedCategory = categories.some(
-    (category) => category.slug === requestedCategory,
-  )
-    ? requestedCategory
-    : "";
+  const selectedCategories = useMemo(
+    () =>
+      Array.from(new Set(searchParams.getAll("category"))).filter(
+        (slug) =>
+          categories.some((category) => category.slug === slug),
+      ),
+    [searchParams],
+  );
 
-  const categoryTitle = categories.find(
-    (category) => category.slug === selectedCategory,
-  )?.title;
+  const categoryTitles = categories
+    .filter((category) =>
+      selectedCategories.includes(category.slug),
+    )
+    .map((category) => category.title)
+    .join(", ");
 
   const filteredArticles = useMemo(() => {
     const search = searchTerm.trim().toLowerCase();
 
     return articles.filter((article) => {
       const matchesCategory =
-        !selectedCategory ||
-        article.category.slug === selectedCategory;
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(article.category.slug);
 
       const matchesSearch =
         !search ||
@@ -63,7 +70,7 @@ export default function Learn() {
 
       return matchesCategory && matchesSearch;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategories]);
 
   const totalPages = Math.max(
     1,
@@ -87,28 +94,41 @@ export default function Learn() {
   );
 
   const hasFilters = Boolean(
-    searchTerm.length > 0 || requestedCategory,
+    searchTerm.length > 0 || searchParams.has("category"),
   );
 
-  function updateFilter(name: "q" | "category", value: string) {
+  function updateSearch(value: string) {
     setSearchParams(
       (previousParams) => {
         const nextParams = new URLSearchParams(previousParams);
 
         if (value) {
-          nextParams.set(name, value);
+          nextParams.set("q", value);
         } else {
-          nextParams.delete(name);
+          nextParams.delete("q");
         }
 
-        // Start from the first page whenever a filter changes.
         nextParams.delete("page");
 
         return nextParams;
       },
-      // Avoid adding a browser-history entry for every keystroke.
-      { replace: name === "q" },
+      { replace: true },
     );
+  }
+
+  function updateCategories(selected: string[]) {
+    setSearchParams((previousParams) => {
+      const nextParams = new URLSearchParams(previousParams);
+
+      nextParams.delete("category");
+      nextParams.delete("page");
+
+      selected.forEach((slug) => {
+        nextParams.append("category", slug);
+      });
+
+      return nextParams;
+    });
   }
 
   function clearFilters() {
@@ -141,6 +161,12 @@ export default function Learn() {
 
   return (
     <AnimatedPage>
+      <SEO
+        title="Learn Crypto for Beginners"
+        description="Explore beginner-friendly lessons on cryptocurrency, Bitcoin, wallets, security, trading, and risk management. Search articles or browse by topic."
+        path="/learn"
+      />
+
       <div>
         {/* Header */}
         <div className="mb-10">
@@ -154,11 +180,12 @@ export default function Learn() {
 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
             Explore beginner-friendly crypto lessons. Search for a
-            topic or choose a category to find your next article.
+            topic or select one or more categories to find your
+            next article.
           </p>
         </div>
 
-        {/* Search and category filter */}
+        {/* Search and category filters */}
         <div className="mb-6 grid gap-5 md:grid-cols-[minmax(0,1fr)_280px]">
           <div>
             <label
@@ -180,7 +207,7 @@ export default function Learn() {
                 type="search"
                 value={searchTerm}
                 onChange={(event) =>
-                  updateFilter("q", event.target.value)
+                  updateSearch(event.target.value)
                 }
                 placeholder="Search Bitcoin, wallets, trading..."
                 className="w-full rounded-2xl border border-slate-200 bg-white/80 py-4 pl-12 pr-4 text-sm font-medium text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900/80 dark:text-white dark:placeholder:text-slate-500"
@@ -188,33 +215,12 @@ export default function Learn() {
             </div>
           </div>
 
-          <div>
-            <label
-              htmlFor="learn-category"
-              className="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300"
-            >
-              Category
-            </label>
-
-            <select
-              id="learn-category"
-              value={selectedCategory}
-              onChange={(event) =>
-                updateFilter("category", event.target.value)
-              }
-              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-4 pr-8 text-sm font-medium text-slate-700 outline-none transition focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-navy-900 dark:text-white"
-            >
-              <option value="">
-                All categories ({articles.length})
-              </option>
-
-              {categories.map((category) => (
-                <option key={category.slug} value={category.slug}>
-                  {category.title} ({category.count})
-                </option>
-              ))}
-            </select>
-          </div>
+          <CategoryFilter
+            categories={categories}
+            selected={selectedCategories}
+            totalArticles={articles.length}
+            onChange={updateCategories}
+          />
         </div>
 
         {/* Results and reset */}
@@ -223,20 +229,22 @@ export default function Learn() {
             role="status"
             aria-live="polite"
             aria-atomic="true"
-            className="text-sm font-medium text-slate-600 dark:text-slate-300"
+            className="min-w-0 break-words text-sm font-medium text-slate-600 dark:text-slate-300"
           >
             <span className="font-bold text-slate-950 dark:text-white">
               {filteredArticles.length}
             </span>{" "}
-            article{filteredArticles.length !== 1 ? "s" : ""}
-            {categoryTitle && (
+            {filteredArticles.length === 1 ? "article" : "articles"}
+
+            {categoryTitles && (
               <>
                 {" "}in{" "}
                 <span className="font-semibold text-blue-600 dark:text-blue-400">
-                  {categoryTitle}
+                  {categoryTitles}
                 </span>
               </>
             )}
+
             {searchTerm.trim() && (
               <>
                 {" "}matching{" "}
@@ -251,7 +259,7 @@ export default function Learn() {
             <button
               type="button"
               onClick={clearFilters}
-              className="rounded-lg px-3 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:bg-blue-500/10"
+              className="shrink-0 rounded-lg px-3 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:bg-blue-500/10"
             >
               Clear filters
             </button>
@@ -355,7 +363,7 @@ export default function Learn() {
             </p>
 
             <p className="mt-2 text-slate-600 dark:text-slate-300">
-              Try another keyword or choose a different category.
+              Try another keyword or change your selected categories.
             </p>
 
             {hasFilters && (

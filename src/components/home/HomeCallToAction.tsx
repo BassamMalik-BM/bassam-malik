@@ -15,7 +15,11 @@ export default function HomeCallToAction() {
           <div className="relative mx-auto max-w-3xl">
             {/* Icon */}
             <div className="mx-auto flex h-12 w-12 items-center justify-center text-white">
-              <BookOpen size={38} strokeWidth={2} />
+              <BookOpen
+                size={38}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
             </div>
 
             {/* Heading */}
@@ -25,14 +29,15 @@ export default function HomeCallToAction() {
 
             {/* Description */}
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
-              Explore guides, templates, and beginner lessons designed for
-              responsible crypto spot trading education.
+              Explore free beginner PDF guides to build your
+              chart-reading knowledge. Read online or download
+              them to learn at your own pace.
             </p>
 
             {/* CTA */}
             <div className="mt-9 flex justify-center">
               <Link
-                to="/learn"
+                to="/resources"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-blue-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md"
               >
                 Open Resources
